@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "eslint:recommended", // Extends recommended rules
+  "parser": "@typescript-eslint/parser", // Specifies the parser (for TypeScript)
+  "plugins": ["@typescript-eslint"], // Specifies ESLint plugins (for TypeScript)
+  "env": {
+    "browser": true, // Enables browser globals
+    "node": true // Enables Node.js globals
+  },
+  "rules": {
+    "semi": ["error", "always"], // Enforces semicolons
+    "indent": ["error", 2], // Enforces 2 spaces for indentation
+    "quotes": ["error", "single"], // Enforces single quotes
+    "no-console": "warn" // Warns about console.log
+  }
 }
