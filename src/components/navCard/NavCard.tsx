@@ -24,6 +24,7 @@ export const NavCard = ({ card }: TProps) => {
 
   return (
     <div
+      className="cursor-pointer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
