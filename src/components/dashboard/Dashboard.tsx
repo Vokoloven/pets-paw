@@ -1,13 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Logo from "../../../public/logoLight.svg";
 import { NavCard } from "../navCard/NavCard";
 import { navCardItems } from "../navCard/navCardItems";
+import { useRouter } from "next/navigation";
 
 export const Dashboard = () => {
+  const router = useRouter();
+
   return (
     <section>
       <header>
-        <Image src={Logo} alt="logo" />
+        <Image
+          src={Logo}
+          alt="logo"
+          onClick={() => router.push("/")}
+          className="cursor-pointer"
+        />
       </header>
       <p className="text-black text-4.5xl font-medium mt-20">Hi! 👋</p>
       <h1 className="text-xl text-placeholder mt-2.5">
