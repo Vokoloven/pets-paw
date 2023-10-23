@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         placeholder: "#8C8C8C",
-        "regal-purple": "#B4B7FF",
-        "regal-green": "#97EAB9",
-        "regal-yellow": "#FFD280",
-        "regal-rgba-0.6": "rgba(255, 255, 255, 0.4)",
-        "regal-active-pink": "#FF868E",
-        "regal-hover-pink": "#FBE0DC",
+        "base-purple": "#B4B7FF",
+        "base-green": "#97EAB9",
+        "base-yellow": "#FFD280",
+        "base-rgba-0.6": "rgba(255, 255, 255, 0.4)",
+        "base-hover-pink": "#FBE0DC",
+        "base-active-pink": "#FF868E",
       },
       fontSize: {
         "4.5xl": ["2.75rem", "3.625rem"],

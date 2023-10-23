@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { handleCardStyle } from "./handleCardStyle";
 import { StaticImageData } from "next/image";
@@ -15,21 +15,23 @@ type TProps = {
 };
 
 export const NavCard = ({ card }: TProps) => {
-  const [active, setActive] = useState<boolean>(false);
+  const [hover, setHover] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
     <div
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
     >
       <div className="flex justify-center items-center flex-col" key={card.alt}>
         <div
-          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleCardStyle(
-            card.alt
-          )} ${active && "border-white"} ${focus && "border-regal-hover-pink"}`}
+          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${
+            hover ? "border-white" : "border-base-rgba-0.6"
+          } ${
+            focus ? "border-base-hover-pink" : "border-base-rgba-0.6"
+          } ${handleCardStyle(card.alt)}`}
         >
           <Image
             src={card.src}
@@ -41,9 +43,11 @@ export const NavCard = ({ card }: TProps) => {
         </div>
         <button
           type="button"
-          className={`bg-white rounded-[10px] w-full py-2.5 mt-2.5 text-regal-active-pink font-medium text-xs focus:outline-none ${
-            active && "bg-regal-hover-pink"
-          } ${focus && "bg-regal-active-pink text-white"} `}
+          className={`${hover ? "bg-base-hover-pink" : "bg-white"} ${
+            focus
+              ? "bg-base-active-pink text-white"
+              : "bg-white text-base-active-pink"
+          } rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none`}
         >
           {card.alt.toUpperCase()}
         </button>
