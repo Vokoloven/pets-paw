@@ -1,17 +1,17 @@
-export const handleCardBgColor = <T>(alt: T): T => {
+export const handleCardBgColor = <T>(alt: T): string => {
   switch (alt) {
     case "voting":
-      return "bg-base-purple" as T;
+      return "bg-base-purple";
       break;
     case "breeds":
-      return "bg-base-green" as T;
+      return "bg-base-green";
       break;
     case "gallery":
-      return "bg-base-yellow" as T;
+      return "bg-base-yellow";
       break;
 
     default:
-      return "" as T;
+      return "";
   }
 };
 

@@ -25,6 +25,7 @@ const config: Config = {
       },
       borderRadius: {
         "2.5xl": "1.25rem",
+        "1.5lg": "0.625rem",
       },
     },
     container: {

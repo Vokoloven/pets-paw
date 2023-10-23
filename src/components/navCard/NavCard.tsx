@@ -8,7 +8,7 @@ import {
   handleCardBgColor,
   handleCardActions,
   handleButtonActions,
-} from "./cardStylesHandlers";
+} from "./cardHandlers";
 import { StaticImageData } from "next/image";
 
 type TProps = {
