@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jost.className} bg-[#F8F8F7]`}>
-        <div className="flex justify-center py-8 ">
+        <div className="container mx-auto flex justify-center py-8">
           <Dashboard />
           <main>{children}</main>
         </div>
