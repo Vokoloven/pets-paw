@@ -35,7 +35,7 @@ export const NavCard = ({ card }: TProps) => {
           className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleCardActions(
             hover,
             focus
-          )} ${handleCardBgColor(card.alt)}`}
+          )} ${handleCardBgColor(card.alt)} transition`}
         >
           <Image
             src={card.src}
@@ -50,7 +50,7 @@ export const NavCard = ({ card }: TProps) => {
           className={`rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none ${handleButtonActions(
             hover,
             focus
-          )}`}
+          )} transition`}
         >
           {card.alt.toUpperCase()}
         </button>
