@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { handleCardStyle } from "./handleCardStyle";
+import {
+  handleCardBgColor,
+  handleCardActions,
+  handleButtonActions,
+} from "./cardStylesHandlers";
 import { StaticImageData } from "next/image";
 
 type TProps = {
@@ -27,11 +31,10 @@ export const NavCard = ({ card }: TProps) => {
     >
       <div className="flex justify-center items-center flex-col" key={card.alt}>
         <div
-          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${
-            hover ? "border-white" : "border-base-rgba-0.6"
-          } ${
-            focus ? "border-base-hover-pink" : "border-base-rgba-0.6"
-          } ${handleCardStyle(card.alt)}`}
+          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleCardActions(
+            hover,
+            focus
+          )} ${handleCardBgColor(card.alt)}`}
         >
           <Image
             src={card.src}
@@ -43,11 +46,10 @@ export const NavCard = ({ card }: TProps) => {
         </div>
         <button
           type="button"
-          className={`${hover ? "bg-base-hover-pink" : "bg-white"} ${
+          className={`rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none ${handleButtonActions(
+            hover,
             focus
-              ? "bg-base-active-pink text-white"
-              : "bg-white text-base-active-pink"
-          } rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none`}
+          )}`}
         >
           {card.alt.toUpperCase()}
         </button>
