@@ -4,19 +4,18 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import Image from "next/image";
-import {
-  handleCardBgColor,
-  handleCardActions,
-  handleButtonActions,
-} from "./cardHandlers";
 import { StaticImageData } from "next/image";
+import {
+  handleBgColor,
+  handleButtonActions,
+  handleCardActions,
+} from "@/helpers/handleActions";
 
 type TProps = {
   card: {
+    id: string;
     src: StaticImageData;
     alt: string;
-    width: number;
-    height: number;
   };
 };
 
@@ -43,19 +42,11 @@ export const NavCard = ({ card }: TProps) => {
     >
       <div className="flex justify-center items-center flex-col" key={card.alt}>
         <div
-          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleCardActions(
-            hover,
-            focus,
-            active
-          )} ${handleCardBgColor(card.alt)} transition`}
+          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
+            card.id
+          )} ${handleCardActions(hover, focus, active)} transition-all`}
         >
-          <Image
-            src={card.src}
-            alt={card.alt}
-            width={card.width}
-            height={card.height}
-            priority
-          />
+          <Image src={card.src} alt={card.alt} priority className="w-auto" />
         </div>
         <button
           type="button"
@@ -63,7 +54,7 @@ export const NavCard = ({ card }: TProps) => {
             hover,
             focus,
             active
-          )} transition`}
+          )} transition-all`}
         >
           {card.alt.toUpperCase()}
         </button>

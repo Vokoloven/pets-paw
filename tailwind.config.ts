@@ -5,17 +5,18 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/helpers/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         placeholder: "#8C8C8C",
-        "base-purple": "#B4B7FF",
-        "base-green": "#97EAB9",
-        "base-yellow": "#FFD280",
-        "base-rgba-0.6": "rgba(255, 255, 255, 0.4)",
-        "base-hover-pink": "#FBE0DC",
-        "base-active-pink": "#FF868E",
+        cardPurple: "#B4B7FF",
+        cardGreen: "#97EAB9",
+        cardYellow: "#FFD280",
+        semiTransparentWhite: "rgba(255, 255, 255, 0.4)",
+        lightPink: "#FBE0DC",
+        darkPink: "#FF868E",
       },
       fontSize: {
         "4.5xl": ["2.75rem", "3.625rem"],
