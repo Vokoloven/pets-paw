@@ -32,3 +32,7 @@ export const handleBgColor = <T>(id: T): string => {
       return "";
   }
 };
+
+export const hadnleButtonAction = (active: string) => {
+  if (active) return  
+};
