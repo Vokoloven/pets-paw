@@ -42,7 +42,7 @@ export const SearchPanel = () => {
             />
           </button>
         </form>
-        <div className="flex gap-[10px] ml-[10px]">
+        <div className="flex gap-[10px] ml-2.5">
           {buttons(pathname).map((button) => (
             <React.Fragment key={button.id}>
               <PreferenceButtons button={button} pathname={pathname} />

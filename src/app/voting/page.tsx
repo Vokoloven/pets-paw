@@ -1,3 +1,11 @@
+"use client";
+
+import { Backtab } from "@/components/backtab";
+
 export default function Voting() {
-  return <div className="text-black">Voting</div>;
+  return (
+    <Backtab>
+      <div>voting</div>
+    </Backtab>
+  );
 }
