@@ -28,7 +28,7 @@ export const Dashboard = () => {
       </h2>
       <div className="flex items-center gap-x-4 mt-5">
         {navCardItems.map((card) => (
-          <NavCard card={card} key={card.alt} />
+          <NavCard card={card} key={card.id} />
         ))}
       </div>
     </section>
