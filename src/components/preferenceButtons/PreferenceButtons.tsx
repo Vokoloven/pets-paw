@@ -23,7 +23,9 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
   }, [pathname]);
 
   return (
-    <div
+    <button
+      type="button"
+      aria-label={button.name}
       onClick={() => router.push(button.name)}
       className={`p-[15px] rounded-2.5xl ${
         active
@@ -32,6 +34,6 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
       }`}
     >
       {button.icon}
-    </div>
+    </button>
   );
 };

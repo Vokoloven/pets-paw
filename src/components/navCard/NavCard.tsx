@@ -44,17 +44,18 @@ export const NavCard = ({ card }: TProps) => {
         <div
           className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
             card.id
-          )} ${handleCardActions(hover, focus, active)} transition-all`}
+          )} ${handleCardActions(hover, focus, active)} transition`}
         >
           <Image src={card.src} alt={card.alt} priority className="w-auto" />
         </div>
         <button
           type="button"
+          aria-label={card.alt}
           className={`rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none ${handleButtonActions(
             hover,
             focus,
             active
-          )} transition-all`}
+          )} transition`}
         >
           {card.alt.toUpperCase()}
         </button>

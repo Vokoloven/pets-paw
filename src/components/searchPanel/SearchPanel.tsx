@@ -32,9 +32,14 @@ export const SearchPanel = () => {
           />
           <button
             type="submit"
-            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink transition-all group"
+            aria-label="search"
+            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink focus:outline-none focus:bg-darkPink transition group"
           >
-            <SearchIcon color={"fill-darkPink group-hover:fill-white"} />
+            <SearchIcon
+              color={
+                "fill-darkPink group-hover:fill-white group-focus:fill-white"
+              }
+            />
           </button>
         </form>
         <div className="flex gap-[10px] ml-[10px]">
