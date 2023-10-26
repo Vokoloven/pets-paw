@@ -27,10 +27,10 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
       type="button"
       aria-label={button.name}
       onClick={() => router.push(button.name)}
-      className={`p-[15px] rounded-2.5xl ${
+      className={`p-[15px] rounded-2.5xl outline-none ${
         active
           ? "bg-darkPink"
-          : "bg-white hover:bg-lightPink transition-all cursor-pointer"
+          : "bg-white hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
       }`}
     >
       {button.icon}

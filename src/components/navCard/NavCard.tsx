@@ -51,7 +51,7 @@ export const NavCard = ({ card }: TProps) => {
         <button
           type="button"
           aria-label={card.alt}
-          className={`rounded-1.5lg w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none ${handleButtonActions(
+          className={`rounded-1.5lg w-full py-2.5 mt-2.5  font-medium text-xs outline-none ${handleButtonActions(
             hover,
             focus,
             active

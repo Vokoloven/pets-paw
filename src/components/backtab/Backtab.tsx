@@ -15,7 +15,7 @@ export const Backtab = ({ children }: TProps) => {
         <button
           type="button"
           aria-label="back"
-          className="bg-lightPink p-2.5 rounded-1.5lg mr-2.5 hover:bg-darkPink group transition focus:outline-none focus:bg-darkPink"
+          className="bg-lightPink p-2.5 rounded-1.5lg mr-2.5 hover:bg-darkPink group transition outline-none focus:bg-darkPink"
           onClick={() => router.back()}
         >
           <BackArrowIcon

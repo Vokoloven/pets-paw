@@ -33,7 +33,7 @@ export const SearchPanel = () => {
           <button
             type="submit"
             aria-label="search"
-            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink focus:outline-none focus:bg-darkPink transition group"
+            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group"
           >
             <SearchIcon
               color={
