@@ -13,10 +13,13 @@ const config: Config = {
         placeholder: "#8C8C8C",
         cardPurple: "#B4B7FF",
         cardGreen: "#97EAB9",
+        rgbaCardGreen: "rgba(151, 234, 185, 0.3)",
         cardYellow: "#FFD280",
+        rgbaCardYellow: "rgba(255, 210, 128, 0.3)",
         semiTransparentWhite: "rgba(255, 255, 255, 0.4)",
         lightPink: "#FBE0DC",
         darkPink: "#FF868E",
+        rgbaDarkPink: "rgba(255, 134, 142, 0.3)",
       },
       fontSize: {
         "4.5xl": ["2.75rem", "3.625rem"],
