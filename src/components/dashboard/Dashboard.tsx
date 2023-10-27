@@ -10,7 +10,7 @@ export const Dashboard = () => {
   const router = useRouter();
 
   return (
-    <section>
+    <div>
       <header>
         <Image
           src={Logo}
@@ -20,17 +20,15 @@ export const Dashboard = () => {
         />
       </header>
       <p className="text-black text-4.5xl font-medium mt-20">Hi! 👋</p>
-      <h1 className="text-xl text-placeholder mt-2.5">
-        Welcome to MacPaw Bootcamp 2023
-      </h1>
-      <h2 className="text-black text-xl font-medium mt-15">
+      <p className="text-xl text-placeholder mt-2.5">Welcome to Cat Paw</p>
+      <p className="text-black text-xl font-medium mt-15">
         Lets start using The Cat API
-      </h2>
-      <div className="flex items-center gap-x-4 mt-5">
+      </p>
+      <nav className="flex items-center gap-x-4 mt-5">
         {navCardItems.map((card) => (
           <NavCard card={card} key={card.id} />
         ))}
-      </div>
-    </section>
+      </nav>
+    </div>
   );
 };
