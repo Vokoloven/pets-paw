@@ -1,4 +1,11 @@
+"use client";
+
+import { Backtab } from "@/components/backtab";
+
 export default function Dislikes() {
-    return <div>Dislikes</div>;
-  }
-  
+  return (
+    <Backtab>
+      <div>Dislikes</div>
+    </Backtab>
+  );
+}

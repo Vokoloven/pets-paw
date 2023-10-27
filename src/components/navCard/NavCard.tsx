@@ -16,6 +16,7 @@ type TProps = {
     id: string;
     src: StaticImageData;
     alt: string;
+    name: string;
   };
 };
 
@@ -43,7 +44,7 @@ export const NavCard = ({ card }: TProps) => {
       <div className="flex justify-center items-center flex-col" key={card.alt}>
         <div
           className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
-            card.id
+            card.name
           )} ${handleCardActions(hover, focus, active)} transition`}
         >
           <Image src={card.src} alt={card.alt} priority className="w-auto" />

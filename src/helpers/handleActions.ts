@@ -18,13 +18,13 @@ export const handleButtonActions = <T>(
 
 export const handleBgColor = <T>(id: T): string => {
   switch (id) {
-    case "1":
+    case "voting":
       return "bg-cardPurple";
       break;
-    case "2":
+    case "breeds":
       return "bg-cardGreen";
       break;
-    case "3":
+    case "gallery":
       return "bg-cardYellow";
       break;
 
@@ -34,5 +34,5 @@ export const handleBgColor = <T>(id: T): string => {
 };
 
 export const hadnleButtonAction = (active: string) => {
-  if (active) return  
+  if (active) return;
 };

@@ -1,3 +1,11 @@
+"use client";
+
+import { Backtab } from "@/components/backtab";
+
 export default function Breeds() {
-  return <div className="text-black">Breeds</div>;
+  return (
+    <Backtab>
+      <div>Breeds</div>
+    </Backtab>
+  );
 }

@@ -1,3 +1,11 @@
+"use client";
+
+import { Backtab } from "@/components/backtab";
+
 export default function Favourites() {
-  return <div>Favourite</div>;
+  return (
+    <Backtab>
+      <div>Favourite</div>
+    </Backtab>
+  );
 }
