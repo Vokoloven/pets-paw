@@ -16,7 +16,7 @@ export const btnPropsByCondition = (name: string) => {
       break;
 
     default:
-      break;
+      return "";
   }
 };
 
@@ -33,6 +33,6 @@ export const boxPropsByCondition = (name: string) => {
       break;
 
     default:
-      break;
+      return "";
   }
 };

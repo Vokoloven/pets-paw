@@ -10,7 +10,7 @@ export const Dashboard = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="mr-[72px]">
       <header>
         <Image
           src={Logo}

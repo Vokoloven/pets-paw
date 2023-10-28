@@ -1,3 +1,3 @@
-import { UserActionLog } from "./userActionLog";
+import { UserActionLog } from "./UserActionLog";
 
 export { UserActionLog };

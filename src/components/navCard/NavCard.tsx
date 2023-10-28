@@ -9,7 +9,7 @@ import {
   handleBgColor,
   handleButtonActions,
   handleCardActions,
-} from "@/helpers/handleActions";
+} from "./navCardHandlers";
 
 type TProps = {
   card: {
