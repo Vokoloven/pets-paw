@@ -1,28 +1,35 @@
 import {
-  votingButtons,
   boxPropsByCondition,
   btnPropsByCondition,
 } from "./handleVoitingButtons";
+import { buttons } from "./buttons";
 
-export const VotingButton = () => {
+type TProps = {
+  button: {
+    id: string;
+    icon: JSX.Element;
+    name: string;
+    ariaLabel: string;
+  };
+};
+
+export const VotingButton = ({ button }: TProps) => {
   return (
-    <div className="flex absolute bottom-0 left-2/4 -translate-x-1/2 translate-y-1/2">
-      {votingButtons.map((button) => (
-        <div
-          className={`bg-white ${boxPropsByCondition(button)}`}
-          key={button.id}
+    <>
+      <div
+        className={`bg-white ${boxPropsByCondition(button.name)}`}
+        key={button.id}
+      >
+        <button
+          type="button"
+          aria-label={button.ariaLabel}
+          className={`p-[25px] border-white ${btnPropsByCondition(
+            button.name
+          )} group transition`}
         >
-          <button
-            type="button"
-            aria-label={button.name}
-            className={`p-[25px] border-white ${btnPropsByCondition(
-              button
-            )} group transition`}
-          >
-            {button.icon}
-          </button>
-        </div>
-      ))}
-    </div>
+          {button.icon}
+        </button>
+      </div>
+    </>
   );
 };

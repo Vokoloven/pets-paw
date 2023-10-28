@@ -17,6 +17,7 @@ type TProps = {
     src: StaticImageData;
     alt: string;
     name: string;
+    ariaLabel: string;
   };
 };
 
@@ -29,7 +30,7 @@ export const NavCard = ({ card }: TProps) => {
   const pathname = useClearPathname();
 
   useEffect(() => {
-    pathname === card.alt ? setActive(true) : setActive(false);
+    pathname === card.name ? setActive(true) : setActive(false);
   }, [pathname]);
 
   return (
@@ -39,9 +40,9 @@ export const NavCard = ({ card }: TProps) => {
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
-      onClick={() => router.push(`/${card.alt}`)}
+      onClick={() => router.push(`/${card.name}`)}
     >
-      <div className="flex justify-center items-center flex-col" key={card.alt}>
+      <div className="flex justify-center items-center flex-col">
         <div
           className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
             card.name
@@ -51,14 +52,14 @@ export const NavCard = ({ card }: TProps) => {
         </div>
         <button
           type="button"
-          aria-label={card.alt}
+          aria-label={card.ariaLabel}
           className={`rounded-1.5lg w-full py-2.5 mt-2.5  font-medium text-xs outline-none ${handleButtonActions(
             hover,
             focus,
             active
           )} transition`}
         >
-          {card.alt.toUpperCase()}
+          {card.name.toUpperCase()}
         </button>
       </div>
     </div>

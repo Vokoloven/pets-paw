@@ -6,6 +6,7 @@ type TProps = {
     id: string;
     icon: React.JSX.Element;
     name: string;
+    ariaLabel: string;
   };
   pathname: string;
 };
@@ -25,7 +26,7 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
   return (
     <button
       type="button"
-      aria-label={button.name}
+      aria-label={button.ariaLabel}
       onClick={() => router.push(button.name)}
       className={`p-[15px] rounded-2.5xl outline-none ${
         active

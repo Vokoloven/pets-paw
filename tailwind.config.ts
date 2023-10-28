@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        body: "#F8F8F7",
         placeholder: "#8C8C8C",
         cardPurple: "#B4B7FF",
         cardGreen: "#97EAB9",
