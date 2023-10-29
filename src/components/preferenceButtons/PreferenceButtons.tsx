@@ -6,6 +6,7 @@ type TProps = {
     id: string;
     icon: React.JSX.Element;
     name: string;
+    ariaLabel: string;
   };
   pathname: string;
 };
@@ -23,15 +24,17 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
   }, [pathname]);
 
   return (
-    <div
+    <button
+      type="button"
+      aria-label={button.ariaLabel}
       onClick={() => router.push(button.name)}
-      className={`p-[15px] rounded-2.5xl ${
+      className={`p-[15px] rounded-2.5xl outline-none ${
         active
           ? "bg-darkPink"
-          : "bg-white hover:bg-lightPink transition-all cursor-pointer"
+          : "bg-white hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
       }`}
     >
       {button.icon}
-    </div>
+    </button>
   );
 };

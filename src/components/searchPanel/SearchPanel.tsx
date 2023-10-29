@@ -1,9 +1,10 @@
 "use client";
-import React, { ChangeEvent, useState, useEffect } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Image from "next/image";
 import search from "../../../public/search.svg";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
+import { SearchIcon } from "../icons";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
@@ -17,7 +18,7 @@ export const SearchPanel = () => {
   return (
     pathname !== "/" && (
       <div className="flex">
-        <div className="relative w-full">
+        <form className="relative w-full">
           <input
             onChange={handleChange}
             type="text"
@@ -29,11 +30,19 @@ export const SearchPanel = () => {
                 : "border-transparent hover:border-lightPink"
             }`}
           />
-          <div className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px]">
-            <Image src={search} alt={"Search Icon"} />
-          </div>
-        </div>
-        <div className="flex gap-[10px] ml-[10px]">
+          <button
+            type="submit"
+            aria-label="Search"
+            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group"
+          >
+            <SearchIcon
+              color={
+                "fill-darkPink group-hover:fill-white group-focus:fill-white"
+              }
+            />
+          </button>
+        </form>
+        <div className="flex gap-[10px] ml-2.5">
           {buttons(pathname).map((button) => (
             <React.Fragment key={button.id}>
               <PreferenceButtons button={button} pathname={pathname} />

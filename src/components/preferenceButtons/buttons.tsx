@@ -10,6 +10,7 @@ export const buttons = (pathname: string) => {
         />
       ),
       name: "likes",
+      ariaLabel: "Likes list",
     },
     {
       id: "2",
@@ -19,6 +20,7 @@ export const buttons = (pathname: string) => {
         />
       ),
       name: "favourites",
+      ariaLabel: "Favourites list",
     },
     {
       id: "3",
@@ -28,6 +30,7 @@ export const buttons = (pathname: string) => {
         />
       ),
       name: "dislikes",
+      ariaLabel: "Dislikes list",
     },
   ];
   return items;

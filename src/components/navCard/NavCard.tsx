@@ -9,13 +9,15 @@ import {
   handleBgColor,
   handleButtonActions,
   handleCardActions,
-} from "@/helpers/handleActions";
+} from "./navCardHandlers";
 
 type TProps = {
   card: {
     id: string;
     src: StaticImageData;
     alt: string;
+    name: string;
+    ariaLabel: string;
   };
 };
 
@@ -28,7 +30,7 @@ export const NavCard = ({ card }: TProps) => {
   const pathname = useClearPathname();
 
   useEffect(() => {
-    pathname === card.alt ? setActive(true) : setActive(false);
+    pathname === card.name ? setActive(true) : setActive(false);
   }, [pathname]);
 
   return (
@@ -38,25 +40,26 @@ export const NavCard = ({ card }: TProps) => {
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
-      onClick={() => router.push(`/${card.alt}`)}
+      onClick={() => router.push(`/${card.name}`)}
     >
-      <div className="flex justify-center items-center flex-col" key={card.alt}>
+      <div className="flex justify-center items-center flex-col">
         <div
           className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
-            card.id
-          )} ${handleCardActions(hover, focus, active)} transition-all`}
+            card.name
+          )} ${handleCardActions(hover, focus, active)} transition`}
         >
           <Image src={card.src} alt={card.alt} priority className="w-auto" />
         </div>
         <button
           type="button"
-          className={`rounded-[10px] w-full py-2.5 mt-2.5  font-medium text-xs focus:outline-none ${handleButtonActions(
+          aria-label={card.ariaLabel}
+          className={`rounded-1.5lg w-full py-2.5 mt-2.5  font-medium text-xs outline-none ${handleButtonActions(
             hover,
             focus,
             active
-          )} transition-all`}
+          )} transition`}
         >
-          {card.alt.toUpperCase()}
+          {card.name.toUpperCase()}
         </button>
       </div>
     </div>
