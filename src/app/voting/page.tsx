@@ -19,8 +19,8 @@ export default function Voting() {
   const [userActionLog, setUserActionLog] = useState<Array<TState>>([]);
 
   return (
-    <Backtab>
-      <section>
+    <Backtab flexProps="flex-col">
+      <section className="pt-5">
         <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
           Voting
         </h1>
@@ -39,7 +39,7 @@ export default function Voting() {
           </div>
         </div>
         <div className="mt-[52px] flex gap-[10px] flex-col">
-          {userActionLog?.toReversed()?.map((log) => (
+          {userActionLog?.map((log) => (
             <React.Fragment key={log.id}>
               <UserActionLog userActionLog={log} />
             </React.Fragment>
