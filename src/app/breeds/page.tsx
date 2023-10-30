@@ -1,7 +1,7 @@
 "use client";
 
 import { Backtab } from "@/components/backtab";
-import { DropdownIcon } from "@/components/icons";
+import { DropdownIcon, SortAZIcon, SortZAIcon } from "@/components/icons";
 import { Select } from "@/components/form";
 import { useState } from "react";
 import { replacedInputString } from "@/helpers/";
@@ -19,32 +19,56 @@ export default function Breeds() {
         <div className="flex">
           <Select
             sx={
-              "ml-2.5 bg-body w-[226px] px-2.5 py-2 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center"
+              "w-[226px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
             paper={
-              "text-placeholder leading-6 w-[300px] h-[300px] absolute top-0 left-0 translate-y-11 rounded-[30px] p-5 bg-white"
+              "w-[300px] h-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white"
             }
-            paperList={"mb-2.5 last:mb-0 hover:bg-lightPink"}
+            paperList={
+              "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            }
             icon={<DropdownIcon color={"fill-placeholder"} />}
             setState={setBreed}
             state={breed}
-            defaultState="Select..."
-            list={Array.from("HereWego")}
+            defaultState="All breeds"
+            list={Array.from([1, 2, 3])}
           />
           <Select
             sx={
-              "ml-2.5 bg-body w-[101px] px-2.5 py-2 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center"
+              "w-[101px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
             paper={
-              "text-placeholder leading-6 w-[300px] absolute top-0 left-0 translate-y-11 rounded-[30px] p-5 bg-white"
+              " w-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white"
             }
-            paperList={"mb-2.5 last:mb-0 hover:bg-lightPink"}
+            paperList={
+              "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            }
             icon={<DropdownIcon color={"fill-placeholder"} />}
             setState={setPerPage}
             state={perPage}
             defaultState="Limit: 5"
             list={["Limit: 5", "Limit: 10", "Limit: 15", "Limit: 20"]}
           />
+          <button
+            type="button"
+            className="ml-2.5 bg-body py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid hover:border-lightPink group transition hover:transition"
+          >
+            <SortAZIcon
+              color={
+                "fill-placeholder transition group-hover:fill-darkPink group-hover:transition"
+              }
+            />
+          </button>
+          <button
+            type="button"
+            className="ml-2.5 bg-body py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid hover:border-lightPink group transition hover:transition"
+          >
+            <SortZAIcon
+              color={
+                "fill-placeholder transition group-hover:fill-darkPink group-hover:transition"
+              }
+            />
+          </button>
         </div>
       </section>
     </Backtab>

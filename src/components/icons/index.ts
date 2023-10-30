@@ -4,6 +4,8 @@ import { FavouriteIcon } from "./FavouriteIcon";
 import { BackArrowIcon } from "./BackArrowIcon";
 import { SearchIcon } from "./SearchIcon";
 import { DropdownIcon } from "./DropdownIcon";
+import { SortAZIcon } from "./SortAZIcon";
+import { SortZAIcon } from "./SortZAIcon";
 
 export {
   DislikeIcon,
@@ -12,4 +14,6 @@ export {
   BackArrowIcon,
   SearchIcon,
   DropdownIcon,
+  SortAZIcon,
+  SortZAIcon,
 };
