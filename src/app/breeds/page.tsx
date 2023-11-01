@@ -23,7 +23,7 @@ export default function Breeds() {
                 "w-[226px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
               }
               paper={
-                "w-[300px] h-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white"
+                "w-[300px] h-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
               }
               paperList={
                 "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
@@ -39,7 +39,7 @@ export default function Breeds() {
                 "w-[101px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
               }
               paper={
-                " w-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white"
+                " w-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
               }
               paperList={
                 "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
@@ -74,19 +74,6 @@ export default function Breeds() {
         </section>
       </Backtab>
       <GridImages images={Array.from(Array(20))} perPage={perPage} />
-      {/* <div className="grid grid-cols-3 gap-5 mt-5">
-        {Array.from(
-          Array(20).slice(0, Number(replacedInputString(perPage)))
-        ).map((item, index) => (
-          <div key={index} className={classNameByCondition(index)}>
-            <Image
-              src={Cat}
-              alt={"Cat"}
-              className="h-full object-cover rounded-2.5xl"
-            />
-          </div>
-        ))}
-      </div> */}
     </>
   );
 }

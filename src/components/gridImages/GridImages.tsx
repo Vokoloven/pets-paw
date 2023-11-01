@@ -14,11 +14,17 @@ export const GridImages = ({ images, perPage }: TProps) => {
       {images
         .slice(0, Number(replacedInputString(perPage)))
         .map((item, index) => (
-          <div key={index} className={classNameByCondition(index)}>
+          <div
+            key={index}
+            className={`${classNameByCondition(
+              index
+            )} relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl hover:before:bg-rgbaDarkPink`}
+          >
             <Image
               src={Cat}
               alt={"Cat"}
               className="h-full object-cover rounded-2.5xl"
+              priority
             />
           </div>
         ))}
