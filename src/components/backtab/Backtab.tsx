@@ -3,15 +3,15 @@ import { BackArrowIcon } from "../icons";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { useRouter } from "next/navigation";
 
-type TProps = { children: ReactNode };
+type TProps = { children: ReactNode; flexProps: string };
 
-export const Backtab = ({ children }: TProps) => {
+export const Backtab = ({ children, flexProps }: TProps) => {
   const pathname = useClearPathname();
   const router = useRouter();
 
   return (
-    <div className="flex flex-col bg-white p-5 mt-2.5 rounded-2.5xl">
-      <div className="flex items-center pb-5">
+    <div className={`flex ${flexProps} bg-white p-5 mt-2.5 rounded-2.5xl`}>
+      <div className="flex items-center">
         <button
           type="button"
           aria-label="back"

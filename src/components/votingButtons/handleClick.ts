@@ -15,7 +15,7 @@ export const handleClick = (
   const id = new Date().getTime().toString();
 
   setState((prevState) => [
-    ...prevState,
     { id, time: formattedTime, action: correctName, name },
+    ...prevState,
   ]);
 };
