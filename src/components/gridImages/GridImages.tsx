@@ -22,7 +22,7 @@ export const GridImages = ({ images, perPage }: TProps) => {
           >
             <Image
               src={Cat}
-              alt={"Cat"}
+              alt={"Cat"} 
               className="h-full object-cover rounded-2.5xl"
               priority
             />

@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
-import { text } from "stream/consumers";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 type TSelect = {
   sx: string;
@@ -24,7 +23,6 @@ export const Select = ({
 }: TSelect) => {
   const [select, setSelect] = useState<boolean>(false);
   const [on, setOn] = useState<boolean>(false);
-  const selectRef = useRef<HTMLInputElement>(null);
 
   const toggleSelect = () => {
     setSelect((prevSelect) => !prevSelect);
@@ -43,9 +41,7 @@ export const Select = ({
     }
 
     const handleClickOutside = () => {
-      if (selectRef.current) {
-        setSelect(false);
-      }
+      setSelect(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -71,7 +67,6 @@ export const Select = ({
       >
         <span>{state ?? defaultState}</span>
         <div
-          ref={selectRef}
           className={`${
             select && "rotate-180 transition-transform"
           } transition-transform`}
@@ -82,12 +77,18 @@ export const Select = ({
       <ul
         onMouseEnter={() => setOn(true)}
         onMouseLeave={() => setOn(false)}
-        className={`${paper} transition-opacity ${
-          select ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`${paper} ${
+          select
+            ? "opacity-100 transition-opacity"
+            : "opacity-0 pointer-events-none transition-opacity"
         }`}
       >
         {list?.map((item, index) => (
-          <li key={index} className={paperList} onClick={handleSelect}>
+          <li
+            key={index}
+            className={`${paperList} transition hover:transition`}
+            onClick={handleSelect}
+          >
             {item}
           </li>
         ))}
