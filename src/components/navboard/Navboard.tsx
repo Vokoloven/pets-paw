@@ -6,7 +6,7 @@ import { NavCard } from "../navCard/NavCard";
 import { navCardItems } from "../navCard/navCardItems";
 import { useRouter } from "next/navigation";
 
-export const Dashboard = () => {
+export const Navboard = () => {
   const router = useRouter();
 
   return (
