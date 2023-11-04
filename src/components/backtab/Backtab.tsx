@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { BackArrowIcon } from "../icons";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { useRouter } from "next/navigation";

@@ -10,7 +10,9 @@ export const UserActionLog = ({ userActionLog }: { userActionLog: TState }) => {
         </div>
         <p className="text-placeholder leading-6 ml-5">
           ImageID:{" "}
-          <span className="text-black font-medium text-base">fQSunHvl8</span>{" "}
+          <span className="text-black font-medium text-base">
+            {userActionLog.image_id}
+          </span>{" "}
           was added to {userActionLog.action}
         </p>
       </div>

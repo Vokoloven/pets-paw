@@ -3,12 +3,30 @@
 import { Backtab } from "@/components/backtab";
 import { DropdownIcon, SortAZIcon, SortZAIcon } from "@/components/icons";
 import { Select } from "@/components/form";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GridImages } from "@/components/gridImages";
+import axios, { AxiosError } from "axios";
+import toast from "react-hot-toast";
 
 export default function Breeds() {
   const [breed, setBreed] = useState<string | null>(null);
   const [perPage, setPerPage] = useState<string | null>(null);
+
+  const getBreeds = useCallback(async () => {
+    try {
+      const res = await axios.get("/api/breeds");
+      const { data } = res;
+      console.log(data);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    getBreeds();
+  }, []);
 
   return (
     <Backtab

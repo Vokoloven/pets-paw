@@ -2,34 +2,44 @@
 
 import { Backtab } from "@/components/backtab";
 import Image from "next/image";
-import Cat from "../../../public/cat.jpg";
 import { VotingButton, buttons } from "@/components/votingButtons";
 import { UserActionLog } from "@/components/userActionLog";
 import React, { useState } from "react";
-
-export type TState = {
-  id: string;
-  time: string;
-  action: string;
-  picture?: string;
-  name: string;
-};
+import { useVoting } from "@/hooks";
+import { TVotingState } from "@/types";
 
 export default function Voting() {
-  const [userActionLog, setUserActionLog] = useState<Array<TState>>([]);
+  const [userActionLog, setUserActionLog] = useState<Array<TVotingState>>([]);
+  const [vote, setVote] = useState<{ value: number; image_id: string } | null>(
+    null
+  );
+
+  const { image } = useVoting(vote);
 
   return (
     <Backtab childrenProps="flex flex-col" heading="Voting">
       <div className="relative pt-5">
-        <Image
-          src={Cat}
-          alt="cat"
-          className="rounded-2.5xl h-[360px] object-cover"
-        />
+        {Boolean(image.length) && (
+          <Image
+            src={image[0].url}
+            alt="Cat"
+            width={image[0].width}
+            height={image[0].height}
+            priority
+            placeholder="blur"
+            blurDataURL={image[0].url}
+            className="rounded-2.5xl object-cover h-full w-full"
+          />
+        )}
         <div className="flex absolute bottom-0 left-2/4 -translate-x-1/2 translate-y-1/2">
           {buttons.map((button) => (
             <React.Fragment key={button.id}>
-              <VotingButton button={button} setState={setUserActionLog} />
+              <VotingButton
+                button={button}
+                setState={setUserActionLog}
+                image_id={image[0]?.id}
+                setVote={setVote}
+              />
             </React.Fragment>
           ))}
         </div>
