@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
-import { TState } from "@/app/voting/page";
+import type { TVotingState } from "@/types";
 
 export const handleClick = (
   name: string,
-  setState: Dispatch<SetStateAction<Array<TState>>>,
+  setState: Dispatch<SetStateAction<Array<TVotingState>>>,
   image_id: string,
   setVote: Dispatch<SetStateAction<{ value: number; image_id: string } | null>>
 ) => {

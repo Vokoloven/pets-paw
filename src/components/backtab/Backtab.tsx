@@ -1,15 +1,7 @@
-import type { ReactNode } from "react";
 import { BackArrowIcon } from "../icons";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { useRouter } from "next/navigation";
-
-type TProps = {
-  children: ReactNode;
-  boxProps?: string;
-  childrenProps?: string;
-  boxElement?: JSX.Element;
-  heading: string;
-};
+import type { TBacktabProps } from "@/types";
 
 export const Backtab = ({
   children,
@@ -17,7 +9,7 @@ export const Backtab = ({
   boxProps,
   boxElement,
   heading,
-}: TProps) => {
+}: TBacktabProps) => {
   const pathname = useClearPathname();
   const router = useRouter();
 

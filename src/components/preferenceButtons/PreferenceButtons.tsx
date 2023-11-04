@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import type { TPreferenceButtons } from "@/types";
 
-type TProps = {
-  button: {
-    id: string;
-    icon: React.JSX.Element;
-    name: string;
-    ariaLabel: string;
-  };
-  pathname: string;
-};
-
-export const PreferenceButtons = ({ button, pathname }: TProps) => {
+export const PreferenceButtons = ({ button, pathname }: TPreferenceButtons) => {
   const [active, setActive] = useState<boolean>(false);
   const router = useRouter();
 

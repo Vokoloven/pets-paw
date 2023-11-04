@@ -3,7 +3,7 @@ import {
   btnPropsByCondition,
 } from "./handleVoitingButtons";
 import { handleClick } from "./handleClick";
-import { TVotingButton } from "@/types";
+import type { TVotingButton } from "@/types";
 
 export const VotingButton = ({
   button,

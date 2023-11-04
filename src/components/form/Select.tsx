@@ -1,15 +1,5 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
-
-type TSelect = {
-  sx: string;
-  paper: string;
-  paperList: string;
-  icon: JSX.Element;
-  list: any[];
-  state: string | null;
-  setState: Dispatch<SetStateAction<string | null>>;
-  defaultState?: string;
-};
+import type { TSelectProps } from "@/types";
 
 export const Select = ({
   sx,
@@ -20,7 +10,7 @@ export const Select = ({
   setState,
   state,
   defaultState,
-}: TSelect) => {
+}: TSelectProps) => {
   const [select, setSelect] = useState<boolean>(false);
   const [on, setOn] = useState<boolean>(false);
 

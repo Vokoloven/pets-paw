@@ -6,7 +6,7 @@ import { VotingButton, buttons } from "@/components/votingButtons";
 import { UserActionLog } from "@/components/userActionLog";
 import React, { useState } from "react";
 import { useVoting } from "@/hooks";
-import { TVotingState } from "@/types";
+import type { TVotingState } from "@/types";
 
 export default function Voting() {
   const [userActionLog, setUserActionLog] = useState<Array<TVotingState>>([]);

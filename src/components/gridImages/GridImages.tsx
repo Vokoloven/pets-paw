@@ -2,13 +2,9 @@ import { classNameByCondition } from "./classNameByCondition";
 import { replacedInputString } from "@/helpers";
 import Image from "next/image";
 import Cat from "../../../public/cat.jpg";
+import type { TGridImagesProps } from "@/types";
 
-type TProps = {
-  images: any[];
-  perPage: string | null;
-};
-
-export const GridImages = ({ images, perPage }: TProps) => {
+export const GridImages = ({ images, perPage }: TGridImagesProps) => {
   return (
     <div className="grid grid-cols-3 gap-5 mt-5">
       {images
@@ -22,7 +18,7 @@ export const GridImages = ({ images, perPage }: TProps) => {
           >
             <Image
               src={Cat}
-              alt={"Cat"} 
+              alt={"Cat"}
               className="h-full object-cover rounded-2.5xl"
               priority
             />

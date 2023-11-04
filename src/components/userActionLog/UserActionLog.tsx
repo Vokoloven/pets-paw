@@ -1,7 +1,11 @@
-import { TState } from "@/app/voting/page";
 import { handleIcon } from "./handleIcon";
+import type { TVotingState } from "@/types";
 
-export const UserActionLog = ({ userActionLog }: { userActionLog: TState }) => {
+export const UserActionLog = ({
+  userActionLog,
+}: {
+  userActionLog: TVotingState;
+}) => {
   return (
     <div className="bg-body py-[18px] pl-[15px] pr-5 rounded-1.5lg flex justify-between">
       <div className="flex items-center">
