@@ -1,3 +1,4 @@
 import { Select } from "./Select";
+import { MenuItem } from "./MenuItem";
 
-export { Select };
+export { Select, MenuItem };

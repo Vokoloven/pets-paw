@@ -1,7 +1,7 @@
 import { IBreedCat } from "./breeds";
 import { TVotingState, IVotingImage, TVotingButton } from "./voting";
 import { TBacktabProps } from "./backtab";
-import { TSelectProps } from "./select";
+import { TSelectProps, TMenuItemProps } from "./select";
 import { TGridImagesProps } from "./gridImages";
 import { TNavCardProps } from "./navCard";
 import { TPreferenceButtons } from "./preferenceButtons";
@@ -16,4 +16,5 @@ export type {
   TGridImagesProps,
   TNavCardProps,
   TPreferenceButtons,
+  TMenuItemProps,
 };
