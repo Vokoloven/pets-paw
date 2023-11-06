@@ -1,7 +1,8 @@
-import { Dispatch, MouseEventHandler, ReactNode, SetStateAction } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type TSelectProps = {
   sx: string;
+  paperWrapper: string;
   paper: string;
   paperList: string;
   icon: JSX.Element;
@@ -9,6 +10,8 @@ export type TSelectProps = {
   setValue: Dispatch<SetStateAction<string | null>>;
   defaultState?: string;
   children: ReactNode;
+  loader?: JSX.Element | JSX.Element[];
+  loading?: boolean;
 };
 
 export type TMenuItemProps = {

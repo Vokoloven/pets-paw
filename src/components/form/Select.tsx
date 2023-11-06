@@ -12,12 +12,15 @@ import type { TSelectProps } from "@/types";
 export const Select = ({
   sx,
   paper,
+  paperWrapper,
   paperList,
   icon,
   setValue,
   value,
   defaultState,
   children,
+  loader,
+  loading,
 }: TSelectProps) => {
   const [label, setLabel] = useState<string | undefined | null>(
     () => defaultState
@@ -75,30 +78,36 @@ export const Select = ({
           {icon}
         </div>
       </div>
-      <ul
+      <div
         onMouseEnter={() => setIsMouseListening(true)}
         onMouseLeave={() => setIsMouseListening(false)}
-        className={`${paper} ${
+        className={`${paperWrapper} ${
           open
             ? "opacity-100 transition-opacity"
             : "opacity-0 pointer-events-none transition-opacity"
         }`}
       >
-        {Children.map(children, (child: ReactNode) => {
-          if (isValidElement(child))
-            return cloneElement(
-              <li
-                className={paperList}
-                onClick={handleClick.bind(
-                  null,
-                  child?.props.children.props.value
-                )}
-              >
-                {child}
-              </li>
-            );
-        })}
-      </ul>
+        {loading ? (
+          loader
+        ) : (
+          <ul className={paper}>
+            {Children.map(children, (child: ReactNode) => {
+              if (isValidElement(child))
+                return cloneElement(
+                  <li
+                    className={paperList}
+                    onClick={handleClick.bind(
+                      null,
+                      child?.props?.children?.props?.value
+                    )}
+                  >
+                    {child}
+                  </li>
+                );
+            })}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
