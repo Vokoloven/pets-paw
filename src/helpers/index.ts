@@ -1,4 +1,4 @@
 import { breedsIdsCollector } from "./breedsIdsCollector";
-import { sortByCondition } from "./sort";
+import { sortBreedsByCondition } from "./sortBreedsByCondition";
 
-export { breedsIdsCollector, sortByCondition };
+export { breedsIdsCollector, sortBreedsByCondition };

@@ -12,8 +12,6 @@ export async function POST(req: Request) {
     const reqBody = await req.json();
     const { breedId, perPage } = reqBody;
 
-    console.log(reqBody);
-
     const res = await fetch(
       `${process.env.URL}images/search?limit=${perPage}&breed_ids=${breedId}`,
       { headers: { "x-api-key": `${process.env.API_KEY}` } }

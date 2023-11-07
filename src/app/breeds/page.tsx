@@ -3,15 +3,18 @@
 import { Backtab } from "@/components/backtab";
 import { DropdownIcon, SortAZIcon, SortZAIcon } from "@/components/icons";
 import { Select } from "@/components/form";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { GridImages } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
 import { MenuItem } from "@/components/form";
-import React from "react";
+import { sortBreedsByCondition } from "@/helpers";
 
 export default function Breeds() {
   const [breedId, setBreedId] = useState<string | null>("all");
   const [perPage, setPerPage] = useState<string | null>("5");
+  const [sortCondition, setSortCondition] = useState<"az" | "za" | "none">(
+    "none"
+  );
   const { breeds, loadingBreeds, loadingImages, breedImages } = useBreeds(
     breedId,
     perPage
@@ -52,9 +55,9 @@ export default function Breeds() {
               <MenuItem value={"all"}>{"All breeds"}</MenuItem>
             )}
             {breeds?.map(({ id, name }) => (
-              <React.Fragment key={id}>
+              <Fragment key={id}>
                 <MenuItem value={id}>{name}</MenuItem>
-              </React.Fragment>
+              </Fragment>
             ))}
           </Select>
           <Select
@@ -75,35 +78,52 @@ export default function Breeds() {
             setValue={setPerPage}
           >
             {["5", "10", "15", "20"].map((item, index) => (
-              <React.Fragment key={index}>
+              <Fragment key={index}>
                 <MenuItem value={item}>{`Limit: ${item}`}</MenuItem>
-              </React.Fragment>
+              </Fragment>
             ))}
           </Select>
           <button
+            onClick={() => setSortCondition("az")}
             type="button"
-            className="ml-2.5 bg-body py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid hover:border-lightPink group transition hover:transition"
+            className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
+              sortCondition === "az"
+                ? "bg-darkPink"
+                : "bg-body hover:border-lightPink"
+            }`}
           >
             <SortAZIcon
-              color={
-                "fill-placeholder transition group-hover:fill-darkPink group-hover:transition"
-              }
+              color={`${
+                sortCondition === "az"
+                  ? "fill-white"
+                  : "fill-placeholder group-hover:fill-darkPink group-hover:transition"
+              } transition`}
             />
           </button>
           <button
+            onClick={() => setSortCondition("za")}
             type="button"
-            className="ml-2.5 bg-body py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid hover:border-lightPink group transition hover:transition"
+            className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
+              sortCondition === "za"
+                ? "bg-darkPink"
+                : "bg-body hover:border-lightPink"
+            }`}
           >
             <SortZAIcon
-              color={
-                "fill-placeholder transition group-hover:fill-darkPink group-hover:transition"
-              }
+              color={`${
+                sortCondition === "za"
+                  ? "fill-white"
+                  : "fill-placeholder group-hover:fill-darkPink group-hover:transition"
+              } transition`}
             />
           </button>
         </div>
       }
     >
-      <GridImages images={breedImages} breedId={breedId} />
+      <GridImages
+        images={sortBreedsByCondition(breedImages, sortCondition)}
+        breedId={breedId}
+      />
     </Backtab>
   );
 }
