@@ -1,3 +1,5 @@
+import { Interface } from "readline";
+
 export interface IBreedCat {
   weight: {
     imperial: string;
@@ -39,4 +41,12 @@ export interface IBreedCat {
   wikipedia_url: string;
   hypoallergenic: number;
   reference_image_id: string;
+}
+
+export interface IBreedImage {
+  breeds: [];
+  id: string;
+  url: string;
+  width: number;
+  height: number;
 }

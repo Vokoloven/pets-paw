@@ -17,13 +17,14 @@ export const Select = ({
   icon,
   setValue,
   value,
-  defaultState,
   children,
   loader,
-  loading,
+  loading = false,
+  defaultLabel,
+  defaultValue,
 }: TSelectProps) => {
   const [label, setLabel] = useState<string | undefined | null>(
-    () => defaultState
+    () => defaultLabel
   );
   const [open, setOpen] = useState<boolean>(false);
   const [isMouseListening, setIsMouseListening] = useState<boolean>(false);
@@ -56,8 +57,8 @@ export const Select = ({
   }, [isMouseListening]);
 
   useEffect(() => {
-    if (!value && defaultState) {
-      setValue(defaultState);
+    if (!value && defaultValue) {
+      setValue(defaultValue);
     }
   }, [value]);
 

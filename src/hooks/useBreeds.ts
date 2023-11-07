@@ -1,16 +1,18 @@
 import axios, { AxiosError } from "axios";
 import { useCallback, useEffect, useState, useRef } from "react";
 import toast from "react-hot-toast";
-import type { IBreedCat } from "@/types";
+import type { IBreedCat, IBreedImage } from "@/types";
 
-export const useBreeds = () => {
+export const useBreeds = (breedId: string | null, perPage: string | null) => {
   const [breeds, setBreeds] = useState<IBreedCat[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [breedImages, setBreedImages] = useState<IBreedImage[]>([]);
+  const [loadingBreeds, setLoadingBreeds] = useState<boolean>(false);
+  const [loadingImages, setLoadingImages] = useState<boolean>(false);
   const isFirstRender = useRef<boolean>(true);
 
   const getBreeds = useCallback(async () => {
     try {
-      setLoading(true);
+      setLoadingBreeds(true);
       const res = await axios.get("/api/breeds");
       const { data } = res;
       if (Boolean(Object.keys(data).length)) setBreeds(data);
@@ -19,9 +21,24 @@ export const useBreeds = () => {
         toast.error(error.message);
       }
     } finally {
-      setLoading(false);
+      setLoadingBreeds(false);
     }
   }, []);
+
+  const getImages = useCallback(async () => {
+    try {
+      setLoadingImages(true);
+      const res = await axios.post("/api/breeds", { breedId, perPage });
+      const { data } = res;
+      setBreedImages(data);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
+      }
+    } finally {
+      setLoadingImages(false);
+    }
+  }, [breedId, perPage]);
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -32,5 +49,9 @@ export const useBreeds = () => {
     }
   }, []);
 
-  return { breeds, loading };
+  useEffect(() => {
+    getImages();
+  }, [breedId, perPage]);
+
+  return { breeds, loadingBreeds, loadingImages, breedImages };
 };

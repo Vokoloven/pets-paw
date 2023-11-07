@@ -10,9 +10,12 @@ import { MenuItem } from "@/components/form";
 import React from "react";
 
 export default function Breeds() {
-  const [breed, setBreed] = useState<string | null>(null);
-  const [perPage, setPerPage] = useState<string | null>(null);
-  const { breeds, loading } = useBreeds();
+  const [breedId, setBreedId] = useState<string | null>("all");
+  const [perPage, setPerPage] = useState<string | null>("5");
+  const { breeds, loadingBreeds, loadingImages, breedImages } = useBreeds(
+    breedId,
+    perPage
+  );
 
   return (
     <Backtab
@@ -33,36 +36,50 @@ export default function Breeds() {
               "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             }
             icon={<DropdownIcon color={"fill-placeholder"} />}
-            setValue={setBreed}
-            value={breed}
-            defaultState="All breeds"
+            setValue={setBreedId}
+            value={breedId}
+            defaultLabel="All breeds"
+            defaultValue="all"
             loader={Array.from({ length: 15 }, (_, index) => (
               <div
                 key={index}
                 className="h-2 w-[260px] mb-2.5 last:mb-0 animate-pulse mx-auto rounded bg-placeholder"
               ></div>
             ))}
-            loading={loading}
+            loading={loadingBreeds}
           >
-            <MenuItem value={"all"}>{"All breeds"}</MenuItem>
-            {breeds.map(({ id, name }) => (
+            {Boolean(breeds.length) && (
+              <MenuItem value={"all"}>{"All breeds"}</MenuItem>
+            )}
+            {breeds?.map(({ id, name }) => (
               <React.Fragment key={id}>
                 <MenuItem value={id}>{name}</MenuItem>
               </React.Fragment>
             ))}
           </Select>
-          {/* <Select
+          <Select
             sx={
               "w-[101px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paper={
-              " w-[300px] text-placeholder leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
+            paperWrapper={
+              "w-[300px] py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white z-10"
             }
+            paper={"text-placeholder"}
             paperList={
               "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             }
             icon={<DropdownIcon color={"fill-placeholder"} />}
-          /> */}
+            defaultLabel="Limit: 5"
+            defaultValue="5"
+            value={perPage}
+            setValue={setPerPage}
+          >
+            {["5", "10", "15", "20"].map((item, index) => (
+              <React.Fragment key={index}>
+                <MenuItem value={item}>{`Limit: ${item}`}</MenuItem>
+              </React.Fragment>
+            ))}
+          </Select>
           <button
             type="button"
             className="ml-2.5 bg-body py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid hover:border-lightPink group transition hover:transition"
@@ -86,7 +103,7 @@ export default function Breeds() {
         </div>
       }
     >
-      <GridImages images={Array.from(Array(20))} perPage={perPage} />
+      <GridImages images={breedImages} />
     </Backtab>
   );
 }

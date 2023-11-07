@@ -1,4 +1,5 @@
+import type { IBreedImage } from ".";
+
 export type TGridImagesProps = {
-  images: any[];
-  perPage: string | null;
+  images: IBreedImage[];
 };

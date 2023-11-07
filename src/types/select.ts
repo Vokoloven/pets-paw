@@ -8,7 +8,8 @@ export type TSelectProps = {
   icon: JSX.Element;
   value: string | null;
   setValue: Dispatch<SetStateAction<string | null>>;
-  defaultState?: string;
+  defaultValue?: string;
+  defaultLabel?: string;
   children: ReactNode;
   loader?: JSX.Element | JSX.Element[];
   loading?: boolean;

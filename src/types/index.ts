@@ -1,4 +1,4 @@
-import { IBreedCat } from "./breeds";
+import { IBreedCat, IBreedImage } from "./breeds";
 import { TVotingState, IVotingImage, TVotingButton } from "./voting";
 import { TBacktabProps } from "./backtab";
 import { TSelectProps, TMenuItemProps } from "./select";
@@ -17,4 +17,5 @@ export type {
   TNavCardProps,
   TPreferenceButtons,
   TMenuItemProps,
+  IBreedImage,
 };
