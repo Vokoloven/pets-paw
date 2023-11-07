@@ -1,3 +1,4 @@
-import { replacedInputString } from "./replacedInputString";
+import { breedsIdsCollector } from "./breedsIdsCollector";
+import { sortByCondition } from "./sort";
 
-export { replacedInputString };
+export { breedsIdsCollector, sortByCondition };

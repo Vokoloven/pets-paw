@@ -44,7 +44,7 @@ export interface IBreedCat {
 }
 
 export interface IBreedImage {
-  breeds: [];
+  breeds: IBreedCat[];
   id: string;
   url: string;
   width: number;

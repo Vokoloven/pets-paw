@@ -103,7 +103,7 @@ export default function Breeds() {
         </div>
       }
     >
-      <GridImages images={breedImages} />
+      <GridImages images={breedImages} breedId={breedId} />
     </Backtab>
   );
 }

@@ -12,20 +12,14 @@ export async function POST(req: Request) {
     const reqBody = await req.json();
     const { breedId, perPage } = reqBody;
 
-    if (breedId === "all") {
-      const res = await fetch(
-        `${process.env.URL}images/search?limit=${perPage}`,
-        { headers: { "x-api-key": `${process.env.API_KEY}` } }
-      );
-
-      return res;
-    }
+    console.log(reqBody);
 
     const res = await fetch(
-      `${process.env.URL}images/search?limit=${perPage}&breed_ids=${breedId}&api_key=${process.env.API_KEY}`
+      `${process.env.URL}images/search?limit=${perPage}&breed_ids=${breedId}`,
+      { headers: { "x-api-key": `${process.env.API_KEY}` } }
     );
 
-    return res;
+    if (res.ok) return res;
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }

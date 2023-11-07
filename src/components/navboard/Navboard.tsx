@@ -17,6 +17,7 @@ export const Navboard = () => {
           alt="logo"
           onClick={() => router.push("/")}
           className="cursor-pointer"
+          priority
         />
       </header>
       <p className="text-black text-4.5xl font-medium mt-20">Hi! 👋</p>
