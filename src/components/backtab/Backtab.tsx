@@ -1,5 +1,4 @@
 import { BackArrowIcon } from "../icons";
-import { useClearPathname } from "@/hooks/useClearPathname";
 import { useRouter } from "next/navigation";
 import type { TBacktabProps } from "@/types";
 
@@ -7,10 +6,11 @@ export const Backtab = ({
   children,
   childrenProps,
   boxProps,
+  wrapper,
   boxElement,
   heading,
+  boxName,
 }: TBacktabProps) => {
-  const pathname = useClearPathname();
   const router = useRouter();
 
   return (
@@ -20,7 +20,7 @@ export const Backtab = ({
       <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
         {heading}
       </h1>
-      <div className={boxProps}>
+      <div className={wrapper}>
         <div className="flex items-center">
           <button
             type="button"
@@ -34,9 +34,7 @@ export const Backtab = ({
               }
             />
           </button>
-          <div className="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]">
-            {pathname.toUpperCase()}
-          </div>
+          <div className={boxProps}>{boxName}</div>
         </div>
         {boxElement}
       </div>

@@ -17,8 +17,13 @@ export default function Voting() {
   const { image } = useVoting(vote);
 
   return (
-    <Backtab childrenProps="flex flex-col" heading="Voting">
-      <div className="relative pt-5">
+    <Backtab
+      childrenProps="flex flex-col"
+      heading="Voting"
+      boxName="VOTING"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+    >
+      <div className="relative mt-5">
         {Boolean(image.length) && (
           <Image
             src={image[0].url}

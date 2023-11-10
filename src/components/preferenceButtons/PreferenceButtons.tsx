@@ -18,7 +18,7 @@ export const PreferenceButtons = ({ button, pathname }: TPreferenceButtons) => {
     <button
       type="button"
       aria-label={button.ariaLabel}
-      onClick={() => router.push(button.name)}
+      onClick={() => router.push(`/${button.name}`)}
       className={`p-[15px] rounded-2.5xl outline-none ${
         active
           ? "bg-darkPink"

@@ -6,4 +6,6 @@ export type TBacktabProps = {
   childrenProps?: string;
   boxElement?: JSX.Element;
   heading: string;
+  boxName: string;
+  wrapper?: string;
 };

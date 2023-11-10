@@ -1,6 +1,7 @@
 export async function GET() {
   try {
     const res = await fetch(`${process.env.URL}images/search?`, {
+      method: "GET",
       headers: { "x-api-key": `${process.env.API_KEY}` },
     });
 

@@ -10,21 +10,23 @@ import { MenuItem } from "@/components/form";
 import { sortBreedsByCondition } from "@/helpers";
 
 export default function Breeds() {
-  const [breedId, setBreedId] = useState<string | null>("all");
+  const [imageId, setImageId] = useState<string | null>("all");
   const [perPage, setPerPage] = useState<string | null>("5");
   const [sortCondition, setSortCondition] = useState<"az" | "za" | "none">(
     "none"
   );
   const { breeds, loadingBreeds, loadingImages, breedImages } = useBreeds(
-    breedId,
+    imageId,
     perPage
   );
 
   return (
     <Backtab
-      boxProps="flex"
+      wrapper="flex"
       childrenProps="flex flex-col"
       heading="Breeds"
+      boxName="BREEDS"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
       boxElement={
         <div className="flex">
           <Select
@@ -39,8 +41,8 @@ export default function Breeds() {
               "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             }
             icon={<DropdownIcon color={"fill-placeholder"} />}
-            setValue={setBreedId}
-            value={breedId}
+            setValue={setImageId}
+            value={imageId}
             defaultLabel="All breeds"
             defaultValue="all"
             loader={Array.from({ length: 15 }, (_, index) => (
@@ -122,7 +124,7 @@ export default function Breeds() {
     >
       <GridImages
         images={sortBreedsByCondition(breedImages, sortCondition)}
-        breedId={breedId}
+        imageId={imageId}
       />
     </Backtab>
   );
