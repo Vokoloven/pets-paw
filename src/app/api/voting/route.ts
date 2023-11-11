@@ -5,7 +5,10 @@ export async function GET() {
       headers: { "x-api-key": `${process.env.API_KEY}` },
     });
 
-    if (res.ok) return res;
+    if (res.ok) {
+      const data = await res.json();
+      return Response.json(data);
+    }
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }
@@ -31,8 +34,6 @@ export async function POST(req: Request) {
         return Response.json(data);
       }
     }
-
-    return Response.json(reqBody);
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }

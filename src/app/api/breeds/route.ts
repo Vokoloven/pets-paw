@@ -1,7 +1,9 @@
 export async function GET() {
   try {
     const res = await fetch(`${process.env.URL}breeds`);
-    if (res.ok) return res;
+    if (res.ok) {
+      return res;
+    }
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }
@@ -17,7 +19,9 @@ export async function POST(req: Request) {
       { headers: { "x-api-key": `${process.env.API_KEY}` } }
     );
 
-    if (res.ok) return res;
+    if (res.ok) {
+      return res;
+    }
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }
