@@ -6,6 +6,8 @@ import { SearchIcon } from "./SearchIcon";
 import { DropdownIcon } from "./DropdownIcon";
 import { SortAZIcon } from "./SortAZIcon";
 import { SortZAIcon } from "./SortZAIcon";
+import { UploadIcon } from "./UploadIcon";
+import { UpdateIcon } from "./UpdateIcon";
 
 export {
   DislikeIcon,
@@ -16,4 +18,6 @@ export {
   DropdownIcon,
   SortAZIcon,
   SortZAIcon,
+  UploadIcon,
+  UpdateIcon,
 };

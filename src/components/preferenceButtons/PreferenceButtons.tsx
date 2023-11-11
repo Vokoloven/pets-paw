@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import type { TPreferenceButtons } from "@/types";
 
-type TProps = {
-  button: {
-    id: string;
-    icon: React.JSX.Element;
-    name: string;
-    ariaLabel: string;
-  };
-  pathname: string;
-};
-
-export const PreferenceButtons = ({ button, pathname }: TProps) => {
+export const PreferenceButtons = ({ button, pathname }: TPreferenceButtons) => {
   const [active, setActive] = useState<boolean>(false);
   const router = useRouter();
 
@@ -27,7 +18,7 @@ export const PreferenceButtons = ({ button, pathname }: TProps) => {
     <button
       type="button"
       aria-label={button.ariaLabel}
-      onClick={() => router.push(button.name)}
+      onClick={() => router.push(`/${button.name}`)}
       className={`p-[15px] rounded-2.5xl outline-none ${
         active
           ? "bg-darkPink"

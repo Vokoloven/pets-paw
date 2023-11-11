@@ -1,97 +1,114 @@
-import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
-import { text } from "stream/consumers";
-
-type TSelect = {
-  sx: string;
-  paper: string;
-  paperList: string;
-  icon: JSX.Element;
-  list: any[];
-  state: string | null;
-  setState: Dispatch<SetStateAction<string | null>>;
-  defaultState?: string;
-};
+import {
+  useState,
+  useEffect,
+  Children,
+  cloneElement,
+  ReactNode,
+  isValidElement,
+  MouseEvent,
+} from "react";
+import type { TSelectProps } from "@/types";
 
 export const Select = ({
   sx,
   paper,
+  paperWrapper,
   paperList,
   icon,
-  list,
-  setState,
-  state,
-  defaultState,
-}: TSelect) => {
-  const [select, setSelect] = useState<boolean>(false);
-  const [on, setOn] = useState<boolean>(false);
-  const selectRef = useRef<HTMLInputElement>(null);
+  setValue,
+  value,
+  children,
+  loader,
+  loading = false,
+  defaultLabel,
+  defaultValue,
+}: TSelectProps) => {
+  const [label, setLabel] = useState<string | undefined | null>(
+    () => defaultLabel
+  );
+  const [open, setOpen] = useState<boolean>(false);
+  const [isMouseListening, setIsMouseListening] = useState<boolean>(false);
 
-  const toggleSelect = () => {
-    setSelect((prevSelect) => !prevSelect);
+  const toggleOpen = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+  const handleClick = (value: string, e: MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
+    const { textContent } = target;
+    setLabel(textContent);
+    setValue(value);
+    setOpen(false);
   };
 
-  const handleSelect = (event: React.MouseEvent<HTMLElement>) => {
-    const target = event.target as HTMLElement;
-    const { textContent } = target;
-    if (textContent) setState(textContent);
-    setSelect(false);
+  const handleClickOutside = () => {
+    setOpen(false);
   };
 
   useEffect(() => {
-    if (on) {
+    if (isMouseListening) {
       return;
     }
-
-    const handleClickOutside = () => {
-      if (selectRef.current) {
-        setSelect(false);
-      }
-    };
 
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [on]);
+  }, [isMouseListening]);
 
   useEffect(() => {
-    if (!state && defaultState) {
-      setState(defaultState);
+    if (!value && defaultValue) {
+      setValue(defaultValue);
     }
-  }, [state]);
+  }, [value]);
 
   return (
     <div className="relative">
       <div
-        onMouseEnter={() => setOn(true)}
-        onMouseLeave={() => setOn(false)}
-        onClick={toggleSelect}
+        onMouseEnter={() => setIsMouseListening(true)}
+        onMouseLeave={() => setIsMouseListening(false)}
+        onClick={toggleOpen}
         className={sx}
       >
-        <span>{state ?? defaultState}</span>
+        <span>{label}</span>
         <div
-          ref={selectRef}
           className={`${
-            select && "rotate-180 transition-transform"
+            open && "rotate-180 transition-transform"
           } transition-transform`}
         >
           {icon}
         </div>
       </div>
-      <ul
-        onMouseEnter={() => setOn(true)}
-        onMouseLeave={() => setOn(false)}
-        className={`${paper} transition-opacity ${
-          select ? "opacity-100" : "opacity-0 pointer-events-none"
+      <div
+        onMouseEnter={() => setIsMouseListening(true)}
+        onMouseLeave={() => setIsMouseListening(false)}
+        className={`${paperWrapper} ${
+          open
+            ? "opacity-100 transition-opacity"
+            : "opacity-0 pointer-events-none transition-opacity"
         }`}
       >
-        {list?.map((item, index) => (
-          <li key={index} className={paperList} onClick={handleSelect}>
-            {item}
-          </li>
-        ))}
-      </ul>
+        {loading ? (
+          loader
+        ) : (
+          <ul className={paper}>
+            {Children.map(children, (child: ReactNode) => {
+              if (isValidElement(child))
+                return cloneElement(
+                  <li
+                    className={paperList}
+                    onClick={handleClick.bind(
+                      null,
+                      child?.props?.children?.props?.value
+                    )}
+                  >
+                    {child}
+                  </li>
+                );
+            })}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

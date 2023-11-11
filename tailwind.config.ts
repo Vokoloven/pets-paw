@@ -44,6 +44,6 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [require("autoprefixer")],
 };
 export default config;

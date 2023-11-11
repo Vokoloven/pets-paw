@@ -3,20 +3,14 @@ import {
   btnPropsByCondition,
 } from "./handleVoitingButtons";
 import { handleClick } from "./handleClick";
-import { TState } from "@/app/voting/page";
-import { Dispatch, SetStateAction } from "react";
+import type { TVotingButton } from "@/types";
 
-type TProps = {
-  button: {
-    id: string;
-    icon: JSX.Element;
-    name: string;
-    ariaLabel: string;
-  };
-  setState: Dispatch<SetStateAction<Array<TState>>>;
-};
-
-export const VotingButton = ({ button, setState }: TProps) => {
+export const VotingButton = ({
+  button,
+  setState,
+  image_id,
+  setVote,
+}: TVotingButton) => {
   return (
     <>
       <div className={`bg-white ${boxPropsByCondition(button.name)}`}>
@@ -26,7 +20,13 @@ export const VotingButton = ({ button, setState }: TProps) => {
           className={`p-[25px] border-white ${btnPropsByCondition(
             button.name
           )} group transition`}
-          onClick={handleClick.bind(null, button.name, setState)}
+          onClick={handleClick.bind(
+            null,
+            button.name,
+            setState,
+            image_id,
+            setVote
+          )}
         >
           {button.icon}
         </button>

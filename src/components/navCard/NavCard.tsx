@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useClearPathname } from "@/hooks/useClearPathname";
+import { useClearPathname } from "@/hooks";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import {
@@ -10,18 +10,9 @@ import {
   handleButtonActions,
   handleCardActions,
 } from "./navCardHandlers";
+import type { TNavCardProps } from "@/types";
 
-type TProps = {
-  card: {
-    id: string;
-    src: StaticImageData;
-    alt: string;
-    name: string;
-    ariaLabel: string;
-  };
-};
-
-export const NavCard = ({ card }: TProps) => {
+export const NavCard = ({ card }: TNavCardProps) => {
   const [hover, setHover] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);

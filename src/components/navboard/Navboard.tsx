@@ -6,7 +6,7 @@ import { NavCard } from "../navCard/NavCard";
 import { navCardItems } from "../navCard/navCardItems";
 import { useRouter } from "next/navigation";
 
-export const Dashboard = () => {
+export const Navboard = () => {
   const router = useRouter();
 
   return (
@@ -17,6 +17,7 @@ export const Dashboard = () => {
           alt="logo"
           onClick={() => router.push("/")}
           className="cursor-pointer"
+          priority
         />
       </header>
       <p className="text-black text-4.5xl font-medium mt-20">Hi! 👋</p>

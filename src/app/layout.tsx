@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
-import { Dashboard } from "@/components/dashboard/Dashboard";
+import { Navboard } from "@/components/navboard";
 import { SearchPanel } from "@/components/searchPanel/SearchPanel";
 
 const jost = Jost({
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${jost.className} bg-body`}>
         <div className="container mx-auto flex justify-center py-8">
-          <Dashboard />
+          <Navboard />
           <div className="flex flex-col w-full">
             <SearchPanel />
             <main>{children}</main>

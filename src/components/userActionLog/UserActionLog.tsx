@@ -1,7 +1,11 @@
-import { TState } from "@/app/voting/page";
 import { handleIcon } from "./handleIcon";
+import type { TVotingState } from "@/types";
 
-export const UserActionLog = ({ userActionLog }: { userActionLog: TState }) => {
+export const UserActionLog = ({
+  userActionLog,
+}: {
+  userActionLog: TVotingState;
+}) => {
   return (
     <div className="bg-body py-[18px] pl-[15px] pr-5 rounded-1.5lg flex justify-between">
       <div className="flex items-center">
@@ -10,7 +14,9 @@ export const UserActionLog = ({ userActionLog }: { userActionLog: TState }) => {
         </div>
         <p className="text-placeholder leading-6 ml-5">
           ImageID:{" "}
-          <span className="text-black font-medium text-base">fQSunHvl8</span>{" "}
+          <span className="text-black font-medium text-base">
+            {userActionLog.image_id}
+          </span>{" "}
           was added to {userActionLog.action}
         </p>
       </div>
