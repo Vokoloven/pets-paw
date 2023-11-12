@@ -8,6 +8,7 @@ import { GridImages } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
 import { MenuItem } from "@/components/form";
 import { sortBreedsByCondition } from "@/helpers";
+import { classNameByConditionSkeleton } from "@/components/gridImages/classNameByCondition";
 
 export default function Breeds() {
   const [imageId, setImageId] = useState<string | null>("all");
