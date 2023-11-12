@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import type { IBreedImage } from "@/types";
 import axios, { AxiosError } from "axios";
 
-export const useSelectedImage = (imageId: string | null) => {
+export const useSelectedImage = (imageId: string | null, breedId: string) => {
   const [imageBreed, setImageBreed] = useState<IBreedImage>({
     breeds: [],
     id: "",
@@ -11,10 +11,10 @@ export const useSelectedImage = (imageId: string | null) => {
     width: 0,
     height: 0,
   });
-  const [loading, setLoading] = useState<boolean>(false);
+  const [imagesBreed, setBreedImages] = useState<IBreedImage[]>([]);
+
   const getImageById = useCallback(async () => {
     try {
-      setLoading(true);
       const req = axios.post("/api/selectedImage", { imageId });
       const res = await req;
       const { data } = res;
@@ -24,13 +24,41 @@ export const useSelectedImage = (imageId: string | null) => {
         toast.error(error.message);
       }
     } finally {
-      setLoading(false);
     }
   }, [imageId]);
+
+  const getImages = useCallback(async () => {
+    try {
+      const res = await axios.post("/api/breeds", { perPage: 4, breedId });
+      const { data } = res;
+      setBreedImages(data);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
+      }
+    } finally {
+    }
+  }, [breedId]);
 
   useEffect(() => {
     getImageById();
   }, [imageId]);
 
-  return { imageBreed };
+  useEffect(() => {
+    getImages();
+  }, [breedId]);
+
+  const spreadImages = (
+    imageBreed: IBreedImage,
+    imagesBreed: IBreedImage[]
+  ) => {
+    if (Boolean(imageBreed.breeds.length) && Boolean(imagesBreed.length)) {
+      const spreadImages = [imageBreed, ...imagesBreed];
+      return spreadImages;
+    }
+  };
+
+  const images = spreadImages(imageBreed, imagesBreed);
+
+  return { imageBreed, imagesBreed, images };
 };

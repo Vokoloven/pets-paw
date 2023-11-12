@@ -8,6 +8,7 @@ import { GridImages } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
 import { MenuItem } from "@/components/form";
 import { sortBreedsByCondition } from "@/helpers";
+import { classNameByConditionSkeleton } from "@/components/gridImages/classNameByCondition";
 
 export default function Breeds() {
   const [imageId, setImageId] = useState<string | null>("all");
@@ -15,10 +16,7 @@ export default function Breeds() {
   const [sortCondition, setSortCondition] = useState<"az" | "za" | "none">(
     "none"
   );
-  const { breeds, loadingBreeds, loadingImages, breedImages } = useBreeds(
-    imageId,
-    perPage
-  );
+  const { breeds, loadingBreeds, breedImages } = useBreeds(imageId, perPage);
 
   return (
     <Backtab
