@@ -16,10 +16,7 @@ export default function Breeds() {
   const [sortCondition, setSortCondition] = useState<"az" | "za" | "none">(
     "none"
   );
-  const { breeds, loadingBreeds, loadingImages, breedImages } = useBreeds(
-    imageId,
-    perPage
-  );
+  const { breeds, loadingBreeds, breedImages } = useBreeds(imageId, perPage);
 
   return (
     <Backtab

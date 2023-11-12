@@ -15,7 +15,7 @@ export default function SelectedBreed({
   const { breedId } = params;
   const searchParams = useSearchParams();
   const imageId = searchParams.get("imageId");
-  const { imageBreed } = useSelectedImage(imageId);
+  const { imageBreed, images } = useSelectedImage(imageId, breedId);
 
   const sliderSettings = {
     dots: true,
@@ -26,8 +26,7 @@ export default function SelectedBreed({
     appendDots: (dots: any) => (
       <div>
         <ul className="rounded-2.5xl bg-white flex gap-[5px] p-[10px]">
-          {" "}
-          {dots}{" "}
+          {dots}
         </ul>
       </div>
     ),
@@ -46,21 +45,21 @@ export default function SelectedBreed({
       childrenProps="flex flex-col"
       boxProps="px-[30px] py-[5px] bg-lightPink rounded-1.5lg text-darkPink font-medium text-xl leading-[30px]"
     >
-      {Boolean(imageBreed.breeds.length) && (
+      {Boolean(images?.length) && (
         <div className="mt-5 flex flex-col">
           <div className="relative">
             <Slider {...sliderSettings}>
-              {Array.from({ length: 5 }, (_, index) => (
+              {images?.map(({ id, url, width, height }) => (
                 <Image
-                  key={index}
-                  src={imageBreed.url}
+                  key={id}
+                  src={url}
                   alt="Cat"
-                  width={imageBreed.width}
-                  height={imageBreed.height}
+                  width={width}
+                  height={height}
                   priority
                   placeholder="blur"
-                  blurDataURL={imageBreed.url}
-                  className="rounded-2.5xl object-cover h-full w-full"
+                  blurDataURL={url}
+                  className="rounded-2.5xl h-[500px] w-full object-cover"
                 />
               ))}
             </Slider>
@@ -75,28 +74,29 @@ export default function SelectedBreed({
                   <ul>
                     <li className="text-black font-medium">Temperament:</li>
                     <li className="text-placeholder">
-                      {imageBreed.breeds[0]?.temperament}
+                      {images?.[0].breeds[0]?.temperament}
                     </li>
                   </ul>
                 </div>
                 <div className="w-full ml-5">
                   <ul>
-                    {breedIdItem(imageBreed).map((item) => (
-                      <li key={item.name}>
-                        <span className="font-medium text-black">
-                          {item.name}:{" "}
-                        </span>
-                        <span className="text-placeholder">
-                          {item.value} {item.add}
-                        </span>
-                      </li>
-                    ))}
+                    {Boolean(images?.length) &&
+                      breedIdItem(images?.[0])!.map((item) => (
+                        <li key={item.name}>
+                          <span className="font-medium text-black">
+                            {item.name}:{" "}
+                          </span>
+                          <span className="text-placeholder">
+                            {item.value} {item.add}
+                          </span>
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
             </div>
             <div className="rounded-2.5xl bg-white py-[5px] px-10 font-medium text-black text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal">
-              {imageBreed?.breeds[0]?.name}
+              {images?.[0].breeds[0]?.name}
             </div>
           </div>
         </div>

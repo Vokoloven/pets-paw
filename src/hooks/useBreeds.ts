@@ -8,7 +8,6 @@ export const useBreeds = (breedId: string | null, perPage: string | null) => {
   const [breeds, setBreeds] = useState<IBreedCat[]>([]);
   const [breedImages, setBreedImages] = useState<IBreedImage[]>([]);
   const [loadingBreeds, setLoadingBreeds] = useState<boolean>(false);
-  const [loadingImages, setLoadingImages] = useState<boolean>(false);
   const isFirstRender = useRef<boolean>(true);
   console.log(breedImages);
 
@@ -29,7 +28,6 @@ export const useBreeds = (breedId: string | null, perPage: string | null) => {
 
   const getImages = useCallback(async () => {
     try {
-      setLoadingImages(true);
       const res = await axios.post("/api/breeds", {
         ...(breedId === "all"
           ? { breedId: breedsIdsCollector(breeds) }
@@ -43,7 +41,6 @@ export const useBreeds = (breedId: string | null, perPage: string | null) => {
         toast.error(error.message);
       }
     } finally {
-      setLoadingImages(false);
     }
   }, [breedId, perPage, breeds]);
 
@@ -60,5 +57,5 @@ export const useBreeds = (breedId: string | null, perPage: string | null) => {
     getImages();
   }, [breedId, perPage, breeds]);
 
-  return { breeds, loadingBreeds, loadingImages, breedImages };
+  return { breeds, loadingBreeds, breedImages };
 };

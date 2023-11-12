@@ -14,7 +14,7 @@ export default function Voting() {
     null
   );
 
-  const { image, loading } = useVoting(vote);
+  const { image } = useVoting(vote);
 
   return (
     <Backtab

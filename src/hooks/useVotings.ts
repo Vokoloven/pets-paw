@@ -61,5 +61,5 @@ export const useVoting = (vote: { value: number; image_id: string } | null) => {
     postVoting();
   }, [vote]);
 
-  return { image, loading };
+  return { image };
 };
