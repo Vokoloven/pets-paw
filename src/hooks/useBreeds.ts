@@ -9,7 +9,6 @@ export const useBreeds = (breedId: string | null, perPage: string | null) => {
   const [breedImages, setBreedImages] = useState<IBreedImage[]>([]);
   const [loadingBreeds, setLoadingBreeds] = useState<boolean>(false);
   const isFirstRender = useRef<boolean>(true);
-  console.log(breedImages);
 
   const getBreeds = useCallback(async () => {
     try {

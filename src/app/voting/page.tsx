@@ -33,7 +33,7 @@ export default function Voting() {
             priority
             placeholder="blur"
             blurDataURL={image[0].url}
-            className="rounded-2.5xl object-cover h-full w-full"
+            className="rounded-2.5xl object-cover h-[500px] w-full"
           />
         )}
         <div className="flex absolute bottom-0 left-2/4 -translate-x-1/2 translate-y-1/2">

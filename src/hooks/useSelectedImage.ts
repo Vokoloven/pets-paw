@@ -55,6 +55,8 @@ export const useSelectedImage = (imageId: string | null, breedId: string) => {
     if (Boolean(imageBreed.breeds.length) && Boolean(imagesBreed.length)) {
       const spreadImages = [imageBreed, ...imagesBreed];
       return spreadImages;
+    } else {
+      return [];
     }
   };
 

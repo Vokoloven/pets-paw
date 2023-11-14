@@ -23,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jost.className} bg-body`}>
-        <div className="container mx-auto flex justify-center py-8">
+        <div className="container flex justify-center py-8">
           <Navboard />
-          <div className="flex flex-col w-full">
+          <div className="2xl:max-w-[680px] flex flex-col w-full">
             <SearchPanel />
             <main>{children}</main>
           </div>

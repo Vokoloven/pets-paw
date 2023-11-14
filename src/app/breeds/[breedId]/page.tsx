@@ -1,11 +1,10 @@
 "use client";
 
 import { Backtab } from "@/components/backtab";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useSelectedImage } from "@/hooks";
 import { breedIdItem } from "@/helpers";
-import Slider from "react-slick";
+import { CustomSlider } from "@/components/slider";
 
 export default function SelectedBreed({
   params,
@@ -15,22 +14,7 @@ export default function SelectedBreed({
   const { breedId } = params;
   const searchParams = useSearchParams();
   const imageId = searchParams.get("imageId");
-  const { imageBreed, images } = useSelectedImage(imageId, breedId);
-
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendDots: (dots: any) => (
-      <div>
-        <ul className="rounded-2.5xl bg-white flex gap-[5px] p-[10px]">
-          {dots}
-        </ul>
-      </div>
-    ),
-  };
+  const { images } = useSelectedImage(imageId, breedId);
 
   return (
     <Backtab
@@ -47,23 +31,7 @@ export default function SelectedBreed({
     >
       {Boolean(images?.length) && (
         <div className="mt-5 flex flex-col">
-          <div className="relative">
-            <Slider {...sliderSettings}>
-              {images?.map(({ id, url, width, height }) => (
-                <Image
-                  key={id}
-                  src={url}
-                  alt="Cat"
-                  width={width}
-                  height={height}
-                  priority
-                  placeholder="blur"
-                  blurDataURL={url}
-                  className="rounded-2.5xl h-[500px] w-full object-cover"
-                />
-              ))}
-            </Slider>
-          </div>
+          <CustomSlider images={images} />
           <div className="relative bg-white rounded-2.5xl px-10 py-10 w-full border-2 border-lightPink border-solid mt-[50px]">
             <div className="flex justify-center flex-col">
               <h2 className="font-medium text-xl text-placeholder text-center">
@@ -95,7 +63,7 @@ export default function SelectedBreed({
                 </div>
               </div>
             </div>
-            <div className="rounded-2.5xl bg-white py-[5px] px-10 font-medium text-black text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal">
+            <div className="whitespace-nowrap rounded-2.5xl bg-white py-[5px] px-10 font-medium text-black text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal text-center">
               {images?.[0].breeds[0]?.name}
             </div>
           </div>
