@@ -1,5 +1,11 @@
 import { CloseIcon, SuccessIcon, ErrorIcon } from "@/components/icons";
-import { ChangeEvent, DragEvent, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  DragEvent,
+  SetStateAction,
+  useState,
+} from "react";
 import Image from "next/image";
 import {
   handleImage,
@@ -11,7 +17,11 @@ import {
   handleFileChange,
 } from ".";
 
-export const GalleryImageUpload = () => {
+export const GalleryImageUpload = ({
+  setOpen,
+}: {
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<{
     file: File;
@@ -20,8 +30,13 @@ export const GalleryImageUpload = () => {
   } | null>(null);
 
   return (
-    <div className="2xl:max-w-[680px] relative flex flex-col items-center">
-      <button className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group">
+    <div
+      className={`2xl:max-w-[680px] relative flex flex-col items-center pb-[158px]`}
+    >
+      <button
+        onClick={() => setOpen((prevState) => !prevState)}
+        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group"
+      >
         <CloseIcon
           color={
             "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
@@ -49,7 +64,7 @@ export const GalleryImageUpload = () => {
         onDragOver={handleDragOver.bind(null, setIsDragOver)}
         onDrop={handleDrop.bind(null, setIsDragOver, setSelectedImage)}
         className={`relative mt-10 bg-white rounded-2.5xl w-full ${
-          selectedImage?.file ? "py-5 px-10" : "py-[145px]"
+          selectedImage?.file ? "py-[18px] px-[38px]" : "py-[145px]"
         } flex justify-center border-dashed border-2 ${
           isDragOver ? "border-darkPink" : "border-lightPink"
         }`}
@@ -89,16 +104,16 @@ export const GalleryImageUpload = () => {
       >
         UPLOAD PHOTO
       </button>
-      <div className="w-full p-5 bg-white rounded-1.5lg flex items-center">
+      {/* <div className="w-full p-5 bg-white rounded-1.5lg flex items-center">
         <SuccessIcon color="fill-cardGreen" />
         <p className="text-placeholder leading-6 ml-2.5">
           Thanks for the Upload - Cat found!
         </p>
         <ErrorIcon color="fill-darkPink" />
         <p className="text-placeholder leading-6 ml-2.5">
-          Thanks for the Upload - Cat found!
+          No Cat found - try a different one
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
