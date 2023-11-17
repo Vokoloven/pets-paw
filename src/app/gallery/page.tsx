@@ -50,9 +50,8 @@ export default function Gallery() {
         }}
       />
       <Modal
-        backdrop={`bg-backdrop ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
-        } transition-all`}
+        open={open}
+        setOpen={setOpen}
         modal={`top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] ${
           open ? "scale-100" : "scale-75"
         }`}
