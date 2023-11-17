@@ -4,11 +4,10 @@ import { Backtab } from "@/components/backtab";
 import { DropdownIcon, SortAZIcon, SortZAIcon } from "@/components/icons";
 import { Select } from "@/components/form";
 import { useState, Fragment } from "react";
-import { GridImages } from "@/components/gridImages";
+import { GridBreeds } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
 import { MenuItem } from "@/components/form";
 import { sortBreedsByCondition } from "@/helpers";
-import { classNameByConditionSkeleton } from "@/components/gridImages/classNameByCondition";
 
 export default function Breeds() {
   const [imageId, setImageId] = useState<string | null>("all");
@@ -120,7 +119,7 @@ export default function Breeds() {
         </div>
       }
     >
-      <GridImages
+      <GridBreeds
         images={sortBreedsByCondition(breedImages, sortCondition)}
         imageId={imageId}
       />

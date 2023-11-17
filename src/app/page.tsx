@@ -5,7 +5,7 @@ export default function Home() {
         Welcome to Cat Social Network
       </h1>
       <div className="w-[680px] h-[840px] bg-lightPink rounded-2.5xl"></div>
-      <div className="absolute top-0 left-0 w-full h-[900px] bg-cover bg-no-repeat bg-[url(../../public/home-bg2x.png)]"></div>
+      <div className="absolute top-0 left-0 w-full h-[900px] bg-cover bg-no-repeat bg-main"></div>
     </section>
   );
 }

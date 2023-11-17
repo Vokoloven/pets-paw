@@ -1,3 +1,4 @@
-import { GridImages } from "./GridImages";
+import { GridBreeds } from "./GridBreeds";
+import { GridGallery } from "./GridGallery";
 
-export { GridImages };
+export { GridBreeds, GridGallery };

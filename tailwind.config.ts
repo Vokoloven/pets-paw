@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        upload: "url('../../public/upload-bg.png')",
+        main: "url(../../public/home-bg2x.png)",
+      },
       colors: {
         body: "#F8F8F7",
         placeholder: "#8C8C8C",
@@ -21,6 +25,7 @@ const config: Config = {
         lightPink: "#FBE0DC",
         darkPink: "#FF868E",
         rgbaDarkPink: "rgba(255, 134, 142, 0.3)",
+        backdrop: "rgba(29, 29, 29, 0.6)",
       },
       fontSize: {
         "4.5xl": ["2.75rem", "3.625rem"],

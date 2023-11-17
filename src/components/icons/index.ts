@@ -8,6 +8,9 @@ import { SortAZIcon } from "./SortAZIcon";
 import { SortZAIcon } from "./SortZAIcon";
 import { UploadIcon } from "./UploadIcon";
 import { UpdateIcon } from "./UpdateIcon";
+import { CloseIcon } from "./CloseIcon";
+import { ErrorIcon } from "./ErrorIcon";
+import { SuccessIcon } from "./SuccessIcon";
 
 export {
   DislikeIcon,
@@ -20,4 +23,7 @@ export {
   SortZAIcon,
   UploadIcon,
   UpdateIcon,
+  CloseIcon,
+  ErrorIcon,
+  SuccessIcon,
 };
