@@ -1,4 +1,4 @@
-import { IBreedCat, IBreedImage } from "./breeds";
+import { IBreedCat, IBreedImage, TBreedsSelectsProps } from "./breeds";
 import { TVotingState, IVotingImage, TVotingButton } from "./voting";
 import { TBacktabProps } from "./backtab";
 import { TSelectProps, TMenuItemProps } from "./select";
@@ -24,4 +24,5 @@ export type {
   TGallerySelectProps,
   IUploadImage,
   IUploadedImages,
+  TBreedsSelectsProps,
 };
