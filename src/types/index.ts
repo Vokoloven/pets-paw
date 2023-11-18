@@ -6,7 +6,7 @@ import { TGridImagesProps } from "./gridImages";
 import { TNavCardProps } from "./navCard";
 import { TPreferenceButtons } from "./preferenceButtons";
 import { TModalProps } from "./modal";
-import { TGallerySelectProps } from "./gallery";
+import { TGallerySelectProps, IUploadImage, IUploadedImages } from "./gallery";
 
 export type {
   IBreedCat,
@@ -22,4 +22,6 @@ export type {
   IBreedImage,
   TModalProps,
   TGallerySelectProps,
+  IUploadImage,
+  IUploadedImages,
 };

@@ -6,6 +6,8 @@ import {
   handleDragLeave,
   handleDragOver,
   handleDrop,
+  handleFile,
+  handleLabel,
 } from "./galleryHandlers";
 
 import { GalleryImageUpload } from "./GalleryImageUpload";
@@ -19,4 +21,6 @@ export {
   handleFileChange,
   handleImage,
   GalleryImageUpload,
+  handleFile,
+  handleLabel,
 };

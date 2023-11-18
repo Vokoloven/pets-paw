@@ -1,21 +1,16 @@
 import { CloseIcon, SuccessIcon, ErrorIcon } from "@/components/icons";
-import {
-  ChangeEvent,
-  Dispatch,
-  DragEvent,
-  SetStateAction,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import {
-  handleImage,
-  GallerySelects,
   handleDragEnter,
   handleDragLeave,
   handleDragOver,
   handleDrop,
   handleFileChange,
+  handleFile,
+  handleLabel,
 } from ".";
+import { Spinner } from "@/components/spinner";
 
 export const GalleryImageUpload = ({
   setOpen,
@@ -28,12 +23,17 @@ export const GalleryImageUpload = ({
     dimensions: { width: number; height: number };
     url: string;
   } | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   return (
     <div
-      className={`2xl:max-w-[680px] relative flex flex-col items-center pb-[158px]`}
+      className={`2xl:max-w-[680px] relative flex flex-col items-center ${
+        status === null ? "pb-[158px]" : "pb-[138px]"
+      }`}
     >
       <button
+        aria-label="close"
         onClick={() => setOpen((prevState) => !prevState)}
         className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group"
       >
@@ -62,15 +62,21 @@ export const GalleryImageUpload = ({
         onDragEnter={handleDragEnter.bind(null, setIsDragOver)}
         onDragLeave={handleDragLeave.bind(null, setIsDragOver)}
         onDragOver={handleDragOver.bind(null, setIsDragOver)}
-        onDrop={handleDrop.bind(null, setIsDragOver, setSelectedImage)}
-        className={`relative mt-10 bg-white rounded-2.5xl w-full ${
+        onDrop={handleDrop.bind(
+          null,
+          setIsDragOver,
+          setSelectedImage,
+          setStatus
+        )}
+        className={`relative mt-10 rounded-2.5xl w-full ${
           selectedImage?.file ? "py-[18px] px-[38px]" : "py-[145px]"
-        } flex justify-center border-dashed border-2 ${
-          isDragOver ? "border-darkPink" : "border-lightPink"
-        }`}
+        } flex justify-center border-dashed border-2 ${handleLabel(
+          status,
+          isDragOver
+        )}`}
       >
         <input
-          onChange={handleFileChange.bind(null, setSelectedImage)}
+          onChange={handleFileChange.bind(null, setSelectedImage, setStatus)}
           type="file"
           className="hidden"
           accept=".jpg, .jpeg, .png, .gif"
@@ -95,25 +101,46 @@ export const GalleryImageUpload = ({
         )}
       </label>
       <p className="text-placeholder text-xl leading-[30px] mt-5">
-        {selectedImage?.file ? selectedImage.file.name : "No file selected"}
+        {selectedImage?.file
+          ? `Image File Name: ${selectedImage.file.name}`
+          : "No file selected"}
       </p>
       <button
-        className={`px-[30px] py-3 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] mt-5 hover:bg-lightPink hover:text-darkPink hover:transition-all transition-all ${
-          selectedImage?.file ? "opacity-100" : "opacity-0 pointer-events-none"
+        onClick={handleFile.bind(null, selectedImage, setLoading, setStatus)}
+        aria-label="Upload photo"
+        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink hover:transition-all transition-all ${
+          selectedImage?.file && status === null
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none absolute"
         }`}
       >
-        UPLOAD PHOTO
+        {loading && <Spinner />}
+        <span className="ml-2.5">{loading ? "UPLOADING" : "UPLOAD PHOTO"}</span>
       </button>
-      {/* <div className="w-full p-5 bg-white rounded-1.5lg flex items-center">
-        <SuccessIcon color="fill-cardGreen" />
-        <p className="text-placeholder leading-6 ml-2.5">
-          Thanks for the Upload - Cat found!
-        </p>
-        <ErrorIcon color="fill-darkPink" />
-        <p className="text-placeholder leading-6 ml-2.5">
-          No Cat found - try a different one
-        </p>
-      </div> */}
+      {[
+        {
+          id: "success",
+          icon: <SuccessIcon color="fill-cardGreen" />,
+          text: "Thanks for uploading your image!",
+        },
+        {
+          id: "error",
+          icon: <ErrorIcon color="fill-darkPink" />,
+          text: "You have already added that image, please try another one.",
+        },
+      ].map(({ id, icon, text }) => (
+        <div
+          key={id}
+          className={`mt-5 w-full p-[18px] bg-white rounded-1.5lg flex items-center transition-all ${
+            selectedImage?.file && status === id
+              ? "opacity-100"
+              : "opacity-0 pointer-events-none absolute"
+          }`}
+        >
+          {icon}
+          <p className="text-placeholder leading-6 ml-2.5">{text}</p>
+        </div>
+      ))}
     </div>
   );
 };

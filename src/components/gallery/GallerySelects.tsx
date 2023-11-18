@@ -5,7 +5,7 @@ import { GridGallery } from "@/components/gridImages";
 import { Fragment } from "react";
 import { UpdateIcon } from "@/components/icons";
 import { useBreeds } from "@/hooks";
-import { TGallerySelectProps } from "@/types";
+import type { TGallerySelectProps } from "@/types";
 
 export const GallerySelects = ({
   props: {
