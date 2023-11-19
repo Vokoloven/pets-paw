@@ -12,10 +12,19 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const reqBody = await req.json();
-    const { breedId, perPage } = reqBody;
+    const { breedId, perPage, mimeTypes, order } = reqBody;
+
+    const queryParams = new URLSearchParams({
+      mime_types: mimeTypes,
+      limit: perPage,
+      order,
+    });
+    if (breedId) {
+      queryParams.append("breed_ids", breedId);
+    }
 
     const res = await fetch(
-      `${process.env.URL}images/search?limit=${perPage}&breed_ids=${breedId}`,
+      `${process.env.URL}images/search?${queryParams.toString()}`,
       { headers: { "x-api-key": `${process.env.API_KEY}` } }
     );
 

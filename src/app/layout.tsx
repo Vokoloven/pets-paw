@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${jost.className} bg-body`}>
+      <body className={`${jost.className} bg-body overflow-hidden`}>
         <div className="container flex justify-center py-8">
           <Navboard />
           <div className="2xl:max-w-[680px] flex flex-col w-full">

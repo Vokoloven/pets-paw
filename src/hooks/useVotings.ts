@@ -7,12 +7,10 @@ import type { IVotingImage } from "@/types";
 
 export const useVoting = (vote: { value: number; image_id: string } | null) => {
   const [image, setImage] = useState<Array<IVotingImage>>([]);
-  const [loading, setLoading] = useState<boolean>(false);
   const isFirstRender = useRef<boolean>(true);
 
   const getVoting = useCallback(async () => {
     try {
-      setLoading(true);
       const res = await axios.get("/api/voting");
       const { data } = res;
       if (Boolean(data)) {
@@ -23,13 +21,11 @@ export const useVoting = (vote: { value: number; image_id: string } | null) => {
         toast.error(error.message);
       }
     } finally {
-      setLoading(false);
     }
   }, []);
 
   const postVoting = useCallback(async () => {
     try {
-      setLoading(true);
       const res = await axios.post("/api/voting", vote);
       const { data } = res;
 
@@ -41,7 +37,6 @@ export const useVoting = (vote: { value: number; image_id: string } | null) => {
         toast.error(error.message);
       }
     } finally {
-      setLoading(false);
     }
   }, [vote]);
 

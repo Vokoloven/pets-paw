@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useClearPathname } from "@/hooks";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 import {
   handleBgColor,
   handleButtonActions,

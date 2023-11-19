@@ -22,6 +22,7 @@ export const Select = ({
   loading = false,
   defaultLabel,
   defaultValue,
+  mainWrapper,
 }: TSelectProps) => {
   const [label, setLabel] = useState<string | undefined | null>(
     () => defaultLabel
@@ -63,12 +64,13 @@ export const Select = ({
   }, [value]);
 
   return (
-    <div className="relative">
+    <div className={`relative ${mainWrapper}`}>
       <div
         onMouseEnter={() => setIsMouseListening(true)}
         onMouseLeave={() => setIsMouseListening(false)}
         onClick={toggleOpen}
         className={sx}
+        aria-label="Select"
       >
         <span>{label}</span>
         <div

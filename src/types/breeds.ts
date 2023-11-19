@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { Interface } from "readline";
 
 export interface IBreedCat {
@@ -50,3 +51,14 @@ export interface IBreedImage {
   width: number;
   height: number;
 }
+
+export type TBreedsSelectsProps = {
+  imageId: string | null;
+  perPage: string | null;
+  sortCondition: "az" | "za" | "none";
+  breeds: IBreedCat[];
+  loadingBreeds: boolean;
+  setImageId: Dispatch<SetStateAction<string | null>>;
+  setPerPage: Dispatch<SetStateAction<string | null>>;
+  setSortCondition: Dispatch<SetStateAction<"az" | "za" | "none">>;
+};
