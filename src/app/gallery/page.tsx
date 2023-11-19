@@ -23,6 +23,7 @@ export default function Gallery() {
       childrenProps="flex flex-col"
       boxElement={
         <button
+          aria-label="Upload"
           onClick={() => setOpen((prevState) => !prevState)}
           className="py-3 px-[30px] bg-lightPink rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group"
         >

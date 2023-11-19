@@ -33,7 +33,7 @@ export const GalleryImageUpload = ({
       }`}
     >
       <button
-        aria-label="close"
+        aria-label="Close"
         onClick={() => setOpen((prevState) => !prevState)}
         className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group"
       >
@@ -108,7 +108,7 @@ export const GalleryImageUpload = ({
       <button
         onClick={handleFile.bind(null, selectedImage, setLoading, setStatus)}
         aria-label="Upload photo"
-        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink hover:transition-all transition-all ${
+        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink hover:transition-colors transition-colors ${
           selectedImage?.file && status === null
             ? "opacity-100"
             : "opacity-0 pointer-events-none absolute"
@@ -131,7 +131,7 @@ export const GalleryImageUpload = ({
       ].map(({ id, icon, text }) => (
         <div
           key={id}
-          className={`mt-5 w-full p-[18px] bg-white rounded-1.5lg flex items-center transition-all ${
+          className={`mt-5 w-full p-[18px] bg-white rounded-1.5lg flex items-center transition-opacity ${
             selectedImage?.file && status === id
               ? "opacity-100"
               : "opacity-0 pointer-events-none absolute"

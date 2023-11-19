@@ -70,6 +70,7 @@ export const Select = ({
         onMouseLeave={() => setIsMouseListening(false)}
         onClick={toggleOpen}
         className={sx}
+        aria-label="Select"
       >
         <span>{label}</span>
         <div

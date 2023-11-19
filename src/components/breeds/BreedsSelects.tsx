@@ -78,6 +78,7 @@ export const BreedsSelects = ({
       </Select>
       <button
         onClick={() => setSortCondition("az")}
+        aria-label="Sort A-Z"
         type="button"
         className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
           sortCondition === "az"
@@ -95,6 +96,7 @@ export const BreedsSelects = ({
       </button>
       <button
         onClick={() => setSortCondition("za")}
+        aria-label="Sort Z-A"
         type="button"
         className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
           sortCondition === "za"
