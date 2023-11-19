@@ -7,6 +7,7 @@ import { TNavCardProps } from "./navCard";
 import { TPreferenceButtons } from "./preferenceButtons";
 import { TModalProps } from "./modal";
 import { TGallerySelectProps, IUploadImage, IUploadedImages } from "./gallery";
+import { IVotesResponse } from "./votes";
 
 export type {
   IBreedCat,
@@ -25,4 +26,5 @@ export type {
   IUploadImage,
   IUploadedImages,
   TBreedsSelectsProps,
+  IVotesResponse,
 };

@@ -11,6 +11,7 @@ import { UpdateIcon } from "./UpdateIcon";
 import { CloseIcon } from "./CloseIcon";
 import { ErrorIcon } from "./ErrorIcon";
 import { SuccessIcon } from "./SuccessIcon";
+import { FavouriteFilledIcon } from "./FavouriteFilledIcon";
 
 export {
   DislikeIcon,
@@ -26,4 +27,5 @@ export {
   CloseIcon,
   ErrorIcon,
   SuccessIcon,
+  FavouriteFilledIcon,
 };

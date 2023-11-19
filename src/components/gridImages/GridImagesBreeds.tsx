@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { TGridImagesProps } from "@/types";
 import Link from "next/link";
 
-export const GridBreeds = ({ images, imageId }: TGridImagesProps) => {
+export const GridImagesBreeds = ({ images, imageId }: TGridImagesProps) => {
   return (
-    <div className="grid grid-cols-3 gap-5 mt-5">
+    <>
       {Boolean(images.length) &&
         images.map(({ id, url, width, height, breeds }, index) => (
           <Link
@@ -37,6 +37,6 @@ export const GridBreeds = ({ images, imageId }: TGridImagesProps) => {
             </div>
           </Link>
         ))}
-    </div>
+    </>
   );
 };

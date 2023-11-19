@@ -2,7 +2,7 @@
 
 import { Backtab } from "@/components/backtab";
 import { useState, Fragment } from "react";
-import { GridBreeds } from "@/components/gridImages";
+import { GridImages, GridImagesBreeds } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
 import { sortBreedsByCondition } from "@/helpers";
 import { BreedsSelects } from "@/components/breeds";
@@ -37,10 +37,12 @@ export default function Breeds() {
         />
       }
     >
-      <GridBreeds
-        images={sortBreedsByCondition(breedImages, sortCondition)}
-        imageId={imageId}
-      />
+      <GridImages>
+        <GridImagesBreeds
+          images={sortBreedsByCondition(breedImages, sortCondition)}
+          imageId={imageId}
+        />
+      </GridImages>
     </Backtab>
   );
 }

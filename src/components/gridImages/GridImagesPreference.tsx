@@ -1,13 +1,17 @@
 import { classNameByCondition } from "./classNameByCondition";
 import Image from "next/image";
-import type { TGridImagesProps } from "@/types";
-import { FavouriteIcon } from "../icons";
+import type { IVotesResponse } from "@/types";
+import { FavouriteFilledIcon } from "@/components/icons";
 
-export const GridGallery = ({ images }: Pick<TGridImagesProps, "images">) => {
+export const GridImagesPreference = ({
+  images,
+}: {
+  images: IVotesResponse[];
+}) => {
   return (
-    <div className="grid grid-cols-3 gap-5 mt-5">
+    <>
       {Boolean(images.length) &&
-        images.map(({ id, url, width, height, breeds }, index) => (
+        images.map(({ id, image: { url } }, index) => (
           <div
             key={id}
             className={`${classNameByCondition(
@@ -17,18 +21,21 @@ export const GridGallery = ({ images }: Pick<TGridImagesProps, "images">) => {
             <Image
               src={url}
               alt={"Cat"}
-              width={width}
-              height={height}
+              width={500}
+              height={500}
               placeholder="blur"
               blurDataURL={url}
               priority
               className="h-full w-full object-cover rounded-2.5xl"
             />
-            <button className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 p-2.5 leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center">
-              <FavouriteIcon color="fill-darkPink" />
+            <button
+              aria-label="Add to favourites"
+              className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 p-2.5 leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center"
+            >
+              <FavouriteFilledIcon color="fill-darkPink" />
             </button>
           </div>
         ))}
-    </div>
+    </>
   );
 };

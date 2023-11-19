@@ -2,7 +2,7 @@ import type { IBreedImage } from "@/types";
 
 export const sortBreedsByCondition = (
   breedsImages: IBreedImage[],
-  sortCondition: "az" | "za" | "none"
+  sortCondition?: "az" | "za" | "none"
 ) => {
   const copyBreedsImages = [...breedsImages];
 

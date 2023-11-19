@@ -1,7 +1,7 @@
 import { Select } from "@/components/form";
 import { DropdownIcon } from "@/components/icons";
 import { MenuItem } from "@/components/form";
-import { GridGallery } from "@/components/gridImages";
+import { GridImages, GridImagesGallery } from "@/components/gridImages";
 import { Fragment } from "react";
 import { UpdateIcon } from "@/components/icons";
 import { useBreeds } from "@/hooks";
@@ -159,7 +159,9 @@ export const GallerySelects = ({
           </div>
         </div>
       </div>
-      <GridGallery images={breedImages} />
+      <GridImages>
+        <GridImagesGallery images={breedImages}/>
+      </GridImages>
     </div>
   );
 };
