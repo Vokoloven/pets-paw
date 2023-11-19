@@ -1,12 +1,9 @@
 "use client";
 
 import { Backtab } from "@/components/backtab";
-import { DropdownIcon, SortAZIcon, SortZAIcon } from "@/components/icons";
-import { Select } from "@/components/form";
 import { useState, Fragment } from "react";
 import { GridBreeds } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
-import { MenuItem } from "@/components/form";
 import { sortBreedsByCondition } from "@/helpers";
 import { BreedsSelects } from "@/components/breeds";
 
