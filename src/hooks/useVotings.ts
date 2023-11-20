@@ -29,9 +29,20 @@ export const useVoting = (vote: { value: number; image_id: string } | null) => {
       const res = await axios.post("/api/voting", vote);
       const { data } = res;
 
-      if (data.message === "SUCCESS") {
-        getVoting();
+      if (data.message === "SUCCESS") getVoting();
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
       }
+    } finally {
+    }
+  }, [vote]);
+
+  const postFavourites = useCallback(async () => {
+    try {
+      const res = await axios.post("/api/favourites", vote);
+      const { data } = res;
+      if (data.message === "SUCCESS") getVoting();
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.message);
@@ -51,9 +62,8 @@ export const useVoting = (vote: { value: number; image_id: string } | null) => {
   }, []);
 
   useEffect(() => {
-    if (!vote) return;
-
-    postVoting();
+    if (vote?.value === 1 || vote?.value === -1) postVoting();
+    if (vote?.value === 0) postFavourites();
   }, [vote]);
 
   return { image };
