@@ -1,11 +1,17 @@
 import { classNameByCondition } from "./classNameByCondition";
 import Image from "next/image";
-import type { TGridImagesProps } from "@/types";
-import { FavouriteIcon } from "../icons";
+import type { TGridImagesProps, IFavouriteList } from "@/types";
+import { FavouriteIcon, FavouriteFilledIcon } from "../icons";
+import { useFavourites } from "@/hooks";
+import { Spinner } from "../spinner";
+import { isInFavouriteList, handleClick } from "./gridImagesGalleryUtils";
 
 export const GridImagesGallery = ({
   images,
 }: Pick<TGridImagesProps, "images">) => {
+  const { favouriteList, setFavourites, removeFavourites, loading } =
+    useFavourites();
+
   return (
     <>
       {Boolean(images.length) &&
@@ -27,10 +33,25 @@ export const GridImagesGallery = ({
               className="h-full w-full object-cover rounded-2.5xl"
             />
             <button
+              onClick={handleClick.bind(
+                null,
+                isInFavouriteList(favouriteList, id),
+                id,
+                setFavourites,
+                removeFavourites
+              )}
               aria-label="Add to favourites"
-              className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 p-2.5 leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center"
+              className={`absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 ${
+                loading ? "p-[9px]" : "p-2.5"
+              } leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center flex items-center`}
             >
-              <FavouriteIcon color="fill-darkPink" />
+              {loading ? (
+                <Spinner sx="h-8 w-8 border-4 text-darkPink" />
+              ) : isInFavouriteList(favouriteList, id) ? (
+                <FavouriteFilledIcon color="fill-darkPink" />
+              ) : (
+                <FavouriteIcon color="fill-darkPink" />
+              )}
             </button>
           </div>
         ))}
