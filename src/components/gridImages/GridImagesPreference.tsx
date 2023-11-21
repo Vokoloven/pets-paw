@@ -2,7 +2,7 @@
 import { style } from ".";
 import { gridClassName, filteredVoteImages } from "@/utils";
 import Image from "next/image";
-import { FavouriteFilledIcon } from "@/components/icons";
+import { FavouriteFilledIcon, BinIcon } from "@/components/icons";
 import { useVotes } from "@/hooks";
 
 export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
@@ -37,7 +37,7 @@ export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
                 aria-label="Add to favourites"
                 className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 p-2.5 leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center"
               >
-                <FavouriteFilledIcon color="fill-darkPink" />
+                <BinIcon color="fill-darkPink" />
               </button>
             </div>
           )
