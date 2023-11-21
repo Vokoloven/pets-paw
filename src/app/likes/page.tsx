@@ -12,7 +12,7 @@ export default function Likes() {
       boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
     >
       <GridImages>
-        <GridImagesPreference />
+        <GridImagesPreference pref={1} />
       </GridImages>
     </Backtab>
   );

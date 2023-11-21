@@ -4,11 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useClearPathname } from "@/hooks";
 import Image from "next/image";
-import {
-  handleBgColor,
-  handleButtonActions,
-  handleCardActions,
-} from "./navCardHandlers";
+import { handleBgColor, handleButtonActions, handleCardActions } from "@/utils";
 import type { TNavCardProps } from "@/types";
 
 export const NavCard = ({ card }: TNavCardProps) => {

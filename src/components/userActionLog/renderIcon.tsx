@@ -1,6 +1,6 @@
 import { LikeIcon, DislikeIcon, FavouriteIcon } from "../icons";
 
-export const handleIcon = (name: string) => {
+export const renderIcon = (name: string) => {
   switch (name) {
     case "like":
       return <LikeIcon color={"fill-cardGreen"} />;

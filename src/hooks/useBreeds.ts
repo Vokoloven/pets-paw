@@ -4,7 +4,7 @@ import axios, { AxiosError } from "axios";
 import { useCallback, useEffect, useState, useRef } from "react";
 import toast from "react-hot-toast";
 import type { IBreedCat, IBreedImage } from "@/types";
-import { breedsIdsCollector } from "@/helpers";
+import { breedsIdsCollector } from "@/utils";
 
 export const useBreeds = (
   breedId: string | null = null,

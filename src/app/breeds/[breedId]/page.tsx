@@ -3,7 +3,7 @@
 import { Backtab } from "@/components/backtab";
 import { useSearchParams } from "next/navigation";
 import { useSelectedImage } from "@/hooks";
-import { breedIdItem } from "@/helpers";
+import { breedIdItem } from "@/utils";
 import { CustomSlider } from "@/components/slider";
 
 export default function SelectedBreed({

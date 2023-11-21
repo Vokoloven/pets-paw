@@ -1,10 +1,7 @@
 "use client";
 
-import {
-  gridClassName,
-  styleSkeleton,
-  GridImages,
-} from "@/components/gridImages";
+import { styleSkeleton, GridImages } from "@/components/gridImages";
+import { gridClassName } from "@/utils";
 
 export default function Loading() {
   return (

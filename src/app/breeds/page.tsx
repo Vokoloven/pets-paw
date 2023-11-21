@@ -4,7 +4,7 @@ import { Backtab } from "@/components/backtab";
 import { useState, Fragment } from "react";
 import { GridImages, GridImagesBreeds } from "@/components/gridImages";
 import { useBreeds } from "@/hooks";
-import { sortBreedsByCondition } from "@/helpers";
+import { sortBreedsByCondition } from "@/utils";
 import { BreedsSelects } from "@/components/breeds";
 
 export default function Breeds() {
