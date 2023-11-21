@@ -1,4 +1,4 @@
-import { classNameByCondition } from "./classNameByCondition";
+import { gridClassName, style } from ".";
 import Image from "next/image";
 import type { TGridImagesProps } from "@/types";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export const GridImagesBreeds = ({ images, imageId }: TGridImagesProps) => {
                 imageId: id,
               },
             }}
-            className={`${classNameByCondition(index)} `}
+            className={`${gridClassName(images.length, style)(index)} `}
             key={id}
           >
             <div

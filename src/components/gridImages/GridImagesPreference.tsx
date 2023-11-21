@@ -1,20 +1,23 @@
-import { classNameByCondition } from "./classNameByCondition";
-import Image from "next/image";
-import type { IVotesResponse } from "@/types";
-import { FavouriteFilledIcon } from "@/components/icons";
+"use client";
 
-export const GridImagesPreference = ({
-  images,
-}: {
-  images: IVotesResponse[];
-}) => {
+import { gridClassName, style } from ".";
+import Image from "next/image";
+import { FavouriteFilledIcon } from "@/components/icons";
+import { useVotes } from "@/hooks";
+
+export const GridImagesPreference = () => {
+  const { voteImages } = useVotes();
+
   return (
     <>
-      {Boolean(images.length) &&
-        images.map(({ id, image: { url } }, index) => (
+      {Boolean(voteImages?.filter(({ value }) => value === 1).length) &&
+        voteImages.map(({ id, image: { url } }, index) => (
           <div
             key={id}
-            className={`${classNameByCondition(
+            className={`${gridClassName(
+              voteImages.length,
+              style
+            )(
               index
             )} h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
           >
