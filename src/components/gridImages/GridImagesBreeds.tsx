@@ -1,4 +1,5 @@
-import { gridClassName, style } from ".";
+import { style } from ".";
+import { gridClassName } from "@/utils";
 import Image from "next/image";
 import type { TGridImagesProps } from "@/types";
 import Link from "next/link";

@@ -46,8 +46,6 @@ export async function DELETE(res: Response) {
       },
     });
 
-    console.log(req.status);
-
     return req;
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });

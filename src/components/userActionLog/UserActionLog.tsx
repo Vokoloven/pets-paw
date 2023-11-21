@@ -1,4 +1,4 @@
-import { handleIcon } from "./handleIcon";
+import { renderIcon } from "./renderIcon";
 import type { TVotingState } from "@/types";
 
 export const UserActionLog = ({
@@ -20,7 +20,7 @@ export const UserActionLog = ({
           was added to {userActionLog.action}
         </p>
       </div>
-      <div>{handleIcon(userActionLog.name)}</div>
+      <div>{renderIcon(userActionLog.name)}</div>
     </div>
   );
 };

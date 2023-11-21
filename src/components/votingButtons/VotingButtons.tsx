@@ -1,8 +1,8 @@
 import {
   boxPropsByCondition,
   btnPropsByCondition,
-} from "./handleVoitingButtons";
-import { handleClick } from "./handleClick";
+} from "../../utils/handleVoitingButtons";
+import { handleClickVoitingButtons } from "@/utils";
 import type { TVotingButton } from "@/types";
 
 export const VotingButton = ({
@@ -20,7 +20,7 @@ export const VotingButton = ({
           className={`p-[25px] border-white ${btnPropsByCondition(
             button.name
           )} group transition`}
-          onClick={handleClick.bind(
+          onClick={handleClickVoitingButtons.bind(
             null,
             button.name,
             setState,

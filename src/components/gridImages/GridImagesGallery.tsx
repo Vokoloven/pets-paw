@@ -1,12 +1,16 @@
 "use client";
 
-import { gridClassName, style } from ".";
+import { gridClassName } from "@/utils";
+import { style } from ".";
 import Image from "next/image";
 import type { TGridImagesProps, IFavouriteList } from "@/types";
 import { FavouriteIcon, FavouriteFilledIcon } from "../icons";
 import { useFavourites } from "@/hooks";
 import { Spinner } from "../spinner";
-import { isInFavouriteList, handleClick } from "./gridImagesGalleryUtils";
+import {
+  isInFavouriteList,
+  handleClickToFavourites,
+} from "../../utils/gridImagesGalleryUtils";
 
 export const GridImagesGallery = ({
   images,
@@ -38,7 +42,7 @@ export const GridImagesGallery = ({
               className="h-full w-full object-cover rounded-2.5xl"
             />
             <button
-              onClick={handleClick.bind(
+              onClick={handleClickToFavourites.bind(
                 null,
                 isInFavouriteList(favouriteList, id),
                 id,

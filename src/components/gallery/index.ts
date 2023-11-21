@@ -8,7 +8,7 @@ import {
   handleDrop,
   handleFile,
   handleLabel,
-} from "./galleryHandlers";
+} from "../../utils/galleryHandlers";
 
 import { GalleryImageUpload } from "./GalleryImageUpload";
 
