@@ -12,7 +12,25 @@ export const useVotes = () => {
 
       const { data } = (await req) as { data: IVotesResponse[] };
 
+      console.log(data);
+
       setVoteImages(data);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.message);
+      }
+    }
+  }, []);
+
+  const removeVotes = useCallback(async (vote_id: number) => {
+    try {
+      const res = await axios.delete("/api/votes", {
+        data: { vote_id },
+      });
+
+      const { data } = res;
+
+      // if (data.message === "SUCCESS") getVotes();
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.message);
@@ -24,5 +42,5 @@ export const useVotes = () => {
     getVotes();
   }, []);
 
-  return { voteImages };
+  return { voteImages, removeVotes };
 };

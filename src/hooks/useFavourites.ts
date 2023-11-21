@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { AxiosError } from "axios";
 import { useCallback, useEffect, useState } from "react";
@@ -48,6 +48,7 @@ export const useFavourites = () => {
         },
       });
       const { data } = res;
+
       if (data.message === "SUCCESS") getFavourites();
     } catch (error) {
       if (error instanceof AxiosError) {

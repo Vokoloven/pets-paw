@@ -1,14 +1,19 @@
 "use client";
 
 import { Backtab } from "@/components/backtab";
+import { GridImages, GridImagesFavourites } from "@/components/gridImages";
 
-export default function Favourites() {
+export default function Likes() {
   return (
-    <Backtab>
-      <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
-        Favourites
-      </h1>
-      <div>Favourite</div>
+    <Backtab
+      heading="Favourites"
+      boxName="FAVOURITES"
+      childrenProps="flex flex-col"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+    >
+      <GridImages>
+        <GridImagesFavourites />
+      </GridImages>
     </Backtab>
   );
 }

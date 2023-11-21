@@ -6,7 +6,7 @@ import { FavouriteFilledIcon } from "@/components/icons";
 import { useVotes } from "@/hooks";
 
 export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
-  const { voteImages } = useVotes();
+  const { voteImages, removeVotes } = useVotes();
 
   return (
     <>
@@ -33,6 +33,7 @@ export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
                 className="h-full w-full object-cover rounded-2.5xl"
               />
               <button
+                onClick={removeVotes.bind(null, id)}
                 aria-label="Add to favourites"
                 className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 p-2.5 leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center"
               >
