@@ -12,8 +12,6 @@ export const useVotes = () => {
 
       const { data } = (await req) as { data: IVotesResponse[] };
 
-      console.log(data);
-
       setVoteImages(data);
     } catch (error) {
       if (error instanceof AxiosError) {
