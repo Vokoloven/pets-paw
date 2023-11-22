@@ -1,4 +1,8 @@
-import { breedsIdsCollector } from "./breedsIdsCollector";
+import {
+  breedsIdsCollector,
+  matchedSearch,
+  searchWrapper,
+} from "./breedsIdsCollector";
 import { sortBreedsByCondition } from "./sortBreedsByCondition";
 import { breedIdItem } from "./breedIdItem";
 import {
@@ -53,4 +57,6 @@ export {
   boxPropsByCondition,
   btnPropsByCondition,
   handleClickVoitingButtons,
+  matchedSearch,
+  searchWrapper,
 };

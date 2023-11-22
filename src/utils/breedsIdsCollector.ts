@@ -13,3 +13,20 @@ export const breedsIdsCollector = (breeds: IBreedCat[]): string => {
 
   return breedsIds;
 };
+
+export const matchedSearch = (breeds: IBreedCat[], search: string | null) => {
+  const filter = breeds.filter(({ id, name }) =>
+    name.match(new RegExp(`${search}`, "gi"))
+  );
+  return filter;
+};
+
+export const searchWrapper = (
+  breeds: IBreedCat[],
+  search: string | null,
+  matchedSearch: (breeds: IBreedCat[], search: string | null) => IBreedCat[]
+) => {
+  const filter = matchedSearch(breeds, search);
+
+  return (func: (breeds: IBreedCat[]) => string) => func(filter);
+};

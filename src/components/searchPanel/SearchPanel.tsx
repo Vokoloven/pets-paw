@@ -1,24 +1,28 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
-import Image from "next/image";
-import search from "../../../public/search.svg";
+import React, { ChangeEvent, useState, FormEvent } from "react";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
 import { SearchIcon } from "../icons";
+import { useRouter } from "next/navigation";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
-
   const pathname = useClearPathname();
+  const route = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    route.push(`/search?text=${value}`);
+  };
+
   return (
     pathname !== "/" && (
       <div className="flex">
-        <form className="relative w-full">
+        <form className="relative w-full" onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
             type="text"
