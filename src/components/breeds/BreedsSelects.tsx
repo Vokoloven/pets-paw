@@ -19,7 +19,7 @@ export const BreedsSelects = ({
   props: TBreedsSelectsProps;
 }) => {
   return (
-    <div className="flex">
+    <div className="flex laptop:mt-5 desktop:mt-0">
       <Select
         sx={
           "w-[226px] ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
