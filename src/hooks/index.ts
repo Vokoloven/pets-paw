@@ -4,6 +4,7 @@ import { useBreeds } from "./useBreeds";
 import { useSelectedImage } from "./useSelectedImage";
 import { useVotes } from "./useVotes";
 import { useFavourites } from "./useFavourites";
+import { useSearch } from "./useSearch";
 
 export {
   useVoting,
@@ -12,4 +13,5 @@ export {
   useSelectedImage,
   useVotes,
   useFavourites,
+  useSearch,
 };
