@@ -28,7 +28,7 @@ export const useVotes = () => {
 
       const { data } = res;
 
-      // if (data.message === "SUCCESS") getVotes();
+      if (data.message === "SUCCESS") getVotes();
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.message);
