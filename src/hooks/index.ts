@@ -5,6 +5,10 @@ import { useSelectedImage } from "./useSelectedImage";
 import { useVotes } from "./useVotes";
 import { useFavourites } from "./useFavourites";
 import { useSearch } from "./useSearch";
+import {
+  useScreenDimensions,
+  getScreenDimensions,
+} from "./useScreenDimensions";
 
 export {
   useVoting,
@@ -14,4 +18,6 @@ export {
   useVotes,
   useFavourites,
   useSearch,
+  getScreenDimensions,
+  useScreenDimensions,
 };
