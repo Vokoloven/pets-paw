@@ -2,27 +2,39 @@
 
 import { useState, useEffect } from "react";
 
-export const getScreenDimensions = () => {
+const getScreenDimensions = () => {
   const { innerHeight: height, innerWidth: width } = window;
 
   return { height, width };
 };
 
-export const useScreenDimensions = (
-  getScreenDimensions: () => { width: number; height: number }
-) => {
-  const [dimension, setDimension] = useState<{
-    width: number;
-    height: number;
-  }>(getScreenDimensions());
+const getScreenName = (dimension: { width: number; height: number }) => {
+  const { width } = dimension;
+
+  if (width <= 767) {
+    return "mobile";
+  } else if (width <= 1023) {
+    return "tablet";
+  } else if (width <= 1279) {
+    return "laptop";
+  } else {
+    return "desktop";
+  }
+};
+
+export const useScreenDimensions = () => {
+  const [screen, setScreen] = useState<
+    "mobile" | "tablet" | "laptop" | "desktop"
+  >(getScreenName(getScreenDimensions()));
 
   useEffect(() => {
-    const setScreenDimension = () => setDimension(getScreenDimensions());
+    const setScreenDimension = () =>
+      setScreen(getScreenName(getScreenDimensions()));
 
     window.addEventListener("resize", setScreenDimension);
 
     return () => window.removeEventListener("resize", setScreenDimension);
   }, []);
 
-  return { dimension };
+  return { screen };
 };
