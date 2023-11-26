@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Logo from "../../../public/logoLight.svg";
 import { NavCardMobile } from "@/components/navCard";
 import { navCardItems } from "../navCard/navCardItems";
 import { useRouter } from "next/navigation";
