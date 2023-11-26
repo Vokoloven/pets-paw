@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${jost.className} bg-body overflow-hidden`}>
         <div className="container flex justify-center py-8">
           <Navboard />
-          <div className="laptop:max-w-[520px] desktop:max-w-[680px] flex flex-col w-full">
+          <div className="laptop:max-w-[520px] desktop:max-w-[680px] flex flex-col laptop:w-full">
             <SearchPanel />
             <main>{children}</main>
           </div>

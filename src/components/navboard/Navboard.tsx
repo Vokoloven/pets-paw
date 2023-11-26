@@ -10,7 +10,7 @@ export const Navboard = () => {
   const router = useRouter();
 
   return (
-    <div className="mr-5 desktop:mr-[72px]">
+    <div className="laptop:mr-5 desktop:mr-[72px]">
       <header>
         <Image
           src={Logo}

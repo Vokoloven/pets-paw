@@ -20,8 +20,6 @@ export async function DELETE(res: Request) {
       headers: { "x-api-key": `${process.env.API_KEY}` },
     });
 
-    console.log(req);
-
     return req;
   } catch (error: any) {
     Response.json({ error: error.message }, { status: 500 });
