@@ -13,6 +13,7 @@ import { ErrorIcon } from "./ErrorIcon";
 import { SuccessIcon } from "./SuccessIcon";
 import { FavouriteFilledIcon } from "./FavouriteFilledIcon";
 import { BinIcon } from "./BinIcon";
+import { MenuIcon } from "./MenuIcon";
 
 export {
   DislikeIcon,
@@ -30,4 +31,5 @@ export {
   SuccessIcon,
   FavouriteFilledIcon,
   BinIcon,
+  MenuIcon,
 };

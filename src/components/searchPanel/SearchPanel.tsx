@@ -2,11 +2,15 @@
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
-import { SearchIcon } from "../icons";
+import { SearchIcon, CloseIcon } from "../icons";
 import { useRouter } from "next/navigation";
+import { MenuIcon } from "../icons";
+import { Modal } from "../modal";
+import { Navboard } from "../navboard";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
   const pathname = useClearPathname();
   const route = useRouter();
 
@@ -22,6 +26,15 @@ export const SearchPanel = () => {
   return (
     pathname !== "/" && (
       <div className="flex">
+        <button
+          aria-label="Menu"
+          onClick={() => {
+            setOpen((prevOpen) => !prevOpen);
+          }}
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors"
+        >
+          <MenuIcon color="fill-darkPink" />
+        </button>
         <form className="relative w-full" onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
@@ -53,6 +66,30 @@ export const SearchPanel = () => {
             </React.Fragment>
           ))}
         </div>
+        <Modal
+          open={open}
+          setOpen={setOpen}
+          backdrop={"bg-body p-7"}
+          backdropElement={
+            <button
+              aria-label="Close"
+              onClick={() => setOpen((prevOpen) => !prevOpen)}
+              className="absolute top-0 right-0 p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+            >
+              <CloseIcon
+                color={
+                  "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
+                }
+                size="25"
+              />
+            </button>
+          }
+          modal={`absolute top-[40px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+            open ? "scale-100" : "scale-75"
+          }`}
+        >
+          {/* <Navboard /> */}
+        </Modal>
       </div>
     )
   );

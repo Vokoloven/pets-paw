@@ -34,7 +34,7 @@ export const GalleryImageUpload = ({
     >
       <button
         aria-label="Close"
-        onClick={() => setOpen((prevState) => !prevState)}
+        onClick={() => setOpen((prevOpen) => !prevOpen)}
         className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group"
       >
         <CloseIcon

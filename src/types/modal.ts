@@ -6,4 +6,5 @@ export type TModalProps = {
   setOpen: Dispatch<SetStateAction<boolean>>;
   backdrop?: string;
   modal?: string;
+  backdropElement?: ReactNode;
 };

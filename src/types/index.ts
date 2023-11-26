@@ -9,6 +9,7 @@ import { TModalProps } from "./modal";
 import { TGallerySelectProps, IUploadImage, IUploadedImages } from "./gallery";
 import { IVotesResponse } from "./votes";
 import { IFavouriteList } from "./favourites";
+import { TRouteRender } from "./route";
 
 export type {
   IBreedCat,
@@ -29,4 +30,5 @@ export type {
   TBreedsSelectsProps,
   IVotesResponse,
   IFavouriteList,
+  TRouteRender,
 };

@@ -53,6 +53,7 @@ export default function Gallery() {
       <Modal
         open={open}
         setOpen={setOpen}
+        backdrop={"bg-backdrop"}
         modal={`top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] ${
           open ? "scale-100" : "scale-75"
         }`}

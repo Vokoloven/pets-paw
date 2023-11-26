@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react";
 
 const getScreenDimensions = () => {
+  if (typeof window === "undefined") {
+    return { height: 0, width: 0 };
+  }
+
   const { innerHeight: height, innerWidth: width } = window;
 
   return { height, width };
