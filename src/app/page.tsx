@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section className="flex justify-center relative w-full">
+    <section className="mobile:hidden laptop:flex justify-center relative w-full laptop:visible">
       <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
         Welcome to Cat Social Network
       </h1>
