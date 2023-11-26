@@ -1,3 +1,4 @@
 import { Navboard } from "./Navboard";
+import { NavboardMobile } from "./NavboardMobile";
 
-export { Navboard };
+export { Navboard, NavboardMobile };

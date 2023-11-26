@@ -6,7 +6,7 @@ import { SearchIcon, CloseIcon } from "../icons";
 import { useRouter } from "next/navigation";
 import { MenuIcon } from "../icons";
 import { Modal } from "../modal";
-import { Navboard } from "../navboard";
+import { NavboardMobile } from "../navboard";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
@@ -69,12 +69,12 @@ export const SearchPanel = () => {
         <Modal
           open={open}
           setOpen={setOpen}
-          backdrop={"bg-body p-7"}
+          backdrop={"bg-body"}
           backdropElement={
             <button
               aria-label="Close"
               onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="absolute top-0 right-0 p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+              className="absolute top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
             >
               <CloseIcon
                 color={
@@ -84,11 +84,11 @@ export const SearchPanel = () => {
               />
             </button>
           }
-          modal={`absolute top-[40px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+          modal={`absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
             open ? "scale-100" : "scale-75"
           }`}
         >
-          {/* <Navboard /> */}
+          <NavboardMobile setOpen={setOpen} />
         </Modal>
       </div>
     )
