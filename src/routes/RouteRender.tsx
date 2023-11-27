@@ -1,11 +1,11 @@
 "use client";
 
-import { useClearPathname, useScreenDimensions } from "@/hooks";
+import { useClearPathname, useResponsiveScreen } from "@/hooks";
 import type { TRouteRender } from "@/types";
 
 export const RouteRender = ({ children, route }: TRouteRender) => {
   const pathname = useClearPathname();
-  const { screen } = useScreenDimensions();
+  const { screen } = useResponsiveScreen();
 
   if (route === "home") {
     return (
