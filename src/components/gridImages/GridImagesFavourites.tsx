@@ -1,7 +1,7 @@
 "use client";
 
 import { style } from ".";
-import { gridClassName, filteredVoteImages } from "@/utils";
+import { gridClassName } from "@/utils";
 import Image from "next/image";
 import { FavouriteFilledIcon } from "@/components/icons";
 import { useFavourites } from "@/hooks";
