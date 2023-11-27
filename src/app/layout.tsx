@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+// import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
 import { Navboard } from "@/components/navboard";
@@ -11,10 +13,10 @@ const jost = Jost({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "PetsPaw",
-  description: "All about cats",
-};
+// export const metadata: Metadata = {
+//   title: "PetsPaw",
+//   description: "All about cats",
+// };
 
 export default function RootLayout({
   children,

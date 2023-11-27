@@ -1,5 +1,3 @@
-"use client";
-
 import { NavCardMobile, navCardItems } from "@/components/navCard";
 import type { Dispatch, SetStateAction } from "react";
 
