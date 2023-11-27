@@ -10,7 +10,7 @@ import { TGallerySelectProps, IUploadImage, IUploadedImages } from "./gallery";
 import { IVotesResponse } from "./votes";
 import { IFavouriteList } from "./favourites";
 import { TRouteRender } from "./route";
-import { TNavCardMobile } from "./navCardMobile";
+import { TNavCardMobileProps } from "./navCardMobile";
 
 export type {
   IBreedCat,
@@ -32,5 +32,5 @@ export type {
   IVotesResponse,
   IFavouriteList,
   TRouteRender,
-  TNavCardMobile,
+  TNavCardMobileProps,
 };

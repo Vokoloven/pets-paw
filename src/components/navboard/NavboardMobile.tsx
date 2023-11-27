@@ -1,8 +1,6 @@
 "use client";
 
-import { NavCardMobile } from "@/components/navCard";
-import { navCardItems } from "../navCard/navCardItems";
-import { useRouter } from "next/navigation";
+import { NavCardMobile, navCardItems } from "@/components/navCard";
 import type { Dispatch, SetStateAction } from "react";
 
 export const NavboardMobile = ({
@@ -10,8 +8,6 @@ export const NavboardMobile = ({
 }: {
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const router = useRouter();
-
   return (
     <div>
       <nav className="flex items-center gap-x-4">

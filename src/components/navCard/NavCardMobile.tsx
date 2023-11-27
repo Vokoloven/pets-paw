@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useClearPathname } from "@/hooks";
 import Image from "next/image";
 import { handleBgColor, handleButtonActions, handleCardActions } from "@/utils";
-import type { TNavCardMobile } from "@/types";
+import type { TNavCardMobileProps } from "@/types";
 
-export const NavCardMobile = ({ card, setOpen }: TNavCardMobile) => {
+export const NavCardMobile = ({ card, setOpen }: TNavCardMobileProps) => {
   const [hover, setHover] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
@@ -28,7 +28,7 @@ export const NavCardMobile = ({ card, setOpen }: TNavCardMobile) => {
       onBlur={() => setFocus(false)}
       onClick={() => {
         router.push(`/${card.name}`);
-        setOpen(false);
+        setOpen((prevOpen) => !prevOpen);
       }}
     >
       <div className="flex justify-center items-center flex-col">

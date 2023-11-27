@@ -1,4 +1,5 @@
 "use client";
+
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
@@ -6,7 +7,7 @@ import { SearchIcon, CloseIcon } from "../icons";
 import { useRouter } from "next/navigation";
 import { MenuIcon } from "../icons";
 import { Modal } from "../modal";
-import { NavboardMobile } from "../navboard";
+import { NavboardMobile } from "@/components/navboard";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");

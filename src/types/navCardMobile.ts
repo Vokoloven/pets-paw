@@ -1,8 +1,8 @@
 import type { TNavCardProps } from ".";
 import type { Dispatch, SetStateAction } from "react";
 
-type TNavMobile = {
+type TNavCardMobile = {
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-export type TNavCardMobile = TNavMobile & TNavCardProps;
+export type TNavCardMobileProps = TNavCardMobile & TNavCardProps;
