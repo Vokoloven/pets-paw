@@ -76,7 +76,7 @@ export const SearchPanel = () => {
             <button
               aria-label="Close"
               onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="absolute top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
             >
               <CloseIcon
                 color={

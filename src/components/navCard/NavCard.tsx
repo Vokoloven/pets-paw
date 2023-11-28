@@ -21,7 +21,7 @@ export const NavCard = ({ card }: TNavCardProps) => {
 
   return (
     <div
-      className="cursor-pointer"
+      className="cursor-pointer mobile:w-full"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFocus(true)}
@@ -30,7 +30,7 @@ export const NavCard = ({ card }: TNavCardProps) => {
     >
       <div className="flex justify-center items-center flex-col">
         <div
-          className={`flex justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
+          className={`flex mobile:hidden justify-center items-center rounded-2.5xl w-[138px] h-[198px] border-4 border-solid ${handleBgColor(
             card.name
           )} ${handleCardActions(hover, focus, active)} transition`}
         >
