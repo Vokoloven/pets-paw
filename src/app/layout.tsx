@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${jost.className} bg-body overflow-hidden`}>
+      <body className={`${jost.className} bg-body overflow-y-hidden`}>
         {children}
       </body>
     </html>

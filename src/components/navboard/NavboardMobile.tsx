@@ -8,7 +8,7 @@ export const NavboardMobile = ({
 }) => {
   return (
     <div>
-      <nav className="flex items-center gap-x-4">
+      <nav className="flex items-center gap-x-4 flex-col tablet:flex-row">
         {navCardItems.map((card) => (
           <NavCardMobile card={card} key={card.id} setOpen={setOpen} />
         ))}

@@ -24,18 +24,18 @@ export const SearchPanel = () => {
 
   return (
     pathname !== "/" && (
-      <div className="flex flex-wrap justify-between tablet:flex-nowrap tablet:justify-normal">
+      <div className="flex mobile:flex-wrap mobile:justify-between">
         <button
           aria-label="Menu"
           onClick={() => {
             setOpen((prevOpen) => !prevOpen);
           }}
-          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden"
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden"
         >
           <MenuIcon color="fill-darkPink" />
         </button>
         <form
-          className="relative w-full order-1 tablet:order-[0] mt-2.5 tablet:mt-0"
+          className="relative w-full mobile:order-1 mobile:mt-2.5"
           onSubmit={handleSubmit}
         >
           <input
@@ -86,7 +86,7 @@ export const SearchPanel = () => {
               />
             </button>
           }
-          modal={`absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+          modal={`container absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
             open ? "scale-100" : "scale-75"
           }`}
         >

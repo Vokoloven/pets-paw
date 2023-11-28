@@ -39,13 +39,19 @@ const config: Config = {
       },
     },
     screens: {
-      mobile: { min: "375px" },
-      tablet: { min: "768px" },
-      laptop: { min: "1024px" },
+      mobile: { min: "375px", max: "767px" },
+      tablet: { min: "768px", max: "1023px" },
+      laptop: { min: "1024px", max: "1279px" },
       desktop: { min: "1280px" },
     },
     container: {
       center: true,
+      padding: {
+        mobile: "20px",
+        tablet: "30px",
+        laptop: "30px",
+        desktop: "30px",
+      },
     },
   },
   darkMode: "class",
