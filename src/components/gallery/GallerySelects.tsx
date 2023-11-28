@@ -1,7 +1,8 @@
 import { Select } from "@/components/form";
 import { DropdownIcon } from "@/components/icons";
 import { MenuItem } from "@/components/form";
-import { GridImages, GridImagesGallery } from "@/components/gridImages";
+import { GridImages } from "@/components/gridImages";
+import { GridImagesGallery } from "@/components/gridImages/GridImagesGallery";
 import { Fragment } from "react";
 import { UpdateIcon } from "@/components/icons";
 import { useBreeds } from "@/hooks";
