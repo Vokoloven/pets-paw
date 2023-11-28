@@ -1,4 +1,3 @@
-
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
@@ -25,7 +24,7 @@ export const SearchPanel = () => {
 
   return (
     pathname !== "/" && (
-      <div className="flex">
+      <div className="flex flex-wrap justify-between tablet:flex-nowrap tablet:justify-normal">
         <button
           aria-label="Menu"
           onClick={() => {
@@ -35,7 +34,10 @@ export const SearchPanel = () => {
         >
           <MenuIcon color="fill-darkPink" />
         </button>
-        <form className="relative w-full" onSubmit={handleSubmit}>
+        <form
+          className="relative w-full order-1 tablet:order-[0] mt-2.5 tablet:mt-0"
+          onSubmit={handleSubmit}
+        >
           <input
             onChange={handleChange}
             type="text"
