@@ -4,7 +4,9 @@ import { Backtab } from "@/components/backtab";
 import { useSearchParams } from "next/navigation";
 import { useBreeds, useSearch } from "@/hooks";
 import { breedsIdsCollector, matchedSearch, searchWrapper } from "@/utils";
-import { GridImages, GridImagesSearch } from "@/components/gridImages";
+import { GridImages } from "@/components/gridImages";
+import { GridImagesSearch } from "@/components/gridImages/GridImagesSearch";
+
 import { Spinner } from "@/components/spinner";
 
 export default function Search() {

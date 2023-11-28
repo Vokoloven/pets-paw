@@ -2,7 +2,9 @@
 
 import { Backtab } from "@/components/backtab";
 import { useState, Fragment } from "react";
-import { GridImages, GridImagesBreeds } from "@/components/gridImages";
+import { GridImages } from "@/components/gridImages";
+import { GridImagesBreeds } from "@/components/gridImages/GridImagesBreeds";
+
 import { useBreeds } from "@/hooks";
 import { sortBreedsByCondition } from "@/utils";
 import { BreedsSelects } from "@/components/breeds";
