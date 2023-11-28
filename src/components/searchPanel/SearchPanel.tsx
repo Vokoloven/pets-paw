@@ -30,7 +30,7 @@ export const SearchPanel = () => {
           onClick={() => {
             setOpen((prevOpen) => !prevOpen);
           }}
-          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors"
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden"
         >
           <MenuIcon color="fill-darkPink" />
         </button>
