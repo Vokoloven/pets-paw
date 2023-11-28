@@ -1,7 +1,7 @@
 "use client";
 
 import { Backtab } from "@/components/backtab";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import { GridImages } from "@/components/gridImages";
 import { GridImagesBreeds } from "@/components/gridImages/GridImagesBreeds";
 
