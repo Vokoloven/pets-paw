@@ -21,7 +21,7 @@ export default function Voting() {
       childrenProps="flex flex-col"
       heading="Voting"
       boxName="VOTING"
-      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
     >
       <div className="relative mt-5">
         {Boolean(image.length) && (

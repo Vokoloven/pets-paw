@@ -22,7 +22,7 @@ export default function Search() {
       heading="Search"
       boxName="SEARCH"
       childrenProps="flex flex-col"
-      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
     >
       <div className="mt-5">
         <p className="text-placeholder text-xl leading-none">

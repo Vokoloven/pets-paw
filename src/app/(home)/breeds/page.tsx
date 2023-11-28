@@ -23,7 +23,7 @@ export default function Breeds() {
       childrenProps="flex flex-col"
       heading="Breeds"
       boxName="BREEDS"
-      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
       boxElement={
         <BreedsSelects
           props={{

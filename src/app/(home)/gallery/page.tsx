@@ -18,7 +18,7 @@ export default function Gallery() {
     <Backtab
       boxName="GALLERY"
       heading="Gallery"
-      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
       wrapper="flex justify-between"
       childrenProps="flex flex-col"
       boxElement={
