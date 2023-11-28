@@ -34,6 +34,13 @@
   font-size: 20px;
 }
 
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .slick-dots li button:before {
+    color: #fbe0dc;
+    font-size: 15px;
+  }
+}
+
 .slick-dots li.slick-active button:before {
   color: #ff868e;
 }
