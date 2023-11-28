@@ -27,7 +27,7 @@ export default function SelectedBreed({
       heading="Selected breed"
       wrapper="flex"
       childrenProps="flex flex-col"
-      boxProps="px-[30px] py-[5px] bg-lightPink rounded-1.5lg text-darkPink font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-lightPink rounded-1.5lg text-darkPink font-medium text-xl leading-[30px] tracking-[2px]"
     >
       {Boolean(images?.length) && (
         <div className="mt-5 flex flex-col">
