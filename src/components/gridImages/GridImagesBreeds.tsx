@@ -36,7 +36,7 @@ export const GridImagesBreeds = ({ images, imageId }: TGridImagesProps) => {
             priority
             className="h-full w-full object-cover rounded-2.5xl"
           />
-          <div className="absolute bottom-[10px] left-[50%] -translate-x-2/4 py-[5px] px-[42px] leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center w-full">
+          <div className="absolute bottom-[10px] left-[50%] -translate-x-2/4 py-[5px] px-[42px] leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center mobile:left-2.5 mobile:right-2.5">
             {Boolean(imageId?.length) ? breeds[0]?.name : imageId}
           </div>
         </div>
