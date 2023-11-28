@@ -1,7 +1,8 @@
 "use client";
 
+import { GridImages } from "@/components/gridImages";
 import { Backtab } from "@/components/backtab";
-import { GridImages, GridImagesFavourites } from "@/components/gridImages";
+import { GridImagesFavourites } from "@/components/gridImages/GridImagesFavourites";
 
 export default function Favourites() {
   return (

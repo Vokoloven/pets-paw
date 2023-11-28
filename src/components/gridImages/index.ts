@@ -3,7 +3,6 @@ import { GridImagesBreeds } from "./GridImagesBreeds";
 import { GridImagesGallery } from "./GridImagesGallery";
 import { GridImagesPreference } from "./GridImagesPreference";
 import { style, styleSkeleton } from "./gridImagesStyle";
-import { GridImagesFavourites } from "./GridImagesFavourites";
 import { GridImagesSearch } from "./GridImagesSearch";
 
 export {
@@ -13,6 +12,5 @@ export {
   GridImagesPreference,
   style,
   styleSkeleton,
-  GridImagesFavourites,
   GridImagesSearch,
 };
