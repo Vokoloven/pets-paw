@@ -24,7 +24,7 @@ const config: Config = {
         semiTransparentWhite: "rgba(255, 255, 255, 0.4)",
         lightPink: "#FBE0DC",
         darkPink: "#FF868E",
-        rgbaDarkPink: "rgba(255, 134, 142, 0.3)",
+        rgbaDarkPink: "rgba(255, 134, 142, 0.6)",
         backdrop: "rgba(29, 29, 29, 0.6)",
       },
       fontSize: {
