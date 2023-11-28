@@ -19,7 +19,7 @@ export default function Breeds() {
 
   return (
     <Backtab
-      wrapper="flex laptop:flex-wrap desktop: flex-nowrap"
+      wrapper="flex mobile:flex-wrap laptop:flex-wrap"
       childrenProps="flex flex-col"
       heading="Breeds"
       boxName="BREEDS"
