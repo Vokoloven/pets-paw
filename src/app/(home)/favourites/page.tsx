@@ -3,7 +3,7 @@
 import { Backtab } from "@/components/backtab";
 import { GridImages, GridImagesFavourites } from "@/components/gridImages";
 
-export default function Likes() {
+export default function Favourites() {
   return (
     <Backtab
       heading="Favourites"
