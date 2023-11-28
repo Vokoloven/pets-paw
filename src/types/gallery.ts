@@ -16,7 +16,7 @@ export type TGallerySelectProps = {
   setOrder: TGallerySelect["setState"];
 };
 
-export interface IUploadImage {
+export type TUploadImage = {
   id: string;
   url: string;
   sub_id: string;
@@ -25,9 +25,9 @@ export interface IUploadImage {
   original_filename: string;
   pending: number;
   approved: number;
-}
+};
 
-export interface IUploadedImages {
+export type TUploadedImages = {
   breed_ids: null;
   breeds: [];
   created_at: string;
@@ -37,4 +37,4 @@ export interface IUploadedImages {
   sub_id: null;
   url: string;
   width: number;
-}
+};

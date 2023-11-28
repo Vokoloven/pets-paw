@@ -1,4 +1,4 @@
-export interface IFavouriteList {
+export type TFavouriteList = {
   created_at: string;
   id: number;
   image: {
@@ -8,4 +8,4 @@ export interface IFavouriteList {
   image_id: string;
   sub_id: string | null;
   user_id: string;
-}
+};
