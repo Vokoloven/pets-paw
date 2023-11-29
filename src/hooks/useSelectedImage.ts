@@ -2,18 +2,18 @@
 
 import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import type { IBreedImage } from "@/types";
+import type { TBreedImage } from "@/types";
 import axios, { AxiosError } from "axios";
 
 export const useSelectedImage = (imageId: string | null, breedId: string) => {
-  const [imageBreed, setImageBreed] = useState<IBreedImage>({
+  const [imageBreed, setImageBreed] = useState<TBreedImage>({
     breeds: [],
     id: "",
     url: "",
     width: 0,
     height: 0,
   });
-  const [imagesBreed, setBreedImages] = useState<IBreedImage[]>([]);
+  const [imagesBreed, setBreedImages] = useState<TBreedImage[]>([]);
 
   const getImageById = useCallback(async () => {
     try {
@@ -51,8 +51,8 @@ export const useSelectedImage = (imageId: string | null, breedId: string) => {
   }, [breedId]);
 
   const spreadImages = (
-    imageBreed: IBreedImage,
-    imagesBreed: IBreedImage[]
+    imageBreed: TBreedImage,
+    imagesBreed: TBreedImage[]
   ) => {
     if (Boolean(imageBreed.breeds.length) && Boolean(imagesBreed.length)) {
       const spreadImages = [imageBreed, ...imagesBreed];
