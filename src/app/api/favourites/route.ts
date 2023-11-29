@@ -34,19 +34,19 @@ export async function GET() {
   }
 }
 
-export async function DELETE(res: Response) {
+export async function DELETE(req: Request) {
   try {
-    const resBody = await res.json();
+    const resBody = await req.json();
     const { favourites_id } = resBody;
 
-    const req = await fetch(`${process.env.URL}favourites/${favourites_id}`, {
+    const res = await fetch(`${process.env.URL}favourites/${favourites_id}`, {
       method: "DELETE",
       headers: {
         "x-api-key": `${process.env.API_KEY}`,
       },
     });
 
-    return req;
+    return res;
   } catch (error: any) {
     return Response.json({ error: error.message }, { status: 500 });
   }
