@@ -26,7 +26,7 @@ export const GallerySelects = ({
 
   return (
     <div className="bg-body rounded-2.5xl pb-5 pt-2.5 px-5 mt-5">
-      <div className="flex gap-5">
+      <div className="flex gap-5 mobile:flex-col mobile:gap-2.5">
         <div className="flex flex-col w-full">
           <span className="pl-2.5 leading-[18px] font-medium text-[10px] text-placeholder">
             ORDER
@@ -84,7 +84,7 @@ export const GallerySelects = ({
           </Select>
         </div>
       </div>
-      <div className="flex gap-5 mt-2.5 items-end">
+      <div className="flex gap-5 mt-2.5 items-end mobile:flex-col mobile:gap-2.5">
         <div className="flex flex-col w-full">
           <span className="pl-2.5 leading-[18px] font-medium text-[10px] text-placeholder">
             BREED
@@ -161,7 +161,7 @@ export const GallerySelects = ({
         </div>
       </div>
       <GridImages>
-        <GridImagesGallery images={breedImages}/>
+        <GridImagesGallery images={breedImages} />
       </GridImages>
     </div>
   );

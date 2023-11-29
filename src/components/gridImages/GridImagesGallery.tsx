@@ -3,7 +3,7 @@
 import { gridClassName } from "@/utils";
 import { style } from ".";
 import Image from "next/image";
-import type { TGridImagesProps, IFavouriteList } from "@/types";
+import type { TGridImagesProps } from "@/types";
 import { FavouriteIcon, FavouriteFilledIcon } from "../icons";
 import { useFavourites } from "@/hooks";
 import { Spinner } from "../spinner";

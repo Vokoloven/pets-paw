@@ -19,13 +19,13 @@ export default function Gallery() {
       boxName="GALLERY"
       heading="Gallery"
       boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
-      wrapper="flex justify-between"
+      wrapper="flex justify-between mobile:flex-col"
       childrenProps="flex flex-col"
       boxElement={
         <button
           aria-label="Upload"
           onClick={() => setOpen((prevState) => !prevState)}
-          className="py-3 px-[30px] bg-lightPink rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group"
+          className="py-3 px-[30px] bg-lightPink rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group mobile:justify-center mobile:mt-2.5"
         >
           <UploadIcon
             color={
