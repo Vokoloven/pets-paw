@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import type { IBreedImage } from ".";
+import type { TBreedImage } from ".";
 
 export type TGridImagesProps = {
-  images: IBreedImage[];
+  images: TBreedImage[];
   imageId: string | null;
 };
