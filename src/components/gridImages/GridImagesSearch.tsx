@@ -2,13 +2,13 @@
 import { style } from ".";
 import { gridClassName } from "@/utils";
 import Image from "next/image";
-import type { IBreedImage } from "@/types";
+import type { TBreedImage } from "@/types";
 import { useResponsiveScreen } from "@/hooks";
 
 export const GridImagesSearch = ({
   breedImages,
 }: {
-  breedImages: IBreedImage[];
+  breedImages: TBreedImage[];
 }) => {
   const { screen } = useResponsiveScreen();
 
