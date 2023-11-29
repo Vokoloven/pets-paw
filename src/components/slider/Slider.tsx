@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import Image from "next/image";
-import type { IBreedImage } from "@/types";
+import type { TBreedImage } from "@/types";
 
-export const CustomSlider = ({ images }: { images: IBreedImage[] }) => {
+export const CustomSlider = ({ images }: { images: TBreedImage[] }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
