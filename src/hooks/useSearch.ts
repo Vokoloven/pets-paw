@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import type { IBreedImage } from "@/types";
+import type { TBreedImage } from "@/types";
 
 export const useSearch = (
   breedId: string,
@@ -11,7 +11,7 @@ export const useSearch = (
   mimeTypes: string | null = "jpg,png,gif",
   order: string | null = "RANDOM"
 ) => {
-  const [breedImages, setBreedImages] = useState<IBreedImage[]>([]);
+  const [breedImages, setBreedImages] = useState<TBreedImage[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const getGalleryImages = useCallback(async () => {
@@ -23,7 +23,7 @@ export const useSearch = (
         mimeTypes,
         order,
       });
-      const { data } = res as { data: IBreedImage[] };
+      const { data } = res as { data: TBreedImage[] };
       setBreedImages(data);
     } catch (error) {
       if (error instanceof AxiosError) {
