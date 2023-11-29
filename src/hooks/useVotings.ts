@@ -3,10 +3,10 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
-import type { IVotingImage } from "@/types";
+import type { TVotingImage } from "@/types";
 
 export const useVoting = (vote: { value: number; image_id: string } | null) => {
-  const [image, setImage] = useState<Array<IVotingImage>>([]);
+  const [image, setImage] = useState<Array<TVotingImage>>([]);
   const isFirstRender = useRef<boolean>(true);
 
   const getVoting = useCallback(async () => {

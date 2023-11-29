@@ -2,15 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-// const getWindowWidth = () => {
-//   if (global?.window) {
-//     const { innerWidth: width } = window;
-//     return width;
-//   }
-
-//   return 0;
-// };
-
 const getScreenName = (width: number) => {
   if (width <= 767) {
     return "mobile";
