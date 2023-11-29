@@ -1,7 +1,7 @@
-import type { IFavouriteList } from "@/types";
+import type { TFavouriteList } from "@/types";
 
 export const isInFavouriteList = (
-  favouriteList: IFavouriteList[],
+  favouriteList: TFavouriteList[],
   id: string
 ) => {
   const inList = favouriteList.reduce((acc, favourite) => {
@@ -23,13 +23,13 @@ export const handleClickToFavourites = (
   func === 0 ? setFavourites(id) : removeFavourites(func);
 };
 
-import type { IVotesResponse } from "@/types";
+import type { TVotesResponse } from "@/types";
 
 export const filteredVoteImages = (
   pref: 1 | -1,
-  voteImages: IVotesResponse[]
+  voteImages: TVotesResponse[]
 ) => {
-  const result = voteImages.reduce((acc: IVotesResponse[], image) => {
+  const result = voteImages.reduce((acc: TVotesResponse[], image) => {
     if (pref === image.value) {
       acc = [...acc, image];
 

@@ -5,7 +5,7 @@ import {
   SetStateAction,
   MouseEvent,
 } from "react";
-import type { IUploadImage, IUploadedImages } from "@/types";
+import type { TUploadImage, TUploadedImages } from "@/types";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 
@@ -122,7 +122,7 @@ export const handleFile = async (
       setLoading(true);
       const getReq = axios.get("/api/gallery");
       const getRes = await getReq;
-      const { data } = getRes as { data: IUploadedImages[] };
+      const { data } = getRes as { data: TUploadedImages[] };
       const inTheList = data.some(
         (name) => name.original_filename === file.name
       );
@@ -132,7 +132,7 @@ export const handleFile = async (
         setStatus("success");
         const postReq = axios.post("/api/gallery", formData);
         const postRes = await postReq;
-        const { data } = postRes as { data: IUploadImage };
+        const { data } = postRes as { data: TUploadImage };
       }
     } catch (error) {
       if (error instanceof AxiosError) {

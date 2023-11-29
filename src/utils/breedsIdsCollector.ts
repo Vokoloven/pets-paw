@@ -1,6 +1,6 @@
-import { IBreedCat } from "@/types";
+import { TBreedCat } from "@/types";
 
-export const breedsIdsCollector = (breeds: IBreedCat[]): string => {
+export const breedsIdsCollector = (breeds: TBreedCat[]): string => {
   const breedsIds = breeds?.reduce((acc, breed, index, arr) => {
     if (arr.length - 1 === index) {
       acc = acc + breed.id;
@@ -14,7 +14,7 @@ export const breedsIdsCollector = (breeds: IBreedCat[]): string => {
   return breedsIds;
 };
 
-export const matchedSearch = (breeds: IBreedCat[], search: string | null) => {
+export const matchedSearch = (breeds: TBreedCat[], search: string | null) => {
   const filter = breeds.filter(({ id, name }) =>
     name.match(new RegExp(`${search}`, "gi"))
   );
@@ -22,11 +22,11 @@ export const matchedSearch = (breeds: IBreedCat[], search: string | null) => {
 };
 
 export const searchWrapper = (
-  breeds: IBreedCat[],
+  breeds: TBreedCat[],
   search: string | null,
-  matchedSearch: (breeds: IBreedCat[], search: string | null) => IBreedCat[]
+  matchedSearch: (breeds: TBreedCat[], search: string | null) => TBreedCat[]
 ) => {
   const filter = matchedSearch(breeds, search);
 
-  return (func: (breeds: IBreedCat[]) => string) => func(filter);
+  return (func: (breeds: TBreedCat[]) => string) => func(filter);
 };

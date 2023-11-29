@@ -1,6 +1,6 @@
-import type { IBreedImage } from "@/types";
+import type { TBreedImage } from "@/types";
 
-export const breedIdItem = (imageBreed: IBreedImage) => {
+export const breedIdItem = (imageBreed: TBreedImage) => {
   if (imageBreed) {
     return [
       {
