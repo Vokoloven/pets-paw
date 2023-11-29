@@ -4,17 +4,17 @@ import { AxiosError } from "axios";
 import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import type { IFavouriteList } from "@/types";
+import type { TFavouriteList } from "@/types";
 
 export const useFavourites = () => {
-  const [favouriteList, setFavouriteList] = useState<IFavouriteList[]>([]);
+  const [favouriteList, setFavouriteList] = useState<TFavouriteList[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const getFavourites = useCallback(async () => {
     try {
       const req = axios.get("/api/favourites");
 
-      const { data } = (await req) as { data: IFavouriteList[] };
+      const { data } = (await req) as { data: TFavouriteList[] };
 
       setFavouriteList(data);
     } catch (error) {
