@@ -6,12 +6,14 @@ import { useRouter } from "next/navigation";
 import { MenuIcon } from "../icons";
 import { Modal } from "../modal";
 import { NavboardMobile } from "@/components/navboard";
+import { useOverflow } from "@/hooks";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const pathname = useClearPathname();
   const route = useRouter();
+  useOverflow(open);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);

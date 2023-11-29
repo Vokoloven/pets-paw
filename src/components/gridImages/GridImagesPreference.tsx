@@ -2,7 +2,7 @@
 import { style } from ".";
 import { gridClassName, filteredVoteImages } from "@/utils";
 import Image from "next/image";
-import { FavouriteFilledIcon, BinIcon } from "@/components/icons";
+import { BinIcon } from "@/components/icons";
 import { useVotes } from "@/hooks";
 import { Spinner } from "../spinner";
 

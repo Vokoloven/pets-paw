@@ -72,7 +72,7 @@ export const GalleryImageUpload = ({
           setSelectedImage,
           setStatus
         )}
-        className={`relative mt-10 mobile:mt-5 rounded-2.5xl w-full mobile:max-h-[172px] ${
+        className={`relative mt-10 mobile:mt-5 rounded-2.5xl w-full mobile:max-h-[172px] max-h-[360px] ${
           selectedImage?.file
             ? "py-[18px] px-[38px] mobile:py-2.5 mobile:px-5"
             : "py-[145px] mobile:py-[54px] mobile:px-[68px]"
@@ -93,7 +93,7 @@ export const GalleryImageUpload = ({
             alt="photo"
             width={selectedImage.dimensions.width}
             height={selectedImage.dimensions.height}
-            className="object-cover max-h-[280px] rounded-1.5lg"
+            className="object-cover rounded-1.5lg"
           />
         ) : (
           <>
@@ -120,7 +120,7 @@ export const GalleryImageUpload = ({
             : "opacity-0 pointer-events-none absolute"
         }`}
       >
-        {loading && <Spinner sx="h-4 w-4 border-2 border-white" />}
+        {loading && <Spinner sx="h-4 w-4 border-2 text-white" />}
         <span className="ml-2.5">{loading ? "UPLOADING" : "UPLOAD PHOTO"}</span>
       </button>
       {[
