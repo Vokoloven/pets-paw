@@ -15,7 +15,7 @@ export default function HomeLayout({
         <Navboard />
       </RouteRender>
       <RouteRender>
-        <div className="laptop:min-w-[520px] desktop:max-w-[680px] w-full flex flex-col">
+        <div className="laptop:max-w-[520px] desktop:max-w-[680px] w-full flex flex-col">
           <SearchPanel />
           <main>{children}</main>
         </div>

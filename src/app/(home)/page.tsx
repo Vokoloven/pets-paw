@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <section className="mobile:hidden laptop:flex justify-center relative w-full laptop:visible">
-      <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
+      <h1 className="absolute left-[-9999px] w-px h-px overflow-hidden">
         Welcome to Cat Social Network
       </h1>
       <div className="w-full h-[840px] bg-lightPink rounded-2.5xl"></div>

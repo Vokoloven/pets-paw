@@ -49,7 +49,7 @@ const config: Config = {
       padding: {
         mobile: "20px",
         tablet: "30px",
-        laptop: "30px",
+        laptop: "20px",
         desktop: "30px",
       },
     },
