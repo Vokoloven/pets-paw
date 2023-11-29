@@ -34,7 +34,7 @@ export default function SelectedBreed({
           <CustomSlider images={images} />
           <div className="relative bg-white rounded-2.5xl p-10 mobile:p-5 w-full border-2 border-lightPink border-solid mt-[50px]">
             <div className="flex justify-center flex-col">
-              <h2 className="font-medium text-xl text-placeholder text-center mobile:text-base">
+              <h2 className="font-medium text-xl text-placeholder text-center mobile:text-base z-10">
                 Breed description
               </h2>
               <div className="mt-5 flex mobile:flex-col mobile:mt-0">
