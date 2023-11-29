@@ -4,23 +4,22 @@ import { style } from ".";
 import { gridClassName } from "@/utils";
 import Image from "next/image";
 import { FavouriteFilledIcon } from "@/components/icons";
-import { useFavourites } from "@/hooks";
+import { useFavourites, useResponsiveScreen } from "@/hooks";
 import { Spinner } from "../spinner";
 
 export const GridImagesFavourites = () => {
   const { removeFavourites, favouriteList, loading } = useFavourites();
+  const { screen } = useResponsiveScreen();
 
   return (
     Boolean(favouriteList.length) &&
     favouriteList.map(({ id, image: { url } }, index) => (
       <div
         key={id}
-        className={`${gridClassName(
-          favouriteList.length,
-          style
-        )(
-          index
-        )} h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
+        className={`${
+          screen !== "mobile" &&
+          gridClassName(favouriteList.length, style)(index)
+        } h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
       >
         <Image
           src={url}
