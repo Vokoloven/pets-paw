@@ -34,7 +34,7 @@ export const GallerySelects = ({
             sx={
               "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
+            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
             paper="text-placeholder"
             paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
@@ -62,7 +62,7 @@ export const GallerySelects = ({
             sx={
               "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
+            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
             paper="text-placeholder"
             paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
@@ -92,7 +92,7 @@ export const GallerySelects = ({
             sx={
               "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-[300px] h-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb"
+            paperWrapper="w-full whitespace-nowrap h-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
             paper="text-placeholder"
             paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
@@ -129,7 +129,7 @@ export const GallerySelects = ({
                   "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
                 }
                 mainWrapper="w-full"
-                paperWrapper="w-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10"
+                paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
                 paper="text-placeholder"
                 paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
                 icon={<DropdownIcon color={"fill-placeholder"} />}
