@@ -12,25 +12,23 @@ export const VotingButton = ({
   setVote,
 }: TVotingButton) => {
   return (
-    <>
-      <div className={`bg-white ${boxPropsByCondition(button.name)}`}>
-        <button
-          type="button"
-          aria-label={button.ariaLabel}
-          className={`p-[25px] border-white ${btnPropsByCondition(
-            button.name
-          )} group transition`}
-          onClick={handleClickVoitingButtons.bind(
-            null,
-            button.name,
-            setState,
-            image_id,
-            setVote
-          )}
-        >
-          {button.icon}
-        </button>
-      </div>
-    </>
+    <div className={`bg-white ${boxPropsByCondition(button.name)}`}>
+      <button
+        type="button"
+        aria-label={button.ariaLabel}
+        className={`p-[25px] border-white ${btnPropsByCondition(
+          button.name
+        )} group transition`}
+        onClick={handleClickVoitingButtons.bind(
+          null,
+          button.name,
+          setState,
+          image_id,
+          setVote
+        )}
+      >
+        {button.icon}
+      </button>
+    </div>
   );
 };
