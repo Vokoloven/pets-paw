@@ -10,17 +10,17 @@ export async function GET() {
   }
 }
 
-export async function DELETE(res: Request) {
+export async function DELETE(req: Request) {
   try {
-    const reqBody = await res.json();
+    const reqBody = await req.json();
     const { vote_id } = reqBody;
 
-    const req = await fetch(`${process.env.URL}votes/${vote_id}`, {
+    const res = await fetch(`${process.env.URL}votes/${vote_id}`, {
       method: "DELETE",
       headers: { "x-api-key": `${process.env.API_KEY}` },
     });
 
-    return req;
+    return res;
   } catch (error: any) {
     Response.json({ error: error.message }, { status: 500 });
   }
