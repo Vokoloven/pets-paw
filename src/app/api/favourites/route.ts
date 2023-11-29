@@ -34,7 +34,7 @@ export async function GET() {
   }
 }
 
-export async function DELETE(req: Request, res: Response) {
+export async function DELETE(res: Response) {
   try {
     const resBody = await res.json();
     const { favourites_id } = resBody;
