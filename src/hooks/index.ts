@@ -5,6 +5,8 @@ import { useSelectedImage } from "./useSelectedImage";
 import { useVotes } from "./useVotes";
 import { useFavourites } from "./useFavourites";
 import { useSearch } from "./useSearch";
+import { useResponsiveScreen } from "./useResponsiveScreen ";
+import { useOverflow } from "./useOverflow";
 
 export {
   useVoting,
@@ -14,4 +16,6 @@ export {
   useVotes,
   useFavourites,
   useSearch,
+  useResponsiveScreen,
+  useOverflow,
 };

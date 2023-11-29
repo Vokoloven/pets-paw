@@ -4,6 +4,7 @@ import { useEffect, useRef, MouseEvent, KeyboardEvent } from "react";
 export const Modal = ({
   children,
   backdrop,
+  backdropElement,
   modal,
   open,
   setOpen,
@@ -29,10 +30,11 @@ export const Modal = ({
       onKeyDown={handleKeyDown}
       onClick={handleClick}
       ref={modalRef}
-      className={`fixed top-0 left-0 w-full h-full bg-backdrop ${
+      className={`fixed top-0 left-0 w-full h-full ${
         open ? "opacity-100" : "opacity-0 pointer-events-none"
-      } transition-all ${backdrop}`}
+      } transition-all ${backdrop} z-50`}
     >
+      {backdropElement}
       <div className={`absolute ${modal}`}>{children}</div>
     </div>
   );

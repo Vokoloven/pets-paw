@@ -24,7 +24,7 @@ const config: Config = {
         semiTransparentWhite: "rgba(255, 255, 255, 0.4)",
         lightPink: "#FBE0DC",
         darkPink: "#FF868E",
-        rgbaDarkPink: "rgba(255, 134, 142, 0.3)",
+        rgbaDarkPink: "rgba(255, 134, 142, 0.6)",
         backdrop: "rgba(29, 29, 29, 0.6)",
       },
       fontSize: {
@@ -38,14 +38,19 @@ const config: Config = {
         "1.5lg": "0.625rem",
       },
     },
+    screens: {
+      mobile: { min: "375px", max: "767px" },
+      tablet: { min: "768px", max: "1023px" },
+      laptop: { min: "1024px", max: "1279px" },
+      desktop: { min: "1280px" },
+    },
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+        mobile: "20px",
+        tablet: "30px",
+        laptop: "30px",
+        desktop: "30px",
       },
     },
   },

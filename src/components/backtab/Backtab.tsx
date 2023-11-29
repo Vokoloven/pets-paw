@@ -17,7 +17,7 @@ export const Backtab = ({
     <section
       className={`flex ${childrenProps} bg-white p-5 mt-2.5 rounded-2.5xl`}
     >
-      <h1 className="absolute left-[9999px] w-px h-px overflow-hidden">
+      <h1 className="absolute left-[-9999px] w-px h-px overflow-hidden">
         {heading}
       </h1>
       <div className={wrapper}>

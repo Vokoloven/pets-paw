@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Interface } from "readline";
 
-export interface IBreedCat {
+export type TBreedCat = {
   weight: {
     imperial: string;
     metric: string;
@@ -42,21 +41,21 @@ export interface IBreedCat {
   wikipedia_url: string;
   hypoallergenic: number;
   reference_image_id: string;
-}
+};
 
-export interface IBreedImage {
-  breeds: IBreedCat[];
+export type TBreedImage = {
+  breeds: TBreedCat[];
   id: string;
   url: string;
   width: number;
   height: number;
-}
+};
 
 export type TBreedsSelectsProps = {
   imageId: string | null;
   perPage: string | null;
   sortCondition: "az" | "za" | "none";
-  breeds: IBreedCat[];
+  breeds: TBreedCat[];
   loadingBreeds: boolean;
   setImageId: Dispatch<SetStateAction<string | null>>;
   setPerPage: Dispatch<SetStateAction<string | null>>;

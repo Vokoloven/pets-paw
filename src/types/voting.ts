@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface IVotingImage {
+export type TVotingImage = {
   id: string;
   url: string;
   width: number;
   height: number;
   breeds: Record<string, any>[];
-}
+};
 
 export type TVotingState = {
   id: string;

@@ -3,7 +3,7 @@
 import axios, { AxiosError } from "axios";
 import { useCallback, useEffect, useState, useRef } from "react";
 import toast from "react-hot-toast";
-import type { IBreedCat, IBreedImage } from "@/types";
+import type { TBreedCat, TBreedImage } from "@/types";
 import { breedsIdsCollector } from "@/utils";
 
 export const useBreeds = (
@@ -12,8 +12,8 @@ export const useBreeds = (
   mimeTypes: string | null = "jpg,png,gif",
   order: string | null = "RANDOM"
 ) => {
-  const [breeds, setBreeds] = useState<IBreedCat[]>([]);
-  const [breedImages, setBreedImages] = useState<IBreedImage[]>([]);
+  const [breeds, setBreeds] = useState<TBreedCat[]>([]);
+  const [breedImages, setBreedImages] = useState<TBreedImage[]>([]);
   const [loadingBreeds, setLoadingBreeds] = useState<boolean>(false);
   const isFirstRender = useRef<boolean>(true);
   const isGetGalleryImages = useRef<boolean>(false);

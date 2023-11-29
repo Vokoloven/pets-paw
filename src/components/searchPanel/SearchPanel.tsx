@@ -1,14 +1,19 @@
-"use client";
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import { useClearPathname } from "@/hooks/useClearPathname";
 import { PreferenceButtons, buttons } from "../preferenceButtons/";
-import { SearchIcon } from "../icons";
+import { SearchIcon, CloseIcon } from "../icons";
 import { useRouter } from "next/navigation";
+import { MenuIcon } from "../icons";
+import { Modal } from "../modal";
+import { NavboardMobile } from "@/components/navboard";
+import { useOverflow } from "@/hooks";
 
 export const SearchPanel = () => {
   const [value, setValue] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
   const pathname = useClearPathname();
   const route = useRouter();
+  useOverflow(open);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -21,8 +26,20 @@ export const SearchPanel = () => {
 
   return (
     pathname !== "/" && (
-      <div className="flex">
-        <form className="relative w-full" onSubmit={handleSubmit}>
+      <div className="flex mobile:flex-wrap mobile:justify-between">
+        <button
+          aria-label="Menu"
+          onClick={() => {
+            setOpen((prevOpen) => !prevOpen);
+          }}
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden"
+        >
+          <MenuIcon color="fill-darkPink" />
+        </button>
+        <form
+          className="relative w-full mobile:order-1 mobile:mt-2.5"
+          onSubmit={handleSubmit}
+        >
           <input
             onChange={handleChange}
             type="text"
@@ -53,6 +70,30 @@ export const SearchPanel = () => {
             </React.Fragment>
           ))}
         </div>
+        <Modal
+          open={open}
+          setOpen={setOpen}
+          backdrop={"bg-body"}
+          backdropElement={
+            <button
+              aria-label="Close"
+              onClick={() => setOpen((prevOpen) => !prevOpen)}
+              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+            >
+              <CloseIcon
+                color={
+                  "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
+                }
+                size="25"
+              />
+            </button>
+          }
+          modal={`container absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+            open ? "scale-100" : "scale-75"
+          }`}
+        >
+          <NavboardMobile setOpen={setOpen} />
+        </Modal>
       </div>
     )
   );

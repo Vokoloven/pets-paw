@@ -3,9 +3,9 @@
 import { gridClassName } from "@/utils";
 import { style } from ".";
 import Image from "next/image";
-import type { TGridImagesProps, IFavouriteList } from "@/types";
+import type { TGridImagesProps } from "@/types";
 import { FavouriteIcon, FavouriteFilledIcon } from "../icons";
-import { useFavourites } from "@/hooks";
+import { useFavourites, useResponsiveScreen } from "@/hooks";
 import { Spinner } from "../spinner";
 import {
   isInFavouriteList,
@@ -15,6 +15,7 @@ import {
 export const GridImagesGallery = ({
   images,
 }: Pick<TGridImagesProps, "images">) => {
+  const { screen } = useResponsiveScreen();
   const { favouriteList, setFavourites, removeFavourites, loading } =
     useFavourites();
 
@@ -24,12 +25,9 @@ export const GridImagesGallery = ({
         images.map(({ id, url, width, height }, index) => (
           <div
             key={id}
-            className={`${gridClassName(
-              images.length,
-              style
-            )(
-              index
-            )} h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
+            className={`${
+              screen !== "mobile" && gridClassName(images.length, style)(index)
+            } h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
           >
             <Image
               src={url}

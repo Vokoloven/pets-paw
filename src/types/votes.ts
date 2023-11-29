@@ -1,4 +1,4 @@
-export interface IVotesResponse {
+export type TVotesResponse = {
   country_code: string;
   created_at: string;
   id: number;

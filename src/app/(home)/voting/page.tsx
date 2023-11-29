@@ -4,7 +4,7 @@ import { Backtab } from "@/components/backtab";
 import Image from "next/image";
 import { VotingButton, buttons } from "@/components/votingButtons";
 import { UserActionLog } from "@/components/userActionLog";
-import React, { useState } from "react";
+import { useState, Fragment } from "react";
 import { useVoting } from "@/hooks";
 import type { TVotingState } from "@/types";
 
@@ -21,7 +21,7 @@ export default function Voting() {
       childrenProps="flex flex-col"
       heading="Voting"
       boxName="VOTING"
-      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px]"
+      boxProps="px-[30px] py-[5px] bg-darkPink rounded-1.5lg text-white font-medium text-xl leading-[30px] tracking-[2px]"
     >
       <div className="relative mt-5">
         {Boolean(image.length) && (
@@ -33,27 +33,29 @@ export default function Voting() {
             priority
             placeholder="blur"
             blurDataURL={image[0].url}
-            className="rounded-2.5xl object-cover h-[500px] w-full"
+            className="rounded-2.5xl object-cover mobile:h-[200px] h-[500px] w-full"
           />
         )}
-        <div className="flex absolute bottom-0 left-2/4 -translate-x-1/2 translate-y-1/2">
-          {buttons.map((button) => (
-            <React.Fragment key={button.id}>
-              <VotingButton
-                button={button}
-                setState={setUserActionLog}
-                image_id={image[0]?.id}
-                setVote={setVote}
-              />
-            </React.Fragment>
-          ))}
-        </div>
+        {Boolean(image.length) && (
+          <div className="flex absolute bottom-0 left-2/4 -translate-x-1/2 translate-y-1/2">
+            {buttons.map((button) => (
+              <Fragment key={button.id}>
+                <VotingButton
+                  button={button}
+                  setState={setUserActionLog}
+                  image_id={image[0]?.id}
+                  setVote={setVote}
+                />
+              </Fragment>
+            ))}
+          </div>
+        )}
       </div>
       <div className="mt-[52px] flex gap-[10px] flex-col">
         {userActionLog?.map((log) => (
-          <React.Fragment key={log.id}>
+          <Fragment key={log.id}>
             <UserActionLog userActionLog={log} />
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </Backtab>

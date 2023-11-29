@@ -1,3 +1,5 @@
+"use client";
+
 import axios, { AxiosError } from "axios";
 import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -5,6 +7,7 @@ import type { IVotesResponse } from "@/types";
 
 export const useVotes = () => {
   const [voteImages, setVoteImages] = useState<IVotesResponse[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getVotes = useCallback(async () => {
     try {
@@ -22,6 +25,7 @@ export const useVotes = () => {
 
   const removeVotes = useCallback(async (vote_id: number) => {
     try {
+      setLoading(true);
       const res = await axios.delete("/api/votes", {
         data: { vote_id },
       });
@@ -33,6 +37,8 @@ export const useVotes = () => {
       if (error instanceof AxiosError) {
         toast.error(error.message);
       }
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -40,5 +46,5 @@ export const useVotes = () => {
     getVotes();
   }, []);
 
-  return { voteImages, removeVotes };
+  return { voteImages, removeVotes, loading };
 };
