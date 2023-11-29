@@ -1,8 +1,6 @@
 import { Select } from "@/components/form";
 import { DropdownIcon } from "@/components/icons";
 import { MenuItem } from "@/components/form";
-import { GridImages } from "@/components/gridImages";
-import { GridImagesGallery } from "@/components/gridImages/GridImagesGallery";
 import { Fragment } from "react";
 import { UpdateIcon } from "@/components/icons";
 import { useBreeds } from "@/hooks";
@@ -18,12 +16,13 @@ export const GallerySelects = ({
     type,
     setType,
     breedId,
+    breeds,
+    loadingBreeds,
+    getGalleryImages,
   },
 }: {
   props: TGallerySelectProps;
 }) => {
-  const { breeds, breedImages, loadingBreeds, getGalleryImages } = useBreeds();
-
   return (
     <div className="bg-body rounded-2.5xl pb-5 pt-2.5 px-5 mt-5">
       <div className="flex gap-5 mobile:flex-col mobile:gap-2.5">
@@ -160,9 +159,6 @@ export const GallerySelects = ({
           </div>
         </div>
       </div>
-      <GridImages>
-        <GridImagesGallery images={breedImages} />
-      </GridImages>
     </div>
   );
 };

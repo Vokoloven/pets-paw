@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import type { TBreedCat } from ".";
 
 type TGallerySelect = {
   state: string | null;
@@ -14,6 +15,14 @@ export type TGallerySelectProps = {
   setLimit: TGallerySelect["setState"];
   setType: TGallerySelect["setState"];
   setOrder: TGallerySelect["setState"];
+  breeds: TBreedCat[];
+  loadingBreeds: boolean;
+  getGalleryImages: (
+    breedId: string | null,
+    perPage: string | null,
+    mimeTypes: string | null,
+    order: string | null
+  ) => Promise<void>;
 };
 
 export type TUploadImage = {

@@ -4,9 +4,10 @@ import { Backtab } from "@/components/backtab";
 import { UploadIcon } from "@/components/icons";
 import { useState } from "react";
 import { Modal } from "@/components/modal";
-import { GallerySelects } from "@/components/gallery";
-import { GalleryImageUpload } from "@/components/gallery";
-import { useOverflow } from "@/hooks";
+import { GallerySelects, GalleryImageUpload } from "@/components/gallery";
+import { useOverflow, useBreeds } from "@/hooks";
+import { GridImages } from "@/components/gridImages";
+import { GridImagesGallery } from "@/components/gridImages/GridImagesGallery";
 
 export default function Gallery() {
   const [order, setOrder] = useState<string | null>("RANDOM");
@@ -15,6 +16,7 @@ export default function Gallery() {
   const [limit, setLimit] = useState<string | null>("5");
   const [open, setOpen] = useState<boolean>(false);
   useOverflow(open);
+  const { breeds, breedImages, loadingBreeds, getGalleryImages } = useBreeds();
 
   return (
     <Backtab
@@ -50,8 +52,14 @@ export default function Gallery() {
           setBreedId,
           limit,
           setLimit,
+          breeds,
+          loadingBreeds,
+          getGalleryImages,
         }}
       />
+      <GridImages>
+        <GridImagesGallery images={breedImages} />
+      </GridImages>
       <Modal
         open={open}
         setOpen={setOpen}

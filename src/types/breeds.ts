@@ -43,7 +43,7 @@ export type TBreedCat = {
   reference_image_id: string;
 };
 
-export type IBreedImage = {
+export type TBreedImage = {
   breeds: TBreedCat[];
   id: string;
   url: string;
