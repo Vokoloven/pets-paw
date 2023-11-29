@@ -21,6 +21,8 @@ export const SearchPanel = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!value) return;
+
     route.push(`/search?text=${value}`);
   };
 
