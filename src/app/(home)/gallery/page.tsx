@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Modal } from "@/components/modal";
 import { GallerySelects } from "@/components/gallery";
 import { GalleryImageUpload } from "@/components/gallery";
+import { useOverflow } from "@/hooks";
 
 export default function Gallery() {
   const [order, setOrder] = useState<string | null>("RANDOM");
@@ -13,6 +14,7 @@ export default function Gallery() {
   const [breedId, setBreedId] = useState<string | null>(null);
   const [limit, setLimit] = useState<string | null>("5");
   const [open, setOpen] = useState<boolean>(false);
+  useOverflow(open);
 
   return (
     <Backtab

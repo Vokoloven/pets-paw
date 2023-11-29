@@ -6,6 +6,7 @@ import { useVotes } from "./useVotes";
 import { useFavourites } from "./useFavourites";
 import { useSearch } from "./useSearch";
 import { useResponsiveScreen } from "./useResponsiveScreen ";
+import { useOverflow } from "./useOverflow";
 
 export {
   useVoting,
@@ -16,4 +17,5 @@ export {
   useFavourites,
   useSearch,
   useResponsiveScreen,
+  useOverflow,
 };
