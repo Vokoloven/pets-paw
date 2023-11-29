@@ -11,6 +11,7 @@ import {
   handleLabel,
 } from ".";
 import { Spinner } from "@/components/spinner";
+import { useResponsiveScreen } from "@/hooks";
 
 export const GalleryImageUpload = ({
   setOpen,
@@ -26,6 +27,8 @@ export const GalleryImageUpload = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
 
+  const { screen } = useResponsiveScreen();
+
   return (
     <div
       className={`2xl:max-w-[680px] relative flex flex-col items-center ${
@@ -35,18 +38,19 @@ export const GalleryImageUpload = ({
       <button
         aria-label="Close"
         onClick={() => setOpen((prevOpen) => !prevOpen)}
-        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group"
+        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group mobile:p-[17.5px] mobile:rounded-2.5xl"
       >
         <CloseIcon
           color={
             "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
           }
+          size={screen === "mobile" ? "25" : "20"}
         />
       </button>
-      <h2 className="font-medium text-4xl mt-[80px]">
+      <h2 className="font-medium text-4xl mt-[80px] mobile:text-xl">
         Upload a .jpg or .png Cat Image
       </h2>
-      <h3 className="text-placeholder text-xl leading-[30px] mt-2.5">
+      <h3 className="text-placeholder text-xl leading-[30px] mt-2.5 mobile:mt-5">
         Any uploads must comply with the{" "}
         <a
           href="http://thecatapi.com/privacy"
@@ -68,8 +72,10 @@ export const GalleryImageUpload = ({
           setSelectedImage,
           setStatus
         )}
-        className={`relative mt-10 rounded-2.5xl w-full ${
-          selectedImage?.file ? "py-[18px] px-[38px]" : "py-[145px]"
+        className={`relative mt-10 mobile:mt-5 rounded-2.5xl w-full mobile:max-h-[200px] ${
+          selectedImage?.file
+            ? "py-[18px] px-[38px] mobile:py-2.5 mobile:px-5"
+            : "py-[145px] mobile:py-[54px] mobile:px-[68px]"
         } flex justify-center border-dashed border-2 ${handleLabel(
           status,
           isDragOver
@@ -91,7 +97,7 @@ export const GalleryImageUpload = ({
           />
         ) : (
           <>
-            <div className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 bg-upload bg-cover bg-no-repeat h-[200px] w-[200px]"></div>
+            <div className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 bg-upload bg-cover bg-no-repeat h-[200px] w-[200px] mobile:h-[100px] mobile:w-[100px]"></div>
             <p className="z-10 text-placeholder leading-[30px] text-xl">
               <span className="font-medium text-black">Drag here</span> your
               file or <span className="font-medium text-black">Click here</span>{" "}
@@ -100,7 +106,7 @@ export const GalleryImageUpload = ({
           </>
         )}
       </label>
-      <p className="text-placeholder text-xl leading-[30px] mt-5">
+      <p className="text-placeholder text-xl leading-[30px] mt-5 mobile:mt-2.5">
         {selectedImage?.file
           ? `Image File Name: ${selectedImage.file.name}`
           : "No file selected"}
