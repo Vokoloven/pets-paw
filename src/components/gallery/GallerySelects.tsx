@@ -24,7 +24,7 @@ export const GallerySelects = ({
   props: TGallerySelectProps;
 }) => {
   return (
-    <div className="bg-body rounded-2.5xl pb-5 pt-2.5 px-5 mt-5">
+    <div className="bg-body dark:bg-rgbaNightBlack rounded-2.5xl pb-5 pt-2.5 px-5 mt-5">
       <div className="flex gap-5 mobile:flex-col mobile:gap-2.5">
         <div className="flex flex-col w-full">
           <span className="pl-2.5 leading-[18px] font-medium text-[10px] text-placeholder">
@@ -32,11 +32,11 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white dark:bg-nightBlack dark:text-white dark:hover:border-rgbaDarkPinkLow px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
+            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white dark:bg-nightBlack z-10 shadow-md"
             paper="text-placeholder"
-            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
             setValue={setOrder}
             value={order}
@@ -60,11 +60,11 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white dark:bg-nightBlack dark:text-white dark:hover:border-rgbaDarkPinkLow px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
+            paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white dark:bg-nightBlack z-10 shadow-md"
             paper="text-placeholder"
-            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
             setValue={setType}
             value={type}
@@ -90,11 +90,11 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white dark:bg-nightBlack dark:text-white dark:hover:border-rgbaDarkPinkLow px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
-            paperWrapper="w-full whitespace-nowrap h-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
+            paperWrapper="w-full whitespace-nowrap h-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white dark:bg-nightBlack z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
             paper="text-placeholder"
-            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
             icon={<DropdownIcon color={"fill-placeholder"} />}
             setValue={setBreedId}
             value={breedId}
@@ -126,12 +126,12 @@ export const GallerySelects = ({
             <div className="flex">
               <Select
                 sx={
-                  "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+                  "w-full bg-white dark:bg-nightBlack dark:text-white dark:hover:border-rgbaDarkPinkLow px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
                 }
                 mainWrapper="w-full"
-                paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
+                paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white dark:bg-nightBlack z-10 shadow-md"
                 paper="text-placeholder"
-                paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+                paperList="mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
                 icon={<DropdownIcon color={"fill-placeholder"} />}
                 setValue={setLimit}
                 value={limit}
@@ -147,7 +147,7 @@ export const GallerySelects = ({
               <button
                 aria-label="Refresh list"
                 onClick={() => getGalleryImages(breedId, limit, type, order)}
-                className="ml-2.5 p-2.5 bg-white rounded-1.5lg transition-colors group hover:bg-darkPink"
+                className="ml-2.5 p-2.5 bg-white dark:bg-nightBlack rounded-1.5lg transition-colors group hover:bg-darkPink"
               >
                 <UpdateIcon
                   color={

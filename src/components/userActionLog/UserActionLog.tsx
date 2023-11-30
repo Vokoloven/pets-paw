@@ -8,7 +8,7 @@ export const UserActionLog = ({
 }) => {
   return (
     <div className="bg-body dark:bg-rgbaNightBlack py-[18px] pl-[15px] pr-5 rounded-1.5lg flex justify-between items-center mobile:flex-wrap">
-      <div className="py-[3px] px-[10px] bg-white dark:bg-rgbaNightBlack dark:text-white text-base leading-6 rounded-[5px]">
+      <div className="py-[3px] px-[10px] bg-white dark:bg-nightBlack dark:text-white text-base leading-6 rounded-[5px]">
         {userActionLog.time}
       </div>
       <div className="flex items-center mobile:order-1">

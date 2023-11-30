@@ -9,9 +9,10 @@ export const CustomSlider = ({ images }: { images: TBreedImage[] }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     appendDots: (dots: any) => (
       <div>
-        <ul className="rounded-2.5xl bg-white flex gap-[5px] p-[10px]">
+        <ul className="rounded-2.5xl bg-white dark:bg-nightDark flex gap-[5px] p-[10px]">
           {dots}
         </ul>
       </div>

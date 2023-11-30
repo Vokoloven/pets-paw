@@ -25,11 +25,11 @@ export const BreedsSelects = ({
           "mobile:w-full w-[226px] mobile:ml-0 laptop:ml-0 ml-2.5 bg-body dark:bg-rgbaNightBlack px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink dark:hover:border-rgbaDarkPinkLow hover:transition"
         }
         paperWrapper={
-          "w-full h-[300px] py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
+          "w-full h-[300px] py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white dark:bg-nightDark z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
         }
         paper={"text-placeholder"}
         paperList={
-          "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+          "mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
         }
         icon={<DropdownIcon color={"fill-placeholder"} />}
         setValue={setImageId}
@@ -60,11 +60,11 @@ export const BreedsSelects = ({
           }
           mainWrapper={"mobile:w-full"}
           paperWrapper={
-            "w-full py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white z-10 shadow-md"
+            "w-full py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white dark:bg-nightDark z-10 shadow-md"
           }
           paper={"text-placeholder"}
           paperList={
-            "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            "mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition hover:transition"
           }
           icon={<DropdownIcon color={"fill-placeholder"} />}
           defaultLabel="Limit: 5"

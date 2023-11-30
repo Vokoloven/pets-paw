@@ -29,7 +29,7 @@ export default function Gallery() {
         <button
           aria-label="Upload"
           onClick={() => setOpen((prevState) => !prevState)}
-          className="py-3 px-[30px] bg-lightPink rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group mobile:justify-center mobile:mt-2.5"
+          className="py-3 px-[30px] bg-lightPink dark:bg-rgbaDarkPinkLow rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group mobile:justify-center mobile:mt-2.5"
         >
           <UploadIcon
             color={

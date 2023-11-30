@@ -28,6 +28,7 @@ const config: Config = {
         rgbaDarkPinkLow: "rgba(255, 134, 142, 0.2)",
         backdrop: "rgba(29, 29, 29, 0.6)",
         nightBlack: "#1D1D1D",
+        nightDark: "#282828",
         rgbaNightBlack: "rgba(255, 255, 255, 0.05)",
       },
       fontSize: {
