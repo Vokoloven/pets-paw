@@ -47,7 +47,7 @@ export const SearchPanel = () => {
             type="text"
             name="search"
             placeholder="Search for breeds by name"
-            className={`px-5 py-[13px] rounded-2.5xl w-full text-black outline-none text-xl leading-[30px] placeholder:text-placeholder border-2 border-solid  ${
+            className={`px-5 py-[13px] rounded-2.5xl w-full text-nightBlack dark:text-placeholder dark:bg-rgbaNightBlack outline-none text-xl leading-[30px] placeholder:text-placeholder border-2 border-solid  ${
               Boolean(value)
                 ? "border-darkPink"
                 : "border-transparent hover:border-lightPink"
@@ -56,11 +56,11 @@ export const SearchPanel = () => {
           <button
             type="submit"
             aria-label="Search"
-            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group"
+            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group dark:bg-rgbaDarkPinkLow dark:focus:bg-lightPink dark:hover:bg-lightPink"
           >
             <SearchIcon
               color={
-                "fill-darkPink group-hover:fill-white group-focus:fill-white"
+                "fill-darkPink group-hover:fill-white dark:group-hover:fill-lightPink group-focus:fill-white dark:group-focus:fill-darkPink transition dark:group-hover:fill-darkPink"
               }
             />
           </button>

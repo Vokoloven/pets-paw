@@ -40,7 +40,9 @@ export default function SelectedBreed({
               <div className="mt-5 flex mobile:flex-col mobile:mt-0">
                 <div className="w-full">
                   <ul>
-                    <li className="text-black font-medium">Temperament:</li>
+                    <li className="text-nightBlack font-medium">
+                      Temperament:
+                    </li>
                     <li className="text-placeholder">
                       {images?.[0].breeds[0]?.temperament}
                     </li>
@@ -51,7 +53,7 @@ export default function SelectedBreed({
                     {Boolean(images?.length) &&
                       breedIdItem(images?.[0])!.map((item) => (
                         <li key={item.name}>
-                          <span className="font-medium text-black">
+                          <span className="font-medium text-nightBlack">
                             {item.name}:{" "}
                           </span>
                           <span className="text-placeholder">
@@ -63,7 +65,7 @@ export default function SelectedBreed({
                 </div>
               </div>
             </div>
-            <div className="mobile:text-xl mobile:px-5 mobile:py-4 whitespace-nowrap rounded-2.5xl bg-white py-[5px] px-10 font-medium text-black text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal text-center">
+            <div className="mobile:text-xl mobile:px-5 mobile:py-4 whitespace-nowrap rounded-2.5xl bg-white py-[5px] px-10 font-medium text-nightBlack text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal text-center">
               {images?.[0].breeds[0]?.name}
             </div>
           </div>

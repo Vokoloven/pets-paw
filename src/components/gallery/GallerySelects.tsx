@@ -32,7 +32,7 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
             paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
             paper="text-placeholder"
@@ -60,7 +60,7 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
             paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"
             paper="text-placeholder"
@@ -90,7 +90,7 @@ export const GallerySelects = ({
           </span>
           <Select
             sx={
-              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+              "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
             }
             paperWrapper="w-full whitespace-nowrap h-[300px] leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
             paper="text-placeholder"
@@ -126,7 +126,7 @@ export const GallerySelects = ({
             <div className="flex">
               <Select
                 sx={
-                  "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-black leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+                  "w-full bg-white px-2.5 py-1.5 rounded-1.5lg text-nightBlack leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
                 }
                 mainWrapper="w-full"
                 paperWrapper="w-full whitespace-nowrap leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] py-5 bg-white z-10 shadow-md"

@@ -12,11 +12,15 @@ export const VotingButton = ({
   setVote,
 }: TVotingButton) => {
   return (
-    <div className={`bg-white ${boxPropsByCondition(button.name)}`}>
+    <div
+      className={`bg-white dark:bg-[#282828] ${boxPropsByCondition(
+        button.name
+      )}`}
+    >
       <button
         type="button"
         aria-label={button.ariaLabel}
-        className={`p-[25px] border-white ${btnPropsByCondition(
+        className={`p-[25px] border-white dark:border-[#282828] ${btnPropsByCondition(
           button.name
         )} group transition`}
         onClick={handleClickVoitingButtons.bind(

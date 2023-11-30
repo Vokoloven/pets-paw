@@ -25,6 +25,7 @@ const config: Config = {
         lightPink: "#FBE0DC",
         darkPink: "#FF868E",
         rgbaDarkPink: "rgba(255, 134, 142, 0.6)",
+        rgbaDarkPinkLow: "rgba(255, 134, 142, 0.2)",
         backdrop: "rgba(29, 29, 29, 0.6)",
         nightBlack: "#1D1D1D",
         rgbaNightBlack: "rgba(255, 255, 255, 0.05)",

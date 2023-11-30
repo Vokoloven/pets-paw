@@ -22,7 +22,7 @@ export const PreferenceButtons = ({ button, pathname }: TPreferenceButtons) => {
       className={`p-[15px] rounded-2.5xl outline-none ${
         active
           ? "bg-darkPink"
-          : "bg-white hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
+          : "bg-white dark:bg-rgbaNightBlack dark:hover:bg-lightPink hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
       }`}
     >
       {button.icon}

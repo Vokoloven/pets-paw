@@ -99,9 +99,10 @@ export const GalleryImageUpload = ({
           <>
             <div className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 bg-upload bg-cover bg-no-repeat h-[200px] w-[200px] mobile:h-[100px] mobile:w-[100px]"></div>
             <p className="z-10 text-placeholder leading-[30px] text-xl">
-              <span className="font-medium text-black">Drag here</span> your
-              file or <span className="font-medium text-black">Click here</span>{" "}
-              to upload
+              <span className="font-medium text-nightBlack">Drag here</span>{" "}
+              your file or{" "}
+              <span className="font-medium text-nightBlack">Click here</span> to
+              upload
             </p>
           </>
         )}
