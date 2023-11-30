@@ -21,8 +21,8 @@ export const PreferenceButtons = ({ button, pathname }: TPreferenceButtons) => {
       onClick={() => router.push(`/${button.name}`)}
       className={`p-[15px] rounded-2.5xl outline-none ${
         active
-          ? "bg-darkPink"
-          : "bg-white dark:bg-rgbaNightBlack dark:hover:bg-lightPink hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
+          ? "bg-darkPink dark:bg-rgbaDarkPinkLow"
+          : "bg-white dark:bg-rgbaNightBlack dark:hover:bg-rgbaDarkPinkLow hover:bg-lightPink focus:bg-lightPink transition cursor-pointer"
       }`}
     >
       {button.icon}

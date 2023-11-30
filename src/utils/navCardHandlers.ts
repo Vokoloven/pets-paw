@@ -11,8 +11,8 @@ export const handleButtonActions = <T>(
   active: T
 ): string => {
   if (active) return "bg-darkPink text-white";
-  if (hover) return "bg-lightPink text-darkPink";
-  if (focus) return "bg-lightPink text-darkPink";
+  if (hover) return "bg-lightPink text-darkPink dark:bg-rgbaDarkPinkLow";
+  if (focus) return "bg-lightPink text-darkPink dark:bg-rgbaDarkPinkLow";
   return "bg-white text-darkPink dark:bg-rgbaNightBlack";
 };
 

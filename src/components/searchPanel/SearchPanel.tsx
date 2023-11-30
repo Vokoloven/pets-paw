@@ -50,7 +50,7 @@ export const SearchPanel = () => {
             className={`px-5 py-[13px] rounded-2.5xl w-full text-nightBlack dark:text-placeholder dark:bg-rgbaNightBlack outline-none text-xl leading-[30px] placeholder:text-placeholder border-2 border-solid  ${
               Boolean(value)
                 ? "border-darkPink"
-                : "border-transparent hover:border-lightPink"
+                : "border-transparent hover:border-lightPink dark:hover:border-rgbaDarkPink"
             }`}
           />
           <button
@@ -60,7 +60,7 @@ export const SearchPanel = () => {
           >
             <SearchIcon
               color={
-                "fill-darkPink group-hover:fill-white dark:group-hover:fill-lightPink group-focus:fill-white dark:group-focus:fill-darkPink transition dark:group-hover:fill-darkPink"
+                "fill-darkPink group-hover:fill-white dark:group-hover:fill-darkPink group-focus:fill-white transition"
               }
             />
           </button>
