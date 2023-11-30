@@ -7,6 +7,7 @@ import { useFavourites } from "./useFavourites";
 import { useSearch } from "./useSearch";
 import { useResponsiveScreen } from "./useResponsiveScreen ";
 import { useOverflow } from "./useOverflow";
+import { useTheme } from "./useTheme";
 
 export {
   useVoting,
@@ -18,4 +19,5 @@ export {
   useSearch,
   useResponsiveScreen,
   useOverflow,
+  useTheme,
 };

@@ -5,13 +5,17 @@ import Logo from "../../../public/logoLight.svg";
 import { NavCard } from "../navCard/NavCard";
 import { navCardItems } from "../navCard/navCardItems";
 import { useRouter } from "next/navigation";
+import { Switcher } from "../switcher";
+import { useTheme } from "@/hooks";
 
 export const Navboard = () => {
   const router = useRouter();
 
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="laptop:mr-5 desktop:mr-[72px] mobile:w-full">
-      <header>
+      <header className="flex justify-between">
         <Image
           src={Logo}
           alt="logo"
@@ -19,6 +23,7 @@ export const Navboard = () => {
           className="cursor-pointer"
           priority
         />
+        <Switcher setTheme={setTheme} theme={theme} />
       </header>
       <p className="text-black text-4.5xl font-medium mt-20">Hi! 👋</p>
       <p className="text-xl text-placeholder mt-2.5">Welcome to Cat Paw</p>
