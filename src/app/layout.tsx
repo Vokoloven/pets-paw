@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const jost = Jost({
   weight: ["400", "500", "700"],

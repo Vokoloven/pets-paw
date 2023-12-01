@@ -27,7 +27,9 @@ export default function Search() {
       <div className="mt-5">
         <p className="text-placeholder text-xl leading-none">
           Search result for:{" "}
-          <span className="text-black font-medium">{search}</span>
+          <span className="text-black font-medium dark:text-white">
+            {search}
+          </span>
         </p>
         {loading ? (
           <div className="flex justify-center mt-5">
@@ -38,7 +40,9 @@ export default function Search() {
             <GridImagesSearch breedImages={breedImages} />
           </GridImages>
         ) : (
-          <p className="text-xl mt-5">No matching breeds found</p>
+          <p className="text-xl text-nightBlack dark:text-white mt-5">
+            No matching breeds found
+          </p>
         )}
       </div>
     </Backtab>
