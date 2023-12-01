@@ -19,14 +19,16 @@ Follow these simple steps to get the project up and running on your local machin
    npm install
    ```
 
-3. **Create a `.env` file in the root directory and add your Cat API key:**
+3. **Obtain your `Cat API key` by visiting [https://thecatapi.com/](https://thecatapi.com/).**
+
+4. **Create a `.env` file in the root directory and add your Cat API key:**
 
    ```env
-   API_KEY=live_As1zX25ZWPiAhmu2Mp3yAAElF83wmqgIIXBoK1QZCS5axnk3yiToAVMmqNy0RrO7
+   API_KEY=YOUR_API_KEY
    URL=https://api.thecatapi.com/v1/
    ```
 
-4. **Start the development server:**
+5. **Start the development server:**
 
    ```bash
    npm run dev
