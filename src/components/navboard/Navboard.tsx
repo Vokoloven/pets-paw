@@ -7,12 +7,14 @@ import { NavCard } from "../navCard/NavCard";
 import { navCardItems } from "../navCard/navCardItems";
 import { useRouter } from "next/navigation";
 import { Switcher } from "../switcher";
-import { useTheme } from "@/hooks";
+import type { TNavboardProps } from "@/types";
 
-export const Navboard = () => {
+export const Navboard = ({
+  props: { setTheme, theme },
+}: {
+  props: TNavboardProps;
+}) => {
   const router = useRouter();
-
-  const { theme, setTheme } = useTheme();
 
   return (
     <div className="laptop:mr-5 desktop:mr-[72px] mobile:w-full">

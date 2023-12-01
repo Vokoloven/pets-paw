@@ -145,9 +145,9 @@ export const GallerySelects = ({
                 ))}
               </Select>
               <button
-                aria-label="Refresh list"
+                aria-label="Update list"
                 onClick={() => getGalleryImages(breedId, limit, type, order)}
-                className="ml-2.5 p-2.5 bg-white dark:bg-nightBlack rounded-1.5lg transition-colors group hover:bg-darkPink"
+                className="ml-2.5 p-2.5 bg-white dark:bg-nightBlack rounded-1.5lg transition-colors group hover:bg-darkPink dark:hover:bg-rgbaDarkPinkLow"
               >
                 <UpdateIcon
                   color={

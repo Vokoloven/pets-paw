@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         upload: "url('../../public/upload-bg.png')",
+        uploadDark: "url('../../public/upload-bg-dark.png')",
         main: "url(../../public/home-bg2x.png)",
       },
       colors: {
@@ -29,6 +30,7 @@ const config: Config = {
         backdrop: "rgba(29, 29, 29, 0.6)",
         nightBlack: "#1D1D1D",
         nightDark: "#282828",
+        rgbaNightDark: "rgba(29, 29, 29, 0.6)",
         rgbaNightBlack: "rgba(255, 255, 255, 0.05)",
       },
       fontSize: {

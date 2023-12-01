@@ -61,8 +61,10 @@ export default function Gallery() {
       <Modal
         open={open}
         setOpen={setOpen}
-        backdrop={"bg-backdrop mobile:bg-body"}
-        modal={`mobile:container top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] mobile:translate-y-0 mobile:static ${
+        backdrop={
+          "bg-backdrop mobile:bg-body dark:bg-rgbaNightDark mobile:dark:bg-nightDark"
+        }
+        modal={`mobile:container dark:bg-nightDark top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] mobile:translate-y-0 mobile:static ${
           open ? "scale-100" : "scale-75"
         }`}
       >

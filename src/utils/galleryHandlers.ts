@@ -148,7 +148,8 @@ export const handleLabel = (
   status: "error" | "success" | null,
   isDragOver: boolean
 ) => {
-  if (status === "error") return "border-darkPink bg-lightPink";
+  if (status === "error")
+    return "border-darkPink bg-lightPink dark:bg-rgbaDarkPinkLow";
   if (isDragOver) return "border-darkPink";
-  return "border-lightPink bg-white";
+  return "border-lightPink bg-white dark:bg-rgbaNightBlack dark:border-rgbaDarkPinkLow";
 };

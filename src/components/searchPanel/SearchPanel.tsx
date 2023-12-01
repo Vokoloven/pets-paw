@@ -34,7 +34,7 @@ export const SearchPanel = () => {
           onClick={() => {
             setOpen((prevOpen) => !prevOpen);
           }}
-          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden"
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden dark:bg-rgbaNightBlack"
         >
           <MenuIcon color="fill-darkPink" />
         </button>
@@ -75,12 +75,12 @@ export const SearchPanel = () => {
         <Modal
           open={open}
           setOpen={setOpen}
-          backdrop={"bg-body"}
+          backdrop={"bg-body dark:bg-nightDark"}
           backdropElement={
             <button
               aria-label="Close"
               onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink group"
+              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink group dark:bg-rgbaNightBlack dark:hover:bg-rgbaDarkPinkLow"
             >
               <CloseIcon
                 color={"fill-darkPink group-hover:fill-white transition-colors"}
@@ -88,7 +88,7 @@ export const SearchPanel = () => {
               />
             </button>
           }
-          modal={`container absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+          modal={`container dark:bg-nightDark absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
             open ? "scale-100" : "scale-75"
           }`}
         >
