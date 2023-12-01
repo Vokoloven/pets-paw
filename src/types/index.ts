@@ -11,6 +11,8 @@ import { TVotesResponse } from "./votes";
 import { TFavouriteList } from "./favourites";
 import { TRouteRender } from "./route";
 import { TNavCardMobileProps } from "./navCardMobile";
+import { TSwitcherProps } from "./switcher";
+import { TNavboardProps } from "./navBoard";
 
 export type {
   TBreedCat,
@@ -33,4 +35,6 @@ export type {
   TFavouriteList,
   TRouteRender,
   TNavCardMobileProps,
+  TSwitcherProps,
+  TNavboardProps,
 };

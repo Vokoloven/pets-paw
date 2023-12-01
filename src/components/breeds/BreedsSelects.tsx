@@ -22,14 +22,14 @@ export const BreedsSelects = ({
     <div className="mobile:w-full flex mobile:flex-col mobile:mt-2.5 laptop:mt-2.5">
       <Select
         sx={
-          "mobile:w-full w-[226px] mobile:ml-0 laptop:ml-0 ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+          "mobile:w-full w-[226px] mobile:ml-0 laptop:ml-0 ml-2.5 bg-body dark:bg-rgbaNightBlack px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink dark:hover:border-rgbaDarkPinkLow"
         }
         paperWrapper={
-          "w-full h-[300px] py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
+          "w-full h-[300px] py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white dark:bg-nightDark z-10 overflow-y-auto scrollbar-width scrollbar-thumb shadow-md"
         }
         paper={"text-placeholder"}
         paperList={
-          "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+          "mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition"
         }
         icon={<DropdownIcon color={"fill-placeholder"} />}
         setValue={setImageId}
@@ -56,15 +56,15 @@ export const BreedsSelects = ({
       <div className="flex mobile:mt-2.5 mobile:w-full">
         <Select
           sx={
-            "mobile:w-full w-[101px] mobile:ml-0 ml-2.5 bg-body px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink hover:transition"
+            "mobile:w-full w-[101px] mobile:ml-0 ml-2.5 bg-body dark:bg-rgbaNightBlack px-2.5 py-1.5 rounded-1.5lg text-placeholder leading-6 flex justify-between items-center border-2 border-transparent border-solid transition hover:border-lightPink dark:hover:border-rgbaDarkPinkLow"
           }
           mainWrapper={"mobile:w-full"}
           paperWrapper={
-            "w-full py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white z-10 shadow-md"
+            "w-full py-5 leading-6 absolute top-0 left-0 translate-y-11 rounded-[30px] bg-white dark:bg-nightDark z-10 shadow-md"
           }
           paper={"text-placeholder"}
           paperList={
-            "mb-2.5 last:mb-0 px-5 hover:bg-lightPink transition hover:transition"
+            "mb-2.5 last:mb-0 px-5 hover:bg-lightPink dark:hover:bg-rgbaDarkPinkLow transition"
           }
           icon={<DropdownIcon color={"fill-placeholder"} />}
           defaultLabel="Limit: 5"
@@ -82,17 +82,17 @@ export const BreedsSelects = ({
           onClick={() => setSortCondition("az")}
           aria-label="Sort A-Z"
           type="button"
-          className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
+          className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition ${
             sortCondition === "az"
-              ? "bg-darkPink"
-              : "bg-body hover:border-lightPink"
+              ? "bg-darkPink dark:bg-rgbaDarkPinkLow"
+              : "bg-body dark:bg-rgbaNightBlack hover:border-lightPink dark:hover:border-rgbaDarkPinkLow"
           }`}
         >
           <SortAZIcon
             color={`${
               sortCondition === "az"
-                ? "fill-white"
-                : "fill-placeholder group-hover:fill-darkPink group-hover:transition"
+                ? "fill-white dark:fill-darkPink"
+                : "fill-placeholder group-hover:fill-darkPink"
             } transition`}
           />
         </button>
@@ -100,17 +100,17 @@ export const BreedsSelects = ({
           onClick={() => setSortCondition("za")}
           aria-label="Sort Z-A"
           type="button"
-          className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition hover:transition ${
+          className={`ml-2.5 py-1.5 px-2 rounded-1.5lg border-2 border-transparent border-solid group transition ${
             sortCondition === "za"
-              ? "bg-darkPink"
-              : "bg-body hover:border-lightPink"
+              ? "bg-darkPink dark:bg-rgbaDarkPinkLow"
+              : "bg-body dark:bg-rgbaNightBlack hover:border-lightPink dark:hover:border-rgbaDarkPinkLow"
           }`}
         >
           <SortZAIcon
             color={`${
               sortCondition === "za"
-                ? "fill-white"
-                : "fill-placeholder group-hover:fill-darkPink group-hover:transition"
+                ? "fill-white dark:fill-darkPink"
+                : "fill-placeholder group-hover:fill-darkPink"
             } transition`}
           />
         </button>

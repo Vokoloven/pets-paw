@@ -34,7 +34,7 @@ export const SearchPanel = () => {
           onClick={() => {
             setOpen((prevOpen) => !prevOpen);
           }}
-          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden"
+          className="py-[21px] px-[15px] bg-white rounded-2.5xl mr-2.5 hover:bg-lightPink transition-colors laptop:hidden desktop:hidden dark:bg-rgbaNightBlack"
         >
           <MenuIcon color="fill-darkPink" />
         </button>
@@ -47,20 +47,20 @@ export const SearchPanel = () => {
             type="text"
             name="search"
             placeholder="Search for breeds by name"
-            className={`px-5 py-[13px] rounded-2.5xl w-full text-black outline-none text-xl leading-[30px] placeholder:text-placeholder border-2 border-solid  ${
+            className={`px-5 py-[13px] rounded-2.5xl w-full text-nightBlack dark:text-placeholder dark:bg-rgbaNightBlack outline-none text-xl leading-[30px] placeholder:text-placeholder border-2 border-solid  ${
               Boolean(value)
                 ? "border-darkPink"
-                : "border-transparent hover:border-lightPink"
+                : "border-transparent hover:border-lightPink dark:hover:border-rgbaDarkPink"
             }`}
           />
           <button
             type="submit"
             aria-label="Search"
-            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group"
+            className="p-2.5 rouned rounded-1.5lg bg-lightPink absolute top-[10px] right-[10px] hover:bg-darkPink outline-none focus:bg-darkPink transition group dark:bg-rgbaDarkPinkLow dark:focus:bg-lightPink dark:hover:bg-lightPink"
           >
             <SearchIcon
               color={
-                "fill-darkPink group-hover:fill-white group-focus:fill-white"
+                "fill-darkPink group-hover:fill-white dark:group-hover:fill-darkPink group-focus:fill-white transition"
               }
             />
           </button>
@@ -75,22 +75,20 @@ export const SearchPanel = () => {
         <Modal
           open={open}
           setOpen={setOpen}
-          backdrop={"bg-body"}
+          backdrop={"bg-body dark:bg-nightDark"}
           backdropElement={
             <button
               aria-label="Close"
               onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink group dark:bg-rgbaNightBlack dark:hover:bg-rgbaDarkPinkLow"
             >
               <CloseIcon
-                color={
-                  "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
-                }
+                color={"fill-darkPink group-hover:fill-white transition-colors"}
                 size="25"
               />
             </button>
           }
-          modal={`container absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
+          modal={`container dark:bg-nightDark absolute top-[110px] right-[50%] transition-all translate-x-2/4 bg-body rounded-2.5xl 2xl:max-w-[680px] ${
             open ? "scale-100" : "scale-75"
           }`}
         >

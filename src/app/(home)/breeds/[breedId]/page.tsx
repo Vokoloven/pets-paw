@@ -27,12 +27,12 @@ export default function SelectedBreed({
       heading="Selected breed"
       wrapper="flex"
       childrenProps="flex flex-col"
-      boxProps="px-[30px] py-[5px] bg-lightPink rounded-1.5lg text-darkPink font-medium text-xl leading-[30px] tracking-[2px]"
+      boxProps="px-[30px] py-[5px] bg-lightPink dark:bg-rgbaDarkPinkLow rounded-1.5lg text-darkPink font-medium text-xl leading-[30px] tracking-[2px]"
     >
       {Boolean(images?.length) && (
         <div className="mt-5 flex flex-col">
           <CustomSlider images={images} />
-          <div className="relative bg-white rounded-2.5xl p-10 mobile:p-5 w-full border-2 border-lightPink border-solid mt-[50px]">
+          <div className="relative bg-white dark:bg-nightDark rounded-2.5xl p-10 mobile:p-5 w-full border-2 border-lightPink dark:border-rgbaDarkPinkLow border-solid mt-[50px]">
             <div className="flex justify-center flex-col">
               <h2 className="font-medium text-xl text-placeholder text-center mobile:text-base z-10">
                 Breed description
@@ -40,7 +40,9 @@ export default function SelectedBreed({
               <div className="mt-5 flex mobile:flex-col mobile:mt-0">
                 <div className="w-full">
                   <ul>
-                    <li className="text-black font-medium">Temperament:</li>
+                    <li className="text-nightBlack dark:text-white font-medium">
+                      Temperament:
+                    </li>
                     <li className="text-placeholder">
                       {images?.[0].breeds[0]?.temperament}
                     </li>
@@ -51,7 +53,7 @@ export default function SelectedBreed({
                     {Boolean(images?.length) &&
                       breedIdItem(images?.[0])!.map((item) => (
                         <li key={item.name}>
-                          <span className="font-medium text-black">
+                          <span className="font-medium text-nightBlack dark:text-white">
                             {item.name}:{" "}
                           </span>
                           <span className="text-placeholder">
@@ -63,7 +65,7 @@ export default function SelectedBreed({
                 </div>
               </div>
             </div>
-            <div className="mobile:text-xl mobile:px-5 mobile:py-4 whitespace-nowrap rounded-2.5xl bg-white py-[5px] px-10 font-medium text-black text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal text-center">
+            <div className="mobile:text-xl mobile:px-5 mobile:py-4 whitespace-nowrap rounded-2.5xl bg-white dark:bg-nightDark dark:text-white py-[5px] px-10 font-medium text-nightBlack text-4xl absolute top-0 left-[50%] -translate-y-1/2 -translate-x-1/2 leading-normal text-center">
               {images?.[0].breeds[0]?.name}
             </div>
           </div>

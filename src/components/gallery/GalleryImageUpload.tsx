@@ -30,24 +30,18 @@ export const GalleryImageUpload = ({
   const { screen } = useResponsiveScreen();
 
   return (
-    <div
-      className={`2xl:max-w-[680px] relative flex flex-col items-center ${
-        status === null ? "pb-[158px]" : "pb-[138px]"
-      }`}
-    >
+    <div className={`max-w-[680px] relative flex flex-col items-center`}>
       <button
         aria-label="Close"
         onClick={() => setOpen((prevOpen) => !prevOpen)}
-        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group mobile:p-[17.5px] mobile:rounded-2.5xl"
+        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink group mobile:p-[17.5px] tablet:p-[17.5px] mobile:rounded-2.5xl dark:bg-rgbaNightBlack dark:hover:bg-rgbaDarkPinkLow"
       >
         <CloseIcon
-          color={
-            "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
-          }
-          size={screen === "mobile" ? "25" : "20"}
+          color={"fill-darkPink group-hover:fill-white transition-colors"}
+          size={screen === "mobile" || screen === "tablet" ? "25" : "20"}
         />
       </button>
-      <h2 className="font-medium text-4xl mt-[80px] mobile:text-xl">
+      <h2 className="font-medium text-4xl mt-[80px] mobile:text-xl dark:text-white">
         Upload a .jpg or .png Cat Image
       </h2>
       <h3 className="text-placeholder text-xl leading-[30px] mt-2.5 mobile:mt-5">
@@ -72,10 +66,10 @@ export const GalleryImageUpload = ({
           setSelectedImage,
           setStatus
         )}
-        className={`relative mt-10 mobile:mt-5 rounded-2.5xl w-full mobile:max-h-[172px] max-h-[360px] ${
+        className={`relative mt-10 mobile:mt-5 rounded-2.5xl w-full mobile:max-h-[172px] max-w-[640px] max-h-[320px] ${
           selectedImage?.file
-            ? "py-[18px] px-[38px] mobile:py-2.5 mobile:px-5"
-            : "py-[145px] mobile:py-[54px] mobile:px-[68px]"
+            ? "py-[20px] px-[38px] mobile:py-2.5 mobile:px-5"
+            : "py-[145px] px-[135px] mobile:py-[54px] mobile:px-[68px]"
         } flex justify-center border-dashed border-2 ${handleLabel(
           status,
           isDragOver
@@ -97,16 +91,25 @@ export const GalleryImageUpload = ({
           />
         ) : (
           <>
-            <div className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 bg-upload bg-cover bg-no-repeat h-[200px] w-[200px] mobile:h-[100px] mobile:w-[100px]"></div>
-            <p className="z-10 text-placeholder leading-[30px] text-xl">
-              <span className="font-medium text-black">Drag here</span> your
-              file or <span className="font-medium text-black">Click here</span>{" "}
+            <div className="absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 bg-upload dark:bg-uploadDark bg-cover bg-no-repeat h-[200px] w-[200px] mobile:h-[100px] mobile:w-[100px]"></div>
+            <p className="z-10 text-placeholder leading-[30px] text-xl whitespace-nowrap mobile:whitespace-normal">
+              <span className="font-medium text-nightBlack dark:text-white">
+                Drag here
+              </span>{" "}
+              your file or{" "}
+              <span className="font-medium text-nightBlack dark:text-white">
+                Click here
+              </span>{" "}
               to upload
             </p>
           </>
         )}
       </label>
-      <p className="text-placeholder text-xl leading-[30px] mt-5 mobile:mt-2.5">
+      <p
+        className={`text-placeholder text-xl leading-[30px] mt-5 mobile:mt-2.5 ${
+          !selectedImage?.file && "mb-[230px] mobile:mb-0"
+        }`}
+      >
         {selectedImage?.file
           ? `Image File Name: ${selectedImage.file.name}`
           : "No file selected"}
@@ -114,9 +117,9 @@ export const GalleryImageUpload = ({
       <button
         onClick={handleFile.bind(null, selectedImage, setLoading, setStatus)}
         aria-label="Upload photo"
-        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink hover:transition-colors transition-colors ${
+        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink transition-colors ${
           selectedImage?.file && status === null
-            ? "opacity-100"
+            ? "opacity-100 mb-[170px] mobile:mb-0"
             : "opacity-0 pointer-events-none absolute"
         }`}
       >
@@ -139,7 +142,7 @@ export const GalleryImageUpload = ({
           key={id}
           className={`mt-5 w-full p-[18px] bg-white rounded-1.5lg flex items-center transition-opacity ${
             selectedImage?.file && status === id
-              ? "opacity-100"
+              ? "opacity-100 mb-[150px] mobile:mb-0"
               : "opacity-0 pointer-events-none absolute"
           }`}
         >

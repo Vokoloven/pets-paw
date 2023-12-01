@@ -15,7 +15,7 @@ export const Backtab = ({
 
   return (
     <section
-      className={`flex ${childrenProps} bg-white p-5 mt-2.5 rounded-2.5xl`}
+      className={`flex ${childrenProps} bg-white dark:bg-rgbaNightBlack p-5 mt-2.5 rounded-2.5xl`}
     >
       <h1 className="absolute left-[-9999px] w-px h-px overflow-hidden">
         {heading}
@@ -25,12 +25,12 @@ export const Backtab = ({
           <button
             type="button"
             aria-label="back"
-            className="bg-lightPink p-2.5 rounded-1.5lg mr-2.5 hover:bg-darkPink group transition outline-none focus:bg-darkPink"
+            className="bg-lightPink p-2.5 rounded-1.5lg mr-2.5 hover:bg-darkPink group transition outline-none focus:bg-darkPink dark:bg-rgbaDarkPinkLow dark:hover:bg-lightPink"
             onClick={() => router.back()}
           >
             <BackArrowIcon
               color={
-                "fill-darkPink group-hover:fill-white group-focus:fill-white transition"
+                "fill-darkPink group-hover:fill-white group-focus:fill-white transition dark:group-hover:fill-darkPink"
               }
             />
           </button>

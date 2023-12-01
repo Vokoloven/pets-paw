@@ -14,6 +14,7 @@ import { SuccessIcon } from "./SuccessIcon";
 import { FavouriteFilledIcon } from "./FavouriteFilledIcon";
 import { BinIcon } from "./BinIcon";
 import { MenuIcon } from "./MenuIcon";
+import { DarkIcon, LightIcon } from "./ThemeIcon";
 
 export {
   DislikeIcon,
@@ -32,4 +33,6 @@ export {
   FavouriteFilledIcon,
   BinIcon,
   MenuIcon,
+  DarkIcon,
+  LightIcon,
 };

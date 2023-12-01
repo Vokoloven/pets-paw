@@ -6,7 +6,11 @@ export const buttons = (pathname: string) => {
       id: "1",
       icon: (
         <LikeIcon
-          color={pathname === "likes" ? "fill-white" : "fill-darkPink"}
+          color={
+            pathname === "likes"
+              ? "fill-white dark:fill-darkPink"
+              : "fill-darkPink"
+          }
         />
       ),
       name: "likes",
@@ -16,7 +20,11 @@ export const buttons = (pathname: string) => {
       id: "2",
       icon: (
         <FavouriteIcon
-          color={pathname === "favourites" ? "fill-white" : "fill-darkPink"}
+          color={
+            pathname === "favourites"
+              ? "fill-white dark:fill-darkPink"
+              : "fill-darkPink"
+          }
         />
       ),
       name: "favourites",
@@ -26,7 +34,11 @@ export const buttons = (pathname: string) => {
       id: "3",
       icon: (
         <DislikeIcon
-          color={pathname === "dislikes" ? "fill-white" : "fill-darkPink"}
+          color={
+            pathname === "dislikes"
+              ? "fill-white dark:fill-darkPink"
+              : "fill-darkPink"
+          }
         />
       ),
       name: "dislikes",

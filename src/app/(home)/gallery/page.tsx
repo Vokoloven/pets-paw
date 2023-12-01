@@ -29,14 +29,12 @@ export default function Gallery() {
         <button
           aria-label="Upload"
           onClick={() => setOpen((prevState) => !prevState)}
-          className="py-3 px-[30px] bg-lightPink rounded-1.5lg flex items-center hover:bg-darkPink hover:transition-colors transition-colors group mobile:justify-center mobile:mt-2.5"
+          className="py-3 px-[30px] bg-lightPink dark:bg-rgbaDarkPinkLow rounded-1.5lg flex items-center hover:bg-darkPink transition-colors group mobile:justify-center mobile:mt-2.5"
         >
           <UploadIcon
-            color={
-              "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
-            }
+            color={"fill-darkPink group-hover:fill-white transition-colors"}
           />
-          <span className="ml-2.5 font-medium text-darkPink text-base leading-4 tracking-[2px] group-hover:text-white group-hover:transition-colors transition-colors">
+          <span className="ml-2.5 font-medium text-darkPink text-base leading-4 tracking-[2px] group-hover:text-white transition-colors">
             UPLOAD
           </span>
         </button>
@@ -63,8 +61,10 @@ export default function Gallery() {
       <Modal
         open={open}
         setOpen={setOpen}
-        backdrop={"bg-backdrop mobile:bg-body"}
-        modal={`mobile:container top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] mobile:translate-y-0 mobile:static ${
+        backdrop={
+          "bg-backdrop mobile:bg-body dark:bg-rgbaNightDark mobile:dark:bg-nightDark"
+        }
+        modal={`mobile:container dark:bg-nightDark top-[50%] right-[30px] transition-all -translate-y-2/4 bg-body rounded-2.5xl p-5 2xl:max-w-[680px] mobile:translate-y-0 mobile:static ${
           open ? "scale-100" : "scale-75"
         }`}
       >
