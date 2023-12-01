@@ -19,7 +19,7 @@ export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
           className={`${
             screen !== "mobile" &&
             gridClassName(voteImages.length, style)(index)
-          } h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
+          } h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink group`}
         >
           <Image
             src={url}
@@ -36,7 +36,7 @@ export const GridImagesPreference = ({ pref }: { pref: 1 | -1 }) => {
             aria-label="Add to favourites"
             className={`absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 ${
               loading ? "p-[9px]" : "p-[15px]"
-            } leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center flex items-center`}
+            } leading-6 text-darkPink rounded-1.5lg bg-white transition-opacity opacity-0 group-hover:opacity-100 text-center flex items-center`}
           >
             {loading ? (
               <Spinner sx="h-8 w-8 border-4 text-darkPink" />

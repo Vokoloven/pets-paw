@@ -38,12 +38,10 @@ export const GalleryImageUpload = ({
       <button
         aria-label="Close"
         onClick={() => setOpen((prevOpen) => !prevOpen)}
-        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink hover:transition-colors group mobile:p-[17.5px] mobile:rounded-2.5xl"
+        className="absolute p-2.5 bg-white rounded-1.5lg top-0 right-0 transition-colors hover:bg-darkPink group mobile:p-[17.5px] mobile:rounded-2.5xl"
       >
         <CloseIcon
-          color={
-            "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
-          }
+          color={"fill-darkPink group-hover:fill-white transition-colors"}
           size={screen === "mobile" ? "25" : "20"}
         />
       </button>
@@ -115,7 +113,7 @@ export const GalleryImageUpload = ({
       <button
         onClick={handleFile.bind(null, selectedImage, setLoading, setStatus)}
         aria-label="Upload photo"
-        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink hover:transition-colors transition-colors ${
+        className={`flex items-center px-[30px] py-3 mt-5 bg-darkPink text-white rounded-1.5lg font-medium leading-4 text-xs tracking-[2px] hover:bg-lightPink hover:text-darkPink transition-colors ${
           selectedImage?.file && status === null
             ? "opacity-100"
             : "opacity-0 pointer-events-none absolute"

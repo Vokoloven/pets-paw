@@ -24,7 +24,7 @@ export const GridImagesBreeds = ({ images, imageId }: TGridImagesProps) => {
         key={id}
       >
         <div
-          className={`h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink before:hover:transition-colors group`}
+          className={`h-full w-full relative transition-colors before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-2.5xl before:hover:bg-rgbaDarkPink group`}
         >
           <Image
             src={url}
@@ -36,7 +36,7 @@ export const GridImagesBreeds = ({ images, imageId }: TGridImagesProps) => {
             priority
             className="h-full w-full object-cover rounded-2.5xl"
           />
-          <div className="absolute bottom-[10px] left-[50%] -translate-x-2/4 py-[5px] px-[42px] leading-6 text-darkPink rounded-1.5lg bg-white dark:bg-nightDark transition-opacity opacity-0 group-hover:opacity-100 group-hover:transition-opacity text-center mobile:left-2.5 mobile:right-2.5 mobile:translate-x-0 laptop:px-[26px]">
+          <div className="absolute bottom-[10px] left-[50%] -translate-x-2/4 py-[5px] px-[42px] leading-6 text-darkPink rounded-1.5lg bg-white dark:bg-nightDark transition-opacity opacity-0 group-hover:opacity-100 text-center mobile:left-2.5 mobile:right-2.5 mobile:translate-x-0 laptop:px-[26px]">
             {Boolean(imageId?.length) ? breeds[0]?.name : imageId}
           </div>
         </div>

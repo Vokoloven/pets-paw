@@ -80,12 +80,10 @@ export const SearchPanel = () => {
             <button
               aria-label="Close"
               onClick={() => setOpen((prevOpen) => !prevOpen)}
-              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink hover:transition-colors group"
+              className="absolute mobile:top-5 mobile:right-5 top-[30px] right-[30px] p-[17.5px] bg-white rounded-2.5xl transition-colors hover:bg-darkPink group"
             >
               <CloseIcon
-                color={
-                  "fill-darkPink group-hover:fill-white group-hover:transition-colors transition-colors"
-                }
+                color={"fill-darkPink group-hover:fill-white transition-colors"}
                 size="25"
               />
             </button>
