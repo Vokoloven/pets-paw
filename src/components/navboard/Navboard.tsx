@@ -18,7 +18,7 @@ export const Navboard = ({
   const router = useRouter();
 
   return (
-    <div className="laptop:mr-5 desktop:mr-[72px] mobile:w-full">
+    <div className="laptop:mr-5 desktop:mr-[72px] mobile:w-full laptop:sticky laptop:top-8 laptop:self-start desktop:sticky desktop:top-8 desktop:self-start">
       <header className="flex justify-between">
         <Image
           src={Logo}
