@@ -35,17 +35,19 @@ export const useBreeds = (
 
   const getImages = useCallback(async () => {
     try {
-      const res = await axios.post("/api/breeds", {
-        ...(breedId === "all"
-          ? { breedId: breedsIdsCollector(breeds) }
-          : { breedId }),
-        perPage,
-        mimeTypes,
-        order,
-      });
-      const { data } = res;
+      if (Boolean(breeds.length)) {
+        const res = await axios.post("/api/breeds", {
+          ...(breedId === "all"
+            ? { breedId: breedsIdsCollector(breeds) }
+            : { breedId }),
+          perPage,
+          mimeTypes,
+          order,
+        });
+        const { data } = res;
 
-      setBreedImages(data);
+        setBreedImages(data);
+      }
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.message);
